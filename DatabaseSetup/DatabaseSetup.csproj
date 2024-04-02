@@ -43,10 +43,12 @@
     <Compile Include="Setup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\Events.Events.sql" />
+    <Content Include="Data\People.Groups.sql" />
+    <Content Include="Data\People.People.sql" />
     <Content Include="Tables.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Procedures\" />
   </ItemGroup>
   <ItemGroup>

@@ -53,15 +53,15 @@ namespace DatabaseSetup
 
             string populateGroupsScript = File.ReadAllText(@"../../Data/People.Groups.sql");
 
-            string populatePeopleGroupsScript = File.ReadAllText(@"../../Data/People.PeopleGroups.sql");
+            // string populatePeopleGroupsScript = File.ReadAllText(@"../../Data/People.PeopleGroups.sql");
 
             string populateEventsScript = File.ReadAllText(@"../../Data/Events.Events.sql");
 
-            string populateEventAttendanceScript = File.ReadAllText(@"../../Data/Events.EventAttendance.sql");
+            // string populateEventAttendanceScript = File.ReadAllText(@"../../Data/Events.EventAttendance.sql");
 
-            string populatePaymentsScript = File.ReadAllText(@"../../Data/People.Payments.sql");
+            // string populatePaymentsScript = File.ReadAllText(@"../../Data/People.Payments.sql");
 
-            string populateChargesScript = File.ReadAllText(@"../../Data/People.Charges.sql");
+            // string populateChargesScript = File.ReadAllText(@"../../Data/People.Charges.sql");
 
             using (TransactionScope transaction = new TransactionScope())
             {
@@ -71,11 +71,11 @@ namespace DatabaseSetup
 
                     ExecuteScript(populatePeopleScript, connection);
                     ExecuteScript(populateGroupsScript, connection);
-                    ExecuteScript(populatePeopleGroupsScript, connection);
+                    // ExecuteScript(populatePeopleGroupsScript, connection);
                     ExecuteScript(populateEventsScript, connection);
-                    ExecuteScript(populateEventAttendanceScript, connection);
-                    ExecuteScript(populatePaymentsScript, connection);
-                    ExecuteScript(populateChargesScript, connection);
+                    // ExecuteScript(populateEventAttendanceScript, connection);
+                    // ExecuteScript(populatePaymentsScript, connection);
+                    // ExecuteScript(populateChargesScript, connection);
 
                     transaction.Complete();
                 }
