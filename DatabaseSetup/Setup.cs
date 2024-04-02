@@ -49,19 +49,19 @@ namespace DatabaseSetup
 
         public void PopulateTables()
         {
-            string populatePeopleScript = File.ReadAllText(@"../../Data/People.People");
+            string populatePeopleScript = File.ReadAllText(@"../../Data/People.People.sql");
 
-            string populateGroupsScript = File.ReadAllText(@"../../Data/People.Groups");
+            string populateGroupsScript = File.ReadAllText(@"../../Data/People.Groups.sql");
 
-            string populatePeopleGroupsScript = File.ReadAllText(@"../../Data/People.PeopleGroups");
+            string populatePeopleGroupsScript = File.ReadAllText(@"../../Data/People.PeopleGroups.sql");
 
-            string populateEventsScript = File.ReadAllText(@"../../Data/Events.Events");
+            string populateEventsScript = File.ReadAllText(@"../../Data/Events.Events.sql");
 
-            string populateEventAttendanceScript = File.ReadAllText(@"../../Data/Events.EventAttendance");
+            string populateEventAttendanceScript = File.ReadAllText(@"../../Data/Events.EventAttendance.sql");
 
-            string populatePaymentsScript = File.ReadAllText(@"../../Data/People.Payments");
+            string populatePaymentsScript = File.ReadAllText(@"../../Data/People.Payments.sql");
 
-            string populateChargesScript = File.ReadAllText(@"../../Data/People.Charges");
+            string populateChargesScript = File.ReadAllText(@"../../Data/People.Charges.sql");
 
             using (TransactionScope transaction = new TransactionScope())
             {
