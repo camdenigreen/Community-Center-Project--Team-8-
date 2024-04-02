@@ -19,9 +19,15 @@ namespace DatabaseSetup
             this._connectionString = connectionString;
         }
 
+        public void RebuildDatabase()
+        {
+            RebuildTables();
+            PopulateTables();
+        }
+
         public void RebuildTables()
         {
-            string setupScript = File.ReadAllText("../../Tables.sql");
+            string setupScript = File.ReadAllText(@"../../Tables.sql");
 
             using (TransactionScope transaction = new TransactionScope())
             {
@@ -43,7 +49,47 @@ namespace DatabaseSetup
 
         public void PopulateTables()
         {
+            string populatePeopleScript = File.ReadAllText(@"../../Data/People.People");
 
+            string populateGroupsScript = File.ReadAllText(@"../../Data/People.Groups");
+
+            string populatePeopleGroupsScript = File.ReadAllText(@"../../Data/People.PeopleGroups");
+
+            string populateEventsScript = File.ReadAllText(@"../../Data/Events.Events");
+
+            string populateEventAttendanceScript = File.ReadAllText(@"../../Data/Events.EventAttendance");
+
+            string populatePaymentsScript = File.ReadAllText(@"../../Data/People.Payments");
+
+            string populateChargesScript = File.ReadAllText(@"../../Data/People.Charges");
+
+            using (TransactionScope transaction = new TransactionScope())
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+
+                    ExecuteScript(populatePeopleScript, connection);
+                    ExecuteScript(populateGroupsScript, connection);
+                    ExecuteScript(populatePeopleGroupsScript, connection);
+                    ExecuteScript(populateEventsScript, connection);
+                    ExecuteScript(populateEventAttendanceScript, connection);
+                    ExecuteScript(populatePaymentsScript, connection);
+                    ExecuteScript(populateChargesScript, connection);
+
+                    transaction.Complete();
+                }
+            }
+        }
+
+        private void ExecuteScript(string script, SqlConnection connection)
+        {
+            using (SqlCommand command = new SqlCommand(script, connection))
+            {
+                command.CommandType = CommandType.Text;
+
+                command.ExecuteNonQuery();
+            }
         }
     }
 }
