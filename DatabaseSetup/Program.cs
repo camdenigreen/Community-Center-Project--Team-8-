@@ -23,7 +23,7 @@ namespace DatabaseSetup
 
             Setup setupObject = new Setup(connectionString);
 
-            setupObject.RebuildTables();
+            setupObject.RebuildDatabase();
         }
     }
 }
