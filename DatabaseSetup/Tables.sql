@@ -49,7 +49,7 @@ CREATE TABLE [Events].[Events](
     [Name] NVARCHAR(50) UNIQUE NOT NULL,
     [Date] DATETIME2(7) NOT NULL,
     [Description] NVARCHAR(MAX),
-    GroupID INT FOREIGN KEY REFERENCES  People.Groups(GroupID) NOT NULL,
+    GroupID INT NULL FOREIGN KEY REFERENCES  People.Groups(GroupID),
     Charge MONEY NOT NULL,
 )
 
