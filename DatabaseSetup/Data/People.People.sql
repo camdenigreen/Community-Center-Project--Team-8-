@@ -1,4 +1,4 @@
-insert into People.Groups(FirstName, LastName, [Address], PhoneNumber, IsMember)
+insert into People.People(FirstName, LastName, [Address], PhoneNumber, IsMember)
 values('Lincoln', 'Sissons', '8107 Rockefeller Way', '157-859-6256', 1),
 ('Arliene', 'Burrage', '032 Karstens Street', '878-507-5936', 1),
 ('Ky', 'Bearne', '418 Dexter Trail', '602-788-3512', 0),
