@@ -17,9 +17,7 @@ namespace DatabaseSetup
             const string SERVER= @"(localdb)\MSSQLLocalDb";
             const string DATABASE = @"communitycenter";
 
-            // DRIVER={{ODBC Driver 17 for SQL Server}};SERVER=(localdb)\\MSSQLLocalDb;DATABASE=WideWorldImporters;Trusted_Connection=yes
-
-            string connectionString = string.Format(@"SERVER={0};DATABASE={1};INTEGRATED SECURITY=SSPI;Trusted_Connection=yes", SERVER, DATABASE);
+            string connectionString = string.Format(@"SERVER={0};DATABASE={1};INTEGRATED SECURITY=SSPI;", SERVER, DATABASE);
 
             Setup setupObject = new Setup(connectionString);
 

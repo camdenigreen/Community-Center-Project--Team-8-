@@ -49,6 +49,10 @@ namespace DatabaseSetup
 
         public void PopulateTables()
         {
+            // Considering constructing PeopleGroups, EventAttendance, Charges, and Payments
+            // based on values in People, Groups, and Events rather than having a base sql script.
+            // Alternatively just use a base sql script.
+
             string populatePeopleScript = File.ReadAllText(@"../../Data/People.People.sql");
 
             string populateGroupsScript = File.ReadAllText(@"../../Data/People.Groups.sql");
