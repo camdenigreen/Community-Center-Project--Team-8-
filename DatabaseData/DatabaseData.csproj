@@ -35,5 +35,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Charge.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Repositories\ChargeRepository.cs" />
+    <Compile Include="Repositories\EventRepository.cs" />
+    <Compile Include="Repositories\GroupRepository.cs" />
+    <Compile Include="IRepositories\IChargeRepository.cs" />
+    <Compile Include="IRepositories\IEventRepository.cs" />
+    <Compile Include="IRepositories\IGroupRepository.cs" />
+    <Compile Include="IRepositories\IPaymentRepository.cs" />
+    <Compile Include="IRepositories\IPersonRepository.cs" />
+    <Compile Include="Repositories\PaymentRepository.cs" />
+    <Compile Include="Repositories\PersonRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataDelegates\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
