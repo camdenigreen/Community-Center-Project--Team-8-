@@ -8,7 +8,7 @@ namespace DatabaseData
 {
     internal class PaymentRepository : IPaymentRepository
     {
-        public void CreatePayment(int personId, int? eventId, decimal amount, string reason, DateTime date)
+        public Payment CreatePayment(int personId, int? eventId, decimal amount, string reason, DateTime date)
         {
             throw new NotImplementedException();
         }

@@ -8,7 +8,12 @@ namespace DatabaseData
 {
     public class EventRepository : IEventRepository
     {
-        public void CreateEvent(string name, int groupId, string description, string organizer, DateTime date, decimal charge)
+        public void AddPersonToEvent(int personId, int eventId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Event CreateEvent(string name, int groupId, string description, string organizer, DateTime date, decimal charge)
         {
             throw new NotImplementedException();
         }
@@ -19,6 +24,11 @@ namespace DatabaseData
         }
 
         public IReadOnlyList<Event> RetrieveEvents(int personId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetPersonsEventAttendance(int personId, int eventId, bool attended)
         {
             throw new NotImplementedException();
         }

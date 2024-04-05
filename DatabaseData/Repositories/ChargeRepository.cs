@@ -8,7 +8,7 @@ namespace DatabaseData
 {
     internal class ChargeRepository : IChargeRepository
     {
-        public void CreateCharge(int personId, int? eventId, decimal amount, string reason, DateTime date)
+        public Charge CreateCharge(int personId, int? eventId, decimal amount, string reason, DateTime date)
         {
             throw new NotImplementedException();
         }

@@ -8,7 +8,12 @@ namespace DatabaseData
 {
     public class GroupRepository : IGroupRepository
     {
-        public void CreateGroup(string name, string Description)
+        public void AddPersonToGroup(int personId, string groupId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Group CreateGroup(string name, string Description)
         {
             throw new NotImplementedException();
         }

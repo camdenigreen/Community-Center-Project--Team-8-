@@ -38,7 +38,7 @@
   <ItemGroup>
     <Compile Include="Command.cs" />
     <Compile Include="DataDelegates\DataDelegate.cs" />
-    <Compile Include="Interfaces\IDataDelegate.cs" />
+    <Compile Include="IDataDelegates\IDataDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data" />

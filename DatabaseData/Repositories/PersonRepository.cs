@@ -6,14 +6,24 @@ using System.Threading.Tasks;
 
 namespace DatabaseData
 {
-    public class PersonRepository : IPaymentRepository
+    public class PersonRepository : IPersonRepository
     {
-        public void CreatePayment(int personId, int? eventId, decimal amount, string reason, DateTime date)
+        public Person CreatePerson(string firstName, string lastName, string address, string phoneNumber, byte isMember)
         {
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<Charge> RetrievePayments(int personId)
+        public Person FetchPerson(int personId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Person GetPerson(string phoneNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IReadOnlyList<Person> RetrievePersons()
         {
             throw new NotImplementedException();
         }
