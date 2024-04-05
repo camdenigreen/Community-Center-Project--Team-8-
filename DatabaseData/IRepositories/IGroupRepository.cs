@@ -12,6 +12,8 @@ namespace DatabaseData
 
         IReadOnlyList<Group> RetrieveGroups(int personId);
 
-        void CreateGroup(string name, string Description);
+        Group CreateGroup(string name, string Description);
+
+        void AddPersonToGroup(int personId, string groupId);
     }
 }

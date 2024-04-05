@@ -10,6 +10,6 @@ namespace DatabaseData
     {
         IReadOnlyList<Charge> RetrievePayments(int personId);
 
-        void CreatePayment(int personId, int? eventId, decimal amount, string reason, DateTime date);
+        Payment CreatePayment(int personId, int? eventId, decimal amount, string reason, DateTime date);
     }
 }
