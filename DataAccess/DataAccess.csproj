@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4A2B4CC0-5FD0-40AC-B513-2397B4D92B66}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>DataAccess</RootNamespace>
     <AssemblyName>DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,16 +32,30 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command.cs" />
+    <Compile Include="CommandExecutor.cs" />
     <Compile Include="DataDelegates\DataDelegate.cs" />
+    <Compile Include="DataDelegates\DataReaderDelegate.cs" />
+    <Compile Include="DataDelegates\NonQueryDataDelegate.cs" />
+    <Compile Include="DataRowReader.cs" />
+    <Compile Include="Exceptions\ColumnNotFoundException.cs" />
+    <Compile Include="Exceptions\RecordNotFoundException.cs" />
     <Compile Include="IDataDelegates\IDataDelegate.cs" />
+    <Compile Include="IDataDelegates\IDataReaderDelegate.cs" />
+    <Compile Include="IDataDelegates\INonQueryDataDelegate.cs" />
+    <Compile Include="IDataRowReader.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

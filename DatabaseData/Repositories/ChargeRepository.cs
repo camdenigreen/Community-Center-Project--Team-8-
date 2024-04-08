@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseData
 {
-    internal class ChargeRepository : IChargeRepository
+    public class ChargeRepository : IChargeRepository
     {
         public Charge CreateCharge(int personId, int? eventId, decimal amount, string reason, DateTime date)
         {

@@ -19,9 +19,9 @@ namespace DatabaseData
 
         public string PhoneNumber { get; }
 
-        public bool IsMember { get; }
+        public byte IsMember { get; }
 
-        public Person(int personId, string firstName, string lastName, string address, string phoneNumber, bool isMember)
+        public Person(int personId, string firstName, string lastName, string address, string phoneNumber, byte isMember)
         {
             PersonId = personId;
             FirstName = firstName;
