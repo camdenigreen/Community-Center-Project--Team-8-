@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseData
 {
-    internal interface IGroupRepository
+    public interface IGroupRepository
     {
         IReadOnlyList<Group> RetrieveGroups();
 

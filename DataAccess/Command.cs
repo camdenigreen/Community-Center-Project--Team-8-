@@ -28,5 +28,14 @@ namespace DataAccess
                 _command.CommandType = value;
             }
         }
+
+        public T GetParameterValue<T>(string name) => (T)_command.Parameters[name].Value;
+
+        public T GetParameterValue<T>(string name, T ifNull)
+        {
+            var value = _command.Parameters[name].Value;
+
+            return value == DBNull.Value ? ifNull : (T)value;
+        }
     }
 }
