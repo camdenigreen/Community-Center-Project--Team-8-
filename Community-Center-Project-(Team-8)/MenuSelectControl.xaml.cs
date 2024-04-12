@@ -24,5 +24,20 @@ namespace Community_Center_Project__Team_8_
         {
             InitializeComponent();
         }
+
+        private void BackClick(object sender, RoutedEventArgs e)
+        {
+            AggregatedQueryDisplay.Visibility = Visibility.Hidden;
+            AggregatedQueryDisplay.Reset();
+            ControlsGrid.Visibility = Visibility.Hidden;
+            MenuSelectButtonGrid.Visibility = Visibility.Visible;
+        }
+
+        private void AggregatedQueryControlClick(object sender, RoutedEventArgs e)
+        {
+            MenuSelectButtonGrid.Visibility = Visibility.Hidden;
+            ControlsGrid.Visibility = Visibility.Visible;
+            AggregatedQueryDisplay.Visibility = Visibility.Visible;
+        }
     }
 }

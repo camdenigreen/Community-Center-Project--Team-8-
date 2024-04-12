@@ -42,11 +42,15 @@
     <Compile Include="DataDelegates\CreatePersonDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchPersonDataDelegate.cs" />
     <Compile Include="DataDelegates\GetPersonDataDelegate.cs" />
+    <Compile Include="Models\ActiveGroup.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventRegistrants.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\PastEvent.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonBalance.cs" />
     <Compile Include="Repositories\ChargeRepository.cs" />
     <Compile Include="Repositories\EventRepository.cs" />
     <Compile Include="Repositories\GroupRepository.cs" />

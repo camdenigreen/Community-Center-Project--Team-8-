@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Community_Center_Project__Team_8_"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="540" Width="960">
     <Grid>
         <local:MenuSelectControl x:Name="MenuSelectDisplay"/>
     </Grid>
