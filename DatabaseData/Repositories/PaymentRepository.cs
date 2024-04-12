@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseData
 {
-    internal class PaymentRepository : IPaymentRepository
+    public class PaymentRepository : IPaymentRepository
     {
         public Payment CreatePayment(int personId, int? eventId, decimal amount, string reason, DateTime date)
         {

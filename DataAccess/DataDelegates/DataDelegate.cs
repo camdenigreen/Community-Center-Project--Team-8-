@@ -20,6 +20,9 @@ namespace DataAccess.DataDelegates
             ProcedureName = procedureName;
         }
 
-        public abstract void PrepareCommand(Command command);
+        public virtual void PrepareCommand(Command command)
+        {
+
+        }
     }
 }

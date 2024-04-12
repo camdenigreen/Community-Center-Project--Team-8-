@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal interface IDataDelegate
+    public interface IDataDelegate
     {
         string ProcedureName { get; }
 
