@@ -29,6 +29,7 @@ namespace Community_Center_Project__Team_8_
         {
             AggregatedQueryDisplay.Visibility = Visibility.Hidden;
             AggregatedQueryDisplay.Reset();
+            EventDisplay.Visibility = Visibility.Hidden;
             ControlsGrid.Visibility = Visibility.Hidden;
             MenuSelectButtonGrid.Visibility = Visibility.Visible;
         }
@@ -39,5 +40,13 @@ namespace Community_Center_Project__Team_8_
             ControlsGrid.Visibility = Visibility.Visible;
             AggregatedQueryDisplay.Visibility = Visibility.Visible;
         }
+
+        private void EventControlClick(object sender, RoutedEventArgs e)
+        {
+            MenuSelectButtonGrid.Visibility = Visibility.Hidden;
+            ControlsGrid.Visibility = Visibility.Visible;
+            EventDisplay.Visibility = Visibility.Visible;
+        }
+
     }
 }

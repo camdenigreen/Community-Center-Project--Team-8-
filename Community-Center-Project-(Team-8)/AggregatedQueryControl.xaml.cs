@@ -58,7 +58,7 @@ namespace Community_Center_Project__Team_8_
                 PersonBalance camdenPoor = new PersonBalance(camden, -1000.99m);
                 list.Add(camdenPoor);
             }
-            DataContext = list;
+            NegativeBalanceListView.DataContext = list;
 
         }
 
@@ -76,7 +76,7 @@ namespace Community_Center_Project__Team_8_
                 EventRegistrants eventRegistrant = new EventRegistrants(i, "Back to school bash", null, "1", "camden", DateTime.Now, 0m, 1000);
                 eventRegistrants.Add(eventRegistrant);
             }
-            DataContext = eventRegistrants;
+            UpcomingEventsListView.DataContext = eventRegistrants;
         }
 
         private void PastEventsClick(object sender, RoutedEventArgs e)
@@ -91,7 +91,7 @@ namespace Community_Center_Project__Team_8_
                 PastEvent past = new PastEvent(i, "Back to school bash", DateTime.Now, 1000, 500, 50, 2, 2, 2);
                 list.Add(past);
             }
-            DataContext = list;
+            PastEventsListView.DataContext = list;
         }
 
         private void GroupActiveMembersClick(object sender, RoutedEventArgs e)
@@ -106,8 +106,9 @@ namespace Community_Center_Project__Team_8_
                 ActiveGroup ag = new ActiveGroup(i, "Group that is active", 100, 99, 99);
                 list.Add(ag);
             }
-            DataContext = list;
+            ActiveGroupsListView.DataContext = list;
         }
+
 
         private void ListViewSizeChanged5Column(object sender, SizeChangedEventArgs e)
         {
@@ -172,5 +173,6 @@ namespace Community_Center_Project__Team_8_
             gView.Columns[8].Width = workingWidth * col9;
 
         }
+
     }
 }
