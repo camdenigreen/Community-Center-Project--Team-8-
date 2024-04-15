@@ -79,8 +79,14 @@
     <Compile Include="SearchEventControl.xaml.cs">
       <DependentUpon>SearchEventControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchGroupControl.xaml.cs">
+      <DependentUpon>SearchGroupControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowEventControl.xaml.cs">
       <DependentUpon>ShowEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowGroupControl.xaml.cs">
+      <DependentUpon>ShowGroupControl.xaml</DependentUpon>
     </Compile>
     <Page Include="AddEventControl.xaml">
       <SubType>Designer</SubType>
@@ -131,7 +137,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SearchGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowGroupControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

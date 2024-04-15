@@ -28,6 +28,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Name="BackButton" Click="BackClick" Grid.Column="1" Margin="5" MinWidth="100" HorizontalAlignment="Right">Back</Button>
             </Grid>
+            <local:SearchGroupControl x:Name="SearchGroupDisplay" Visibility="Collapsed" DockPanel.Dock="Top"/>
             <local:AddGroupControl x:Name="AddGroupDisplay" Visibility="Collapsed" DockPanel.Dock="Top"/>
         </DockPanel>
     </Grid>

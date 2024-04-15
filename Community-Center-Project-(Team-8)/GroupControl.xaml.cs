@@ -30,8 +30,8 @@ namespace Community_Center_Project__Team_8_
             ButtonDisplay.Visibility = Visibility.Visible;
             AddGroupDisplay.Visibility = Visibility.Collapsed;
             GroupControlsDisplay.Visibility = Visibility.Hidden;
-            //SearchEventDisplay.Visibility = Visibility.Collapsed;
-            //SearchEventDisplay.ShowEventDisplay.Visibility = Visibility.Hidden;
+            SearchGroupDisplay.Visibility = Visibility.Collapsed;
+            SearchGroupDisplay.ShowGroupDisplay.Visibility = Visibility.Hidden;
             AddGroupDisplay.Reset();
         }
 
@@ -50,12 +50,11 @@ namespace Community_Center_Project__Team_8_
 
         private void SearchGroupClick(object sender, RoutedEventArgs e)
         {
-            /*
+            
             ButtonDisplay.Visibility = Visibility.Hidden;
-            EventControlsDisplay.Visibility = Visibility.Visible;
-            SearchEventDisplay.Visibility = Visibility.Visible;
-            SearchEventDisplay.SearchingGrid.Visibility = Visibility.Visible;
-            */
+            GroupControlsDisplay.Visibility = Visibility.Visible;
+            SearchGroupDisplay.Visibility = Visibility.Visible;
+            SearchGroupDisplay.SearchingGrid.Visibility = Visibility.Visible;
         }
     }
 }
