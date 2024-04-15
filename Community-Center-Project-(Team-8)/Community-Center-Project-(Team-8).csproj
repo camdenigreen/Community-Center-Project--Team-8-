@@ -70,6 +70,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddGroupControl.xaml.cs">
+      <DependentUpon>AddGroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupControl.xaml.cs">
+      <DependentUpon>GroupControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SearchEventControl.xaml.cs">
       <DependentUpon>SearchEventControl.xaml</DependentUpon>
     </Compile>
@@ -80,11 +86,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AggregatedQueryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
