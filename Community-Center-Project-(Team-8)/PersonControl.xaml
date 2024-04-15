@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="Community_Center_Project__Team_8_.PersonControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Community_Center_Project__Team_8_"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Style.Resources>
+
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid  Grid.Row="0" x:Name="PersonDisplay">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+
+                <StackPanel Grid.Column="2" Margin="20,14,0,0">
+                    <TextBlock  FontSize="20" Text="CurrentBalance:"/>
+                    <TextBlock Text="{Binding Path=Balance, StringFormat=' {0:C}'}"/>
+                    <Button x:Name="MakePayment" Click="ClickMakePayment" Content="Make Payment"/>
+                    <Button  x:Name="Transactions" Content="View Transactions" Click="ClickViewTransactions"/>
+
+                </StackPanel>
+ 
+
+
+
+        
+            
+
+
+            <StackPanel  Grid.Column="0" Margin="20,14,0,0">
+            
+            <TextBlock FontSize="20" Text="Information: "/>
+              <TextBlock FontSize="12" Text="{Binding Path=PersonId, StringFormat='Person ID: {0}'}"/>
+            <TextBlock x:Name="FirstName" Text="{Binding Path=FirstName, StringFormat='First Name: {0}' }"/>
+            <TextBlock x:Name="LastName" Text="{Binding Path=LastName, StringFormat='Last Name: {0}' }"/>
+            <TextBlock x:Name="Address" Text="{Binding Path=Address, StringFormat='Address: {0}' }"/>
+            <TextBlock x:Name="PhoneNumber" Text="{Binding Path=PhoneNumber, StringFormat='PhoneNumber: {0}' }"/>
+            <Button x:Name="UpdateInfo" Content="Update Information" Click="ClickUpdateInfo"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,40,0,0">
+            <Button x:Name="AddEvent" Click="ClickAddEvent" Content="Add Event"/>
+            <Button x:Name="JoinGroup" Click="ClickJoinGroup" Content="Join Group"/>
+            <Button x:Name="DeletePerson" Click="ClickDeletePerson" Content="DeletePerson" IsEnabled="{Binding Path=CanDelete}"/>
+
+        </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1"  Margin="20,14,0,0">
+                <TextBlock FontSize="20" Text="Groups"/>
+                <ListView  ItemsSource="{Binding}" >
+                    <ListView ItemsSource="{ Binding Groups.Name}"/>
+                </ListView>
+                <Button   x:Name="LeaveGroup" Content="Leave Group" Click="ClickLeaveGroup"/>
+
+            </StackPanel>
+
+            <StackPanel  Margin="20,14,0,0" Grid.Row="1" Grid.Column="1">
+                <TextBlock FontSize="20" Text="Events"/>
+                <ListView  ItemsSource="{Binding}" >
+                    <ListView ItemsSource="{ Binding Groups.Events}"/>
+                </ListView>
+                <Button   x:Name="LeaveEvent" Content="Leave Group" Click="ClickLeaveEvent"/>
+
+            </StackPanel>
+
+
+
+
+
+        </Grid>
+        <Grid x:Name="ViewModifyPerson" Visibility="Hidden">
+
+            <local:UpdatePersonControl x:Name="UpdatePersonDisplay" Visibility="Hidden"/>
+            <local:PersonTransactionsControl x:Name="TransactionsPersonDisplay" Visibility="Hidden"/>
+            <local:PersonAddEventControl x:Name="EventPersonDisplay" Visibility="Hidden"/>
+            <local:PaymentControl x:Name="PaymentDisplay" Visibility="Hidden"/>
+            <local:PersonGroupsControl x:Name="GroupsPersonDisplay" Visibility="Hidden"/>
+
+        </Grid>
+        <Grid x:Name="BackGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="BackButton" Grid.Column="1" MinWidth="100" Margin="1" HorizontalAlignment="Right" Click="ClickBack">Back</Button>
+        </Grid>
+    
+    </Grid>
+</UserControl>
+

@@ -16,20 +16,19 @@ using System.Windows.Shapes;
 namespace Community_Center_Project__Team_8_
 {
     /// <summary>
-    /// Interaction logic for AddEventControl.xaml
+    /// Interaction logic for UpdatePersonControl.xaml
     /// </summary>
-    public partial class AddEventControl : UserControl
+    public partial class UpdatePersonControl : UserControl
     {
-        public AddEventControl()
+        public UpdatePersonControl()
         {
             InitializeComponent();
+        }
 
-            //validate information
-            //enable button when only stuff are all fixed
-            //attempt to add event
-            //get message from the database whether it is successful 
-            //success message, show event, then back button.
-            //property changed for array of events
+        private void ClickUpdate(object sender, RoutedEventArgs e)
+        {
+            //attempt to insert into database;
+            //interprete exceptions
         }
     }
 }

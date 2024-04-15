@@ -28,7 +28,7 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Button Name="PersonControlButton" Grid.Column="0" Grid.Row="0">Member Lookup</Button>
+            <Button Name="PersonControlButton" Grid.Column="0" Grid.Row="0" Click="MemberLookupClick">Member Lookup</Button>
             <Button Name="GroupControlButton" Grid.Column="1" Grid.Row="0">Group Lookup</Button>
             <Button Name="EventControlButton" Grid.Column="0" Grid.Row="1" Click="EventControlClick">Event Lookup</Button>
             <Button Name="AggregatedQueryControlButton" Grid.Column="1" Grid.Row="1" Click="AggregatedQueryControlClick">Management</Button>
@@ -40,7 +40,11 @@
             </Grid.RowDefinitions>
             <local:AggregatedQueryControl x:Name="AggregatedQueryDisplay" Visibility="Hidden"/>
             <local:EventControl x:Name="EventDisplay" Visibility="Hidden"/>
-            <Grid Grid.Row="1">
+           
+            <local:PersonLookupControl x:Name="MembersDisplay" Visibility="Hidden"/>
+            <local:PersonControl x:Name="PersonDisplay" Visibility="Hidden"/>
+
+            <Grid x:Name="BackGrid" Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>

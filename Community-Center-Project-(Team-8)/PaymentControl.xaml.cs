@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace Community_Center_Project__Team_8_
 {
     /// <summary>
-    /// Interaction logic for AddEventControl.xaml
+    /// Interaction logic for PaymentControl.xaml
     /// </summary>
-    public partial class AddEventControl : UserControl
+    public partial class PaymentControl : UserControl
     {
-        public AddEventControl()
+        public PaymentControl()
         {
             InitializeComponent();
-
-            //validate information
-            //enable button when only stuff are all fixed
-            //attempt to add event
-            //get message from the database whether it is successful 
-            //success message, show event, then back button.
-            //property changed for array of events
         }
     }
 }
