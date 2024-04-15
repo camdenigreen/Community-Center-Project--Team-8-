@@ -20,6 +20,15 @@
             <Button Name="AddEventButton" Grid.Row="1" Click="AddEventClick">Add Event</Button>
             <Button Name="SearchEventButton" Grid.Row="1" Grid.Column="1">Search for Event</Button>
         </Grid>
-        <local:AddEventControl x:Name="AddEventDisplay" Visibility="Hidden"/>
+        <DockPanel Name="EventControlsDisplay" Visibility="Hidden">
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="BackButton" Grid.Column="1" Margin="5" MinWidth="100" HorizontalAlignment="Right">Back</Button>
+            </Grid>
+            <local:AddEventControl x:Name="AddEventDisplay" Visibility="Hidden" DockPanel.Dock="Top"/>
+         </DockPanel>
     </Grid>
 </UserControl>

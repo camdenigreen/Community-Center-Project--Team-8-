@@ -39,7 +39,7 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Name="BackButton" Grid.Column="1" MinWidth="100" HorizontalAlignment="Right" Click="BackClick">Back</Button>
+                <Button Name="BackButton" Grid.Column="1" Margin="5" MinWidth="100" HorizontalAlignment="Right" Click="BackClick">Back</Button>
             </Grid>
             <ListView Name="NegativeBalanceListView" ItemsSource="{Binding}" Visibility="Collapsed" SizeChanged="ListViewSizeChanged5Column" DockPanel.Dock="Top">
                 <ListView.View>

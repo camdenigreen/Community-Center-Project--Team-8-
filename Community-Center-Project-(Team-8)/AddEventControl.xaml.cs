@@ -23,6 +23,38 @@ namespace Community_Center_Project__Team_8_
         public AddEventControl()
         {
             InitializeComponent();
+            DescriptionTextBox.DataContext = this;
+            StartUpText = " ";
+        }
+
+        private string _startUpText;
+        public string StartUpText
+        {
+            get => _startUpText;
+            set
+            {
+                if (value != _startUpText)
+                {
+                    _startUpText = value;
+                }
+            }
+        }
+
+        public void Reset()
+        {
+            NameTextBox.Text = string.Empty;
+            DescriptionTextBox.Text = string.Empty;
+            OrganizerTextBox.Text = string.Empty;
+            ChargeTextBox.Text = string.Empty;
+            DateTimePicker.Text = string.Empty;
+        }
+
+        private void CreateEventClick(object sender, RoutedEventArgs e)
+        {
+            //Data validation
+            //Create event
+            //Reset if it worked
+            Reset();
         }
     }
 }

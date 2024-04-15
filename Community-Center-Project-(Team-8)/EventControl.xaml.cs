@@ -25,10 +25,20 @@ namespace Community_Center_Project__Team_8_
             InitializeComponent();
         }
 
+        public void Reset() 
+        {
+            ButtonDisplay.Visibility = Visibility.Visible;
+            AddEventDisplay.Visibility = Visibility.Hidden;
+            EventControlsDisplay.Visibility = Visibility.Hidden;
+            AddEventDisplay.Reset();
+        }
         private void AddEventClick(object sender, RoutedEventArgs e)
         {
             ButtonDisplay.Visibility = Visibility.Hidden;
+            EventControlsDisplay.Visibility = Visibility.Visible;
             AddEventDisplay.Visibility = Visibility.Visible;
+
+            AddEventDisplay.DescriptionTextBox.Text = "";
         }
     }
 }
