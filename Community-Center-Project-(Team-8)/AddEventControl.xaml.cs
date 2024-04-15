@@ -44,6 +44,7 @@ namespace Community_Center_Project__Team_8_
         {
             NameTextBox.Text = string.Empty;
             DescriptionTextBox.Text = string.Empty;
+            GroupIDTextBox.Text = string.Empty;
             OrganizerTextBox.Text = string.Empty;
             ChargeTextBox.Text = string.Empty;
             DateTimePicker.Text = string.Empty;

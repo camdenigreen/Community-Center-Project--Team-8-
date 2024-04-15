@@ -70,6 +70,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SearchEventControl.xaml.cs">
+      <DependentUpon>SearchEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowEventControl.xaml.cs">
+      <DependentUpon>ShowEventControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddEventControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,6 +110,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MenuSelectControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowEventControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

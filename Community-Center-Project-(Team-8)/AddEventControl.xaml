@@ -35,10 +35,20 @@
                 <TextBox Name="OrganizerTextBox" MinWidth="200"/>
             </StackPanel>
         </Grid>
-        <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">
-            <TextBlock Text="Description"/>
-            <TextBox Name="DescriptionTextBox" MinWidth="200" MaxWidth="200" MinLines="3"  MaxLines="3" TextWrapping="Wrap" Text="{Binding StartUpText}"/>
-        </StackPanel>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                <TextBlock Text="Description"/>
+                <TextBox Name="DescriptionTextBox" MinWidth="200" MaxWidth="200" MinLines="3"  MaxLines="3" TextWrapping="Wrap" Text="{Binding StartUpText}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                <TextBlock Text="GroupID (optional)"/>
+                <TextBox Name="GroupIDTextBox" MinWidth="100"/>
+            </StackPanel>
+        </Grid>
         <Grid Grid.Column="1" Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>

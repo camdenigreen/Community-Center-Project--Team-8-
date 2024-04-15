@@ -28,10 +28,18 @@ namespace Community_Center_Project__Team_8_
         public void Reset() 
         {
             ButtonDisplay.Visibility = Visibility.Visible;
-            AddEventDisplay.Visibility = Visibility.Hidden;
+            AddEventDisplay.Visibility = Visibility.Collapsed;
             EventControlsDisplay.Visibility = Visibility.Hidden;
+            SearchEventDisplay.Visibility = Visibility.Collapsed;
+            SearchEventDisplay.ShowEventDisplay.Visibility = Visibility.Hidden;
             AddEventDisplay.Reset();
         }
+
+        private void BackClick(object sender, RoutedEventArgs e)
+        {
+            Reset();
+        }
+
         private void AddEventClick(object sender, RoutedEventArgs e)
         {
             ButtonDisplay.Visibility = Visibility.Hidden;
@@ -39,6 +47,14 @@ namespace Community_Center_Project__Team_8_
             AddEventDisplay.Visibility = Visibility.Visible;
 
             AddEventDisplay.DescriptionTextBox.Text = "";
+        }
+
+        private void SearchEventClick(object sender, RoutedEventArgs e)
+        {
+            ButtonDisplay.Visibility = Visibility.Hidden;
+            EventControlsDisplay.Visibility = Visibility.Visible;
+            SearchEventDisplay.Visibility = Visibility.Visible;
+            SearchEventDisplay.SearchingGrid.Visibility = Visibility.Visible;
         }
     }
 }
