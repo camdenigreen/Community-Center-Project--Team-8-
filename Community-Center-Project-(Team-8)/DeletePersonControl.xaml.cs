@@ -16,20 +16,25 @@ using System.Windows.Shapes;
 namespace Community_Center_Project__Team_8_
 {
     /// <summary>
-    /// Interaction logic for PaymentControl.xaml
+    /// Interaction logic for DeletePersonControl.xaml
     /// </summary>
-    public partial class PaymentControl : UserControl
+    public partial class DeletePersonControl : UserControl
     {
-        public PaymentControl()
+        public DeletePersonControl()
         {
             InitializeComponent();
         }
 
-        private void FinalizePayment(object sender, RoutedEventArgs e)
+        public event EventHandler DeletedPerson;
+
+        private void ClickDelete(object sender, RoutedEventArgs e)
         {
             PersonView person = this.DataContext as PersonView;
-            person.MakePayment(decimal.Parse(AmountBox.Text));
-            MessageBox.Show("Payment Complete");
+            person.Delete();
+            int id = person.Id;
+            MessageBox.Show("SuccessfullyDeleted # " + id.ToString());
+            //go back to members screen
+            DeletedPerson.Invoke(this, EventArgs.Empty);
         }
     }
 }

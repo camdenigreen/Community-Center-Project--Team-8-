@@ -64,6 +64,7 @@
     <Content Include="Procedures\People.RetrievePersonEvents.sql" />
     <Content Include="Procedures\People.RetrievePersonGroups.sql" />
     <Content Include="Procedures\People.UpdateMembership.sql" />
+    <Content Include="Procedures\Person.ChargesAndPayments.sql" />
     <Content Include="Tables.sql" />
   </ItemGroup>
   <ItemGroup />

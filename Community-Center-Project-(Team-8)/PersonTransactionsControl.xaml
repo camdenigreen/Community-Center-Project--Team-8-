@@ -9,5 +9,19 @@
     <Grid>
         <TextBlock Text="Transactions" FontSize="20"/>
 
+
+
+
+        <ListView Name="TransactionsListView" ItemsSource="{Binding Transactions}" Visibility="Collapsed" SizeChanged="ListViewSizeChanged4Column" DockPanel.Dock="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="Type"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Amount}" Header="Amount"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Reason}" Header="Reason"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </UserControl>

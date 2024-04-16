@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,18 @@ namespace Community_Center_Project__Team_8_
         private void ClickUpdate(object sender, RoutedEventArgs e)
         {
             //attempt to insert into database;
-            //interprete exceptions
+           
+
+            PersonView person = DataContext as PersonView;
+           if( person.UpdateInfo(FirstName.Text, LastName.Text, PhoneNumber.Text, Address.Text))
+            {
+
+                MessageBox.Show($"Information updated");
+            }
+            else
+            {
+                MessageBox.Show($"Failed, person already exists");
+            }
         }
     }
 }

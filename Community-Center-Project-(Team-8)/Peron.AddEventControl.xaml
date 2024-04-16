@@ -33,7 +33,7 @@
             </Grid.ColumnDefinitions>
 
 
-            <ListView Grid.ColumnSpan="3" Grid.Row="0" Name="EventsListView" ItemsSource="{Binding}" Visibility="Visible" SizeChanged="ListViewSizeChanged9Column" DockPanel.Dock="Top">
+            <ListView Grid.ColumnSpan="3" Grid.Row="0" Name="EventsListView" ItemsSource="{Binding}" Visibility="Visible" SizeChanged="ListViewSizeChanged7Column" DockPanel.Dock="Top">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding EventId}" Header="Id"/>
@@ -43,10 +43,7 @@
                         <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Charge}" Header="Charge"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Charge}" Header="Charge"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Charge}" Header="Charge"/>
+                        
 
                     </GridView>
                 </ListView.View>
@@ -57,7 +54,7 @@
 
         </Grid>
 
-       
+
 
     </Grid>
 </UserControl>

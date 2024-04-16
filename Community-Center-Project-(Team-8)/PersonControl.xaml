@@ -21,59 +21,62 @@
         </Style>
     </UserControl.Resources>
     <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid  Grid.Row="0" x:Name="PersonDisplay">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        
-
-                <StackPanel Grid.Column="2" Margin="20,14,0,0">
-                    <TextBlock  FontSize="20" Text="CurrentBalance:"/>
-                    <TextBlock Text="{Binding Path=Balance, StringFormat=' {0:C}'}"/>
-                    <Button x:Name="MakePayment" Click="ClickMakePayment" Content="Make Payment"/>
-                    <Button  x:Name="Transactions" Content="View Transactions" Click="ClickViewTransactions"/>
-
-                </StackPanel>
- 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
 
 
+            <StackPanel Grid.Column="2" Margin="20,14,0,0">
+                <TextBlock  FontSize="20" Text="CurrentBalance:"/>
+                <TextBlock Text="{Binding Path=Balance, StringFormat=' {0:C}'}"/>
+                <Button x:Name="MakePayment" Click="ClickMakePayment" Content="Make Payment"/>
+                <Button  x:Name="Transactions" Content="View Transactions" Click="ClickViewTransactions"/>
 
-        
-            
+            </StackPanel>
+
+
+
+
+
+
 
 
             <StackPanel  Grid.Column="0" Margin="20,14,0,0">
-            
-            <TextBlock FontSize="20" Text="Information: "/>
-              <TextBlock FontSize="12" Text="{Binding Path=PersonId, StringFormat='Person ID: {0}'}"/>
-            <TextBlock x:Name="FirstName" Text="{Binding Path=FirstName, StringFormat='First Name: {0}' }"/>
-            <TextBlock x:Name="LastName" Text="{Binding Path=LastName, StringFormat='Last Name: {0}' }"/>
-            <TextBlock x:Name="Address" Text="{Binding Path=Address, StringFormat='Address: {0}' }"/>
-            <TextBlock x:Name="PhoneNumber" Text="{Binding Path=PhoneNumber, StringFormat='PhoneNumber: {0}' }"/>
-            <Button x:Name="UpdateInfo" Content="Update Information" Click="ClickUpdateInfo"/>
-        </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,40,0,0">
-            <Button x:Name="AddEvent" Click="ClickAddEvent" Content="Add Event"/>
-            <Button x:Name="JoinGroup" Click="ClickJoinGroup" Content="Join Group"/>
-            <Button x:Name="DeletePerson" Click="ClickDeletePerson" Content="DeletePerson" IsEnabled="{Binding Path=CanDelete}"/>
+                <TextBlock FontSize="20" Text="Information: "/>
+                <TextBlock FontSize="12" Text="{Binding Path=PersonId, StringFormat='Person ID: {0}'}"/>
+                <TextBlock x:Name="FirstName" Text="{Binding Path=FirstName, StringFormat='First Name: {0}' }"/>
+                <TextBlock x:Name="LastName" Text="{Binding Path=LastName, StringFormat='Last Name: {0}' }"/>
+                <TextBlock x:Name="Address" Text="{Binding Path=Address, StringFormat='Address: {0}' }"/>
+                <TextBlock x:Name="PhoneNumber" Text="{Binding Path=PhoneNumber, StringFormat='PhoneNumber: {0}' }"/>
+                <Button x:Name="UpdateInfo" Content="Update Information" Click="ClickUpdateInfo"/>
+            </StackPanel>
 
-        </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,40,0,0">
+                <Button x:Name="AddEvent" Click="ClickAddEvent" Content="Add Event"/>
+                <Button x:Name="JoinGroup" Click="ClickJoinGroup" Content="Join Group"/>
+                <Button x:Name="DeletePerson" Click="ClickDeletePerson" Content="DeletePerson" IsEnabled="{Binding Path=CanDelete}"/>
+
+            </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="1"  Margin="20,14,0,0">
                 <TextBlock FontSize="20" Text="Groups"/>
-                <ListView  ItemsSource="{Binding}" >
-                    <ListView ItemsSource="{ Binding Groups.Name}"/>
+                <ListView  x:Name="MyGroups" ItemsSource="{Binding}" >
+                    <ListView ItemsSource="{ Binding MyGroups.Name}"/>
                 </ListView>
                 <Button   x:Name="LeaveGroup" Content="Leave Group" Click="ClickLeaveGroup"/>
 
@@ -97,19 +100,21 @@
 
             <local:UpdatePersonControl x:Name="UpdatePersonDisplay" Visibility="Hidden"/>
             <local:PersonTransactionsControl x:Name="TransactionsPersonDisplay" Visibility="Hidden"/>
-            <local:PersonAddEventControl x:Name="EventPersonDisplay" Visibility="Hidden"/>
+            <local:PersonAddEventControl   x:Name="EventPersonDisplay" Visibility="Hidden"/>
             <local:PaymentControl x:Name="PaymentDisplay" Visibility="Hidden"/>
             <local:PersonGroupsControl x:Name="GroupsPersonDisplay" Visibility="Hidden"/>
+            <local:DeletePersonControl x:Name="DeletePersonDisplay" Visibility="Hidden"/>
+            <local:LeaveGroupControl x:Name="LeaveGroupDisplay" Visiblity="Hidden"/>
 
         </Grid>
-        <Grid x:Name="BackGrid" Grid.Row="1">
+        <Grid x:Name="BackGrid" Margin="0,409,0,0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Name="BackButton" Grid.Column="1" MinWidth="100" Margin="1" HorizontalAlignment="Right" Click="ClickBack">Back</Button>
         </Grid>
-    
+
     </Grid>
 </UserControl>
 

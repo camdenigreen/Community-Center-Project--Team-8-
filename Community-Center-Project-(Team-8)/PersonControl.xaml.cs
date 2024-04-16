@@ -24,7 +24,52 @@ namespace Community_Center_Project__Team_8_
         public PersonControl()
         {
             InitializeComponent();
+            DeletePersonDisplay.DeletedPerson += ClickBack;
+            LeaveGroupDisplay.LeftGroup += UpdateGroupsEvents;
+            GroupsPersonDisplay.JoinGroup += UpdateGroupsEvents;
         }
+
+        private void UpdateGroupsEvents(object sender, PersonEventGroupEventArgs e)
+        {
+            PersonView person = this.DataContext as PersonView;
+
+            if (e.Type == "group")
+            {
+                if (e.Action == true)
+                {
+                    person.JoinGroup(e.Id);
+                }
+                else
+                {
+                    person.LeaveGroup(e.Id);
+                }
+            }
+            else if(e.Type == "event")
+            {
+                if (e.Action == true)
+                {
+                    person.JoinEvent(e.Id);
+                }
+                else
+                {
+                    person.LeaveEvent(e.Id);
+                }
+
+            }
+            
+            prev_screen.Visibility = Visibility.Hidden;
+            ViewModifyPerson.Visibility = Visibility.Hidden;
+            PersonDisplay.Visibility = Visibility.Visible;
+
+        }
+
+        private void ClickBack(object sender, EventArgs e)
+        {
+            ClickBackTriggered.Invoke(this, EventArgs.Empty);
+            //rerun querries
+
+        }
+
         private UserControl prev_screen;
 
         
@@ -74,6 +119,8 @@ namespace Community_Center_Project__Team_8_
             ViewModifyPerson.Visibility = Visibility.Visible;
             GroupsPersonDisplay.Visibility = Visibility.Visible;
             GroupsPersonDisplay.DataContext = this.DataContext;
+            PersonView person = this.DataContext as PersonView;
+            GroupsPersonDisplay.DataContext = person.OtherGroups;
         }
         private void ClickMakePayment(object sender, RoutedEventArgs e)
         {
@@ -95,15 +142,34 @@ namespace Community_Center_Project__Team_8_
         }
         private void ClickDeletePerson(object sender, RoutedEventArgs e)
         {
+            prev_screen = DeletePersonDisplay;
+            PersonDisplay.Visibility = Visibility.Hidden;
+            ViewModifyPerson.Visibility = Visibility.Visible;
+            DeletePersonDisplay.Visibility = Visibility.Visible;
+            DeletePersonDisplay.DataContext = this.DataContext;
+
+            //move to deleteperson control
+            //dlete person question
+            //yes
+            //show person deleted
+            //go back to the members screen.
 
         }
 
         private void ClickLeaveGroup(object sender, RoutedEventArgs e)
         {
-          // person = MembersListView.SelectedItem as Person;
-        }
+            // person = MembersListView.SelectedItem as Person;
 
-        private void ClickLeaveEvent(object sender, RoutedEventArgs e)
+            
+                prev_screen = LeaveGroupDisplay;
+                PersonDisplay.Visibility = Visibility.Hidden;
+                ViewModifyPerson.Visibility = Visibility.Visible;
+                LeaveGroupDisplay.Visibility = Visibility.Visible;
+                LeaveGroupDisplay.DataContext = MyGroups.SelectedItem;
+
+         }
+
+            private void ClickLeaveEvent(object sender, RoutedEventArgs e)
         {
             // person = MembersListView.SelectedItem as Person;
         }

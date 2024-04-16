@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,54 +8,122 @@ using DatabaseData;
 
 namespace Community_Center_Project__Team_8_
 {
-    public class PersonView
+    public class PersonView : INotifyPropertyChanged
     {
+
 
         private Person _person;
 
+        private int _id;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string  FirstName{get;set;}
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
+
+        public int Id { get; }
+
+
+
+
+        private decimal _balance;
         public decimal Balance { get; }
+
+        public void SetBalance()
+        {
+            _balance = 0;
+        }
 
         public decimal CalcBalance(int id)
         {
             return 0;
         }
 
-        public List<string> MyGroups { get; }
+        public List<Group> MyGroups { get; }
 
-        public List<string> OtherGroups { get; }
+        public List<Group> OtherGroups { get; }
 
-        public Dictionary<string,DateTime> MyEvent { get; }
+        public Dictionary<string,DateTime> MyEvents { get; }
 
         public Dictionary<string,DateTime> OtherEvents { get; }
 
-        public bool JoinGroup()
+        public bool JoinGroup(int groupId)
         {
             return false;
         }
 
-        public bool JoinEvent()
+        public bool JoinEvent(int eventId)
         {
             return false;
         }
 
-        public bool UpdateInfo()
+        public void LeaveGroup(int id)
         {
+
+        }
+        public void LeaveEvent(int id)
+        {
+
+        }
+
+        public bool UpdateInfo(string firstName,string lastNmae,string phoneNumber, string address)
+        {
+
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(LastName)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Address)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PhoneNumber)));
+
             return false;
         }
         public List<string> Transactions { get; }
 
+        public string Info =>$"{FirstName} {LastName} #{Id.ToString()}";
 
-        public bool MakePayment()
+
+        public bool MakePayment(decimal payment)
         {
             return false;
         }
+        private decimal _paid=0;
+        public decimal Paid
+        {
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Values must be >0");
+                }
+                else
+                {
+                    Paid = value; 
+                }
+            }
+
+            get
+            {
+                return _paid;
+            }
+        }
         public bool Finalize { get; }
 
+        //make sure that amount is >0 and paid >0 or not empty
 
+        public void Delete()
+        {
 
+        }
         public PersonView(Person person)
         {
             _person = person;
+            FirstName = person.FirstName;
+            LastName = person.LastName;
+            Address = person.Address;
+            PhoneNumber = person.PhoneNumber;
+            _balance = 0;
+            //initialize groups and ......
 
         }
     }

@@ -92,6 +92,7 @@ namespace Community_Center_Project__Team_8_
                 PersonDisplay.Visibility = Visibility.Visible;
                 prev_screen = PersonDisplay;
                 PersonDisplay.DataContext = person;
+                //PersonDisplay.DataContext=new PersonView(person);
 
             }
         }
@@ -103,7 +104,10 @@ namespace Community_Center_Project__Team_8_
             PersonControlGrid.Visibility = Visibility.Hidden;
             MembersDisplay.Visibility = Visibility.Visible;
             SwitchButton.Invoke(this, new MainMenuButtonEventArgs(Visibility.Visible));
-
+            //reset the members incase of information changing
+            //get a new list of members.
+        
+            
 
             }
 
