@@ -24,11 +24,14 @@ namespace Community_Center_Project__Team_8_
         {
             InitializeComponent();
         }
-
+        public event EventHandler MakePayment;
         private void FinalizePayment(object sender, RoutedEventArgs e)
         {
-            PersonView person = this.DataContext as PersonView;
-            person.MakePayment(decimal.Parse(AmountBox.Text));
+            //PersonView person = this.DataContext as PersonView;
+            //person.MakePayment(decimal.Parse(AmountBox.Text));
+            PaymentView pay = this.DataContext as PaymentView;
+            pay.MakePayment();
+            MakePayment.Invoke(this,  EventArgs.Empty);
             MessageBox.Show("Payment Complete");
         }
     }

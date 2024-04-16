@@ -27,8 +27,33 @@ namespace Community_Center_Project__Team_8_
             DeletePersonDisplay.DeletedPerson += ClickBack;
             LeaveGroupDisplay.LeftGroup += UpdateGroupsEvents;
             GroupsPersonDisplay.JoinGroup += UpdateGroupsEvents;
+            UpdatePersonDisplay.UpdatedInfo += UpdateInformation;
+            PaymentDisplay.MakePayment += UpdateBalance;
         }
 
+        private void UpdateBalance(object sender, EventArgs e)
+        {
+
+            PersonView person = this.DataContext as PersonView;
+            person.CalcBalance();
+            ClickBack(sender, new RoutedEventArgs());
+
+
+        }
+        private void UpdateInformation(object sender, EventArgs e)
+        {
+            PersonView person = this.DataContext as PersonView;
+            person.FirstName = UpdatePersonDisplay.FirstName.Text.ToString();
+            person.LastName = UpdatePersonDisplay.LastName.Text.ToString();
+            person.Address = UpdatePersonDisplay.Address.Text.ToString();
+            person.PhoneNumber = UpdatePersonDisplay.PhoneNumber.Text.ToString();
+
+
+            prev_screen.Visibility = Visibility.Hidden;
+            ViewModifyPerson.Visibility = Visibility.Hidden;
+            PersonDisplay.Visibility = Visibility.Visible;
+
+        }
         private void UpdateGroupsEvents(object sender, PersonEventGroupEventArgs e)
         {
             PersonView person = this.DataContext as PersonView;
@@ -84,9 +109,12 @@ namespace Community_Center_Project__Team_8_
             PersonDisplay.Visibility = Visibility.Hidden;
             ViewModifyPerson.Visibility = Visibility.Visible;
             UpdatePersonDisplay.Visibility = Visibility.Visible;
-            UpdatePersonDisplay.DataContext = this.DataContext;
+            //UpdatePersonDisplay.DataContext = this.DataContext;
 
-    }
+            PersonView person = DataContext as PersonView;
+            UpdatePersonDisplay.DataContext = new UpdatePersonView(person.Id);
+
+        }
 
         public void ClickBack(object sender, RoutedEventArgs e)
         {
@@ -128,8 +156,10 @@ namespace Community_Center_Project__Team_8_
             PersonDisplay.Visibility = Visibility.Hidden;
             ViewModifyPerson.Visibility = Visibility.Visible;
             PaymentDisplay.Visibility = Visibility.Visible;
-            PaymentDisplay.DataContext = this.DataContext;
+            //   PaymentDisplay.DataContext = this.DataContext;
+            PersonView person = DataContext as PersonView;
 
+            PaymentDisplay.DataContext = new PaymentView(person.Id);
         }
         private void ClickViewTransactions(object sender, RoutedEventArgs e)
         {

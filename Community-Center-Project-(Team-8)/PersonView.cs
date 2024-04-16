@@ -18,7 +18,18 @@ namespace Community_Center_Project__Team_8_
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string  FirstName{get;set;}
+        private string _firstname;
+        public string  FirstName{
+            get
+            {
+                return _firstname;
+            }
+            set
+            {
+                FirstName = value;
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
+            }
+        }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
@@ -29,15 +40,27 @@ namespace Community_Center_Project__Team_8_
 
 
         private decimal _balance;
-        public decimal Balance { get; }
-
+        public decimal Balance
+        {
+            get
+            {
+                return _balance;
+            }
+            private set
+            {
+                _balance = value;
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
+            }
+        }
         public void SetBalance()
         {
             _balance = 0;
         }
 
-        public decimal CalcBalance(int id)
+        public decimal CalcBalance()
         {
+            decimal res = 0;
+            Balance = res;
             return 0;
         }
 
@@ -118,11 +141,12 @@ namespace Community_Center_Project__Team_8_
         public PersonView(Person person)
         {
             _person = person;
-            FirstName = person.FirstName;
+            _firstname = person.FirstName;
             LastName = person.LastName;
             Address = person.Address;
             PhoneNumber = person.PhoneNumber;
-            _balance = 0;
+            
+            CalcBalance();
             //initialize groups and ......
 
         }

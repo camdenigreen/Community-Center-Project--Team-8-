@@ -25,17 +25,22 @@ namespace Community_Center_Project__Team_8_
         {
             InitializeComponent();
         }
-
+        public event EventHandler UpdatedInfo;
         private void ClickUpdate(object sender, RoutedEventArgs e)
         {
             //attempt to insert into database;
-           
 
-            PersonView person = DataContext as PersonView;
-           if( person.UpdateInfo(FirstName.Text, LastName.Text, PhoneNumber.Text, Address.Text))
+
+            //PersonView person = DataContext as PersonView;
+
+            // this.DataContext = new UpdatePersonView();
+            UpdatePersonView person = this.DataContext as UpdatePersonView;
+
+           if( person.UpdateInfo())
             {
 
                 MessageBox.Show($"Information updated");
+                UpdatedInfo.Invoke(this, EventArgs.Empty);
             }
             else
             {

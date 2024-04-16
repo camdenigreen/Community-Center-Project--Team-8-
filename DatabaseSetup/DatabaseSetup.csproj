@@ -60,6 +60,7 @@
     <Content Include="Procedures\Payments.ViewAllPayments.sql" />
     <Content Include="Procedures\People.AddPerson.sql" />
     <Content Include="Procedures\People.RetrieveAllMembers.sql" />
+    <Content Include="Procedures\People.RetrieveBalance.sql" />
     <Content Include="Procedures\People.RetrieveChargesAndPayments.sql" />
     <Content Include="Procedures\People.RetrievePersonEvents.sql" />
     <Content Include="Procedures\People.RetrievePersonGroups.sql" />

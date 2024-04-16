@@ -105,7 +105,7 @@
             <local:PersonGroupsControl x:Name="GroupsPersonDisplay" Visibility="Hidden"/>
             <local:DeletePersonControl x:Name="DeletePersonDisplay" Visibility="Hidden"/>
             <local:LeaveGroupControl x:Name="LeaveGroupDisplay" Visiblity="Hidden"/>
-
+            <local:UserControl1 x:Name="UserControl" Visibility="Hidden"/>
         </Grid>
         <Grid x:Name="BackGrid" Margin="0,409,0,0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>

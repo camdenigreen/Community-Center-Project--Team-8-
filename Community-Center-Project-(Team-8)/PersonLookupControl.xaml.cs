@@ -91,7 +91,7 @@ namespace Community_Center_Project__Team_8_
                 PersonControlGrid.Visibility = Visibility.Visible;
                 PersonDisplay.Visibility = Visibility.Visible;
                 prev_screen = PersonDisplay;
-                PersonDisplay.DataContext = person;
+                PersonDisplay.DataContext = new PersonView(person);
                 //PersonDisplay.DataContext=new PersonView(person);
 
             }
