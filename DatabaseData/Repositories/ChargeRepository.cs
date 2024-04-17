@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess;
+using DatabaseData.DataDelegates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,13 @@ namespace DatabaseData
 {
     public class ChargeRepository : IChargeRepository
     {
+        private readonly CommandExecutor _executor;
+
+        public ChargeRepository(string connectionString)
+        {
+            _executor = new CommandExecutor(connectionString);
+        }
+
         public Charge CreateCharge(int personId, int? eventId, decimal amount, string reason, DateTime date)
         {
             throw new NotImplementedException();
@@ -15,7 +24,8 @@ namespace DatabaseData
 
         public IReadOnlyList<Charge> RetreiveCharges(int personId)
         {
-            throw new NotImplementedException();
+            RetrieveChargesByPersonIDDataDelegate data = new RetrieveChargesByPersonIDDataDelegate(personId);
+            return _executor.ExecuteReader(data);
         }
     }
 }
