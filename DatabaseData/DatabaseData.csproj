@@ -42,6 +42,7 @@
     <Compile Include="DataDelegates\CreatePersonDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchPersonDataDelegate.cs" />
     <Compile Include="DataDelegates\GetPersonDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveChargesByPersonIDDataDelegate.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Group.cs" />
