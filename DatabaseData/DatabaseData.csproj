@@ -87,5 +87,21 @@
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sql\Schemas\Events.sql" />
+    <Content Include="Sql\Schemas\People.sql" />
+    <Content Include="Sql\Tables\DropTables.sql" />
+    <Content Include="Sql\Tables\Events.EventAttendance.sql" />
+    <Content Include="Sql\Tables\Events.Events.sql" />
+    <Content Include="Sql\Tables\People.Charges.sql" />
+    <Content Include="Sql\Tables\People.Groups.sql" />
+    <Content Include="Sql\Tables\People.Payments.sql" />
+    <Content Include="Sql\Tables\People.People.sql" />
+    <Content Include="Sql\Tables\People.PeopleGroups.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sql\Data\" />
+    <Folder Include="Sql\StoredProcedures\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
