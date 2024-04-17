@@ -28,7 +28,7 @@ namespace Community_Center_Project__Team_8_
             set
             {
                 _firstname = value;
-               // PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
+               PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
             }
         }
         public string LastName { get; set; }
@@ -50,7 +50,7 @@ namespace Community_Center_Project__Team_8_
             private set
             {
                 _balance = value;
-              PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
+      //        PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
             }
         }
         public void SetBalance()
@@ -61,7 +61,11 @@ namespace Community_Center_Project__Team_8_
         public decimal CalcBalance()
         {
             decimal res = 0;
-            _balance = res;
+            Balance = res;
+
+            //PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
+            GetTransactions();
+            //PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Transactions)));
             return 0;
         }
         List<Group> _mygroups = new List<Group>();
