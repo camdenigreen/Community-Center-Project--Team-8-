@@ -22,7 +22,8 @@
     <Grid>
         <Grid Name="PersonEventsDisplay">
         <Grid.RowDefinitions>
-            <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
             <RowDefinition Height="1*"/>
 
         </Grid.RowDefinitions>
@@ -32,21 +33,22 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Groups" FontSize="26"/>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Groups" FontSize="20"   Grid.ColumnSpan="3"/>
 
-        <ListView  Grid.ColumnSpan="3" Grid.Row="0"  Name="GroupsListView" ItemsSource="{Binding }" Visibility="Collapsed" SizeChanged="ListViewSizeChanged3Column" DockPanel.Dock="Top">
+        <ListView  Grid.ColumnSpan="3" Grid.Row="1"  Name="GroupsListView" ItemsSource="{Binding OtherGroups}" Visibility="Visible" SizeChanged="ListViewSizeChanged3Column" DockPanel.Dock="Top">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding GroupId}" Header="Id"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Event Name"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Date"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description"/>
 
                 </GridView>
             </ListView.View>
         </ListView>
-        <DockPanel Grid.Row="1">
-            <Button Grid.Row="1" Grid.Column="0" DockPanel.Dock="Left" x:Name="SelectGroup" Content="Join Group" Click="ClickJoinGroup"/>
-        </DockPanel>
+        <DockPanel Grid.Row="2">
+            <Button Grid.Row="2" Grid.Column="0" DockPanel.Dock="Left" x:Name="SelectGroup" Content="Join Group" Click="ClickJoinGroup"/>
+               
+            </DockPanel>
 
     </Grid>
     </Grid>

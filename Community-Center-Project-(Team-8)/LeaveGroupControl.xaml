@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Community_Center_Project__Team_8_.LeaveGroup"
+﻿<UserControl x:Class="Community_Center_Project__Team_8_.LeaveGroupControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,25 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <UserControl.Resources>
-        <Style TargetType="Button">
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Style.Resources>
+        <UserControl.Resources>
+            <Style TargetType="Button">
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Style.Resources>
 
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Margin" Value="15"/>
-            <Setter Property="Height" Value="30"/>
-        </Style>
-    </UserControl.Resources>
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="{Binding Path= Name, StringFormat='Are You Sure You Want To Leave {0}'}" FontSize="26"/>
-            <Button Content="Proceed" Click="ClickLeaveGroup" Width="100" HorizontalAlignment="Left" Margin="40,20,20,20"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Margin" Value="15"/>
+                <Setter Property="Height" Value="30"/>
+            </Style>
+        </UserControl.Resources>
+        <Grid>
+        
+
+
+        <StackPanel Margin="140,20,20,20">
+            <TextBlock Margin="230,100,0,40" Text="{Binding Path= Name, StringFormat='Are You Sure You Want To Leave {0}'}" FontSize="23"/>
+            <Button Content="Proceed" Click="ClickLeaveGroup" Width="100" HorizontalAlignment="Center" Margin="0,20,180,20" />
 
         </StackPanel>
-
     </Grid>
+
+
+
 </UserControl>

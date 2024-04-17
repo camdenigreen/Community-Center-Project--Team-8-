@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -59,24 +60,27 @@ namespace Community_Center_Project__Team_8_
             gView.Columns[5].Width = workingWidth * col6;
             gView.Columns[6].Width = workingWidth * col7;
         }
-
+        public event EventHandler<PersonEventGroupEventArgs> JoinEvent;
         private void ClickAddEvent(object sender, RoutedEventArgs e)
         {
             //all events that a person is not in 
             Event even = EventsListView.SelectedItem as Event;
-            PersonView person=this.DataContext as PersonView;
-            if (person.JoinEvent(even.EventId))
+            //PersonView person=this.DataContext as PersonView;
+            
+
+            if (even != null)
             {
-                MessageBox.Show($"Event {even.Name} joined");
+                MessageBox.Show($"Event #{even.EventId.ToString()} added");
+                JoinEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventId, true, "event"));
             }
             else
             {
-                MessageBox.Show($" Could not join Event {even.Name}");
+                MessageBox.Show("no event to add");
             }
-           //have to change my events for the person
-           //redrwa the dashboard for events
-           //redraw the dashboard for person's  upcoming eevents section
-           //same for groups
+            //have to change my events for the person
+            //redrwa the dashboard for events
+            //redraw the dashboard for person's  upcoming eevents section
+            //same for groups
 
         }
 

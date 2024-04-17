@@ -11,15 +11,15 @@ namespace DatabaseData
     {
         public int PersonId { get; }
 
-        public string FirstName { get; set; }
+        public string FirstName { get; }
 
-        public string LastName { get; set; }
+        public string LastName { get;  }
 
-        public string Address { get; set; }
+        public string Address { get;  }
 
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get;  }
 
-        public byte IsMember { get; set; }
+        public byte IsMember { get; }
 
      
 

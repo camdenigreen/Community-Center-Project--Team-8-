@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatabaseData;
+using DatabaseData.Models;
 
 namespace Community_Center_Project__Team_8_
 {
@@ -12,7 +13,7 @@ namespace Community_Center_Project__Team_8_
     {
 
 
-        private Person _person;
+       // private Person _person;
 
         private int _id;
 
@@ -26,15 +27,15 @@ namespace Community_Center_Project__Team_8_
             }
             set
             {
-                FirstName = value;
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
+                _firstname = value;
+               // PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
             }
         }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
 
-        public int Id { get; }
+        public int Id { get; private set; }
 
 
 
@@ -49,7 +50,7 @@ namespace Community_Center_Project__Team_8_
             private set
             {
                 _balance = value;
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
+              PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
             }
         }
         public void SetBalance()
@@ -60,30 +61,89 @@ namespace Community_Center_Project__Team_8_
         public decimal CalcBalance()
         {
             decimal res = 0;
-            Balance = res;
+            _balance = res;
             return 0;
         }
+        List<Group> _mygroups = new List<Group>();
+        public List<Group> MyGroups { private set 
+            
+            {
+                
+                //query the database for groups based on id
 
-        public List<Group> MyGroups { get; }
+            }
+            get {
+                return _mygroups;
+            
+            }
+        }
 
-        public List<Group> OtherGroups { get; }
+        List<Group> _othergroups = new List<Group>();
 
-        public Dictionary<string,DateTime> MyEvents { get; }
+        public List<Group> OtherGroups { private set 
+            {
+              
 
-        public Dictionary<string,DateTime> OtherEvents { get; }
+            } get
+            {
+                return _othergroups;
+              }
+             }
+
+        List<Event> _myevents = new List<Event>();
+
+        public List<Event> MyEvents {
+            private set
+            { 
+            
+            } get
+            {
+                return _myevents;
+            }
+        }
+
+        List<Event> _otherevents = new List<Event>();
+
+        public List<Event> OtherEvents { private set 
+            {
+                
+            }
+            get
+            {
+
+                return _otherevents;
+            }
+        }
 
         public bool JoinGroup(int groupId)
         {
+
+            GetOtherGroups();
+            GetMyGroups();
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyGroups)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherGroups)));
+
+
             return false;
         }
 
         public bool JoinEvent(int eventId)
         {
+
+            GetOtherEvents();
+            GetMyEvents();
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyEvents)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherEvents)));
             return false;
         }
 
         public void LeaveGroup(int id)
         {
+
+            GetOtherGroups();
+            GetMyGroups();
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyGroups)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherGroups)));
 
         }
         public void LeaveEvent(int id)
@@ -91,18 +151,34 @@ namespace Community_Center_Project__Team_8_
 
         }
 
-        public bool UpdateInfo(string firstName,string lastNmae,string phoneNumber, string address)
+        public void UpdateInfo(string firstName,string lastName,string phoneNumber, string address)
         {
+            FirstName = firstName;
+            LastName = lastName;
+            PhoneNumber = phoneNumber;
+            Address = address;
 
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(LastName)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Address)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PhoneNumber)));
 
-            return false;
+            
         }
-        public List<string> Transactions { get; }
 
+        private List<Transaction> _transactions=new List<Transaction>();
+        public List<Transaction> Transactions
+        {
+            set
+            {
+
+            }
+
+            get
+            {
+                return _transactions;
+            }
+        }
         public string Info =>$"{FirstName} {LastName} #{Id.ToString()}";
 
 
@@ -140,15 +216,76 @@ namespace Community_Center_Project__Team_8_
         }
         public PersonView(Person person)
         {
-            _person = person;
+           // _person = person;
             _firstname = person.FirstName;
             LastName = person.LastName;
             Address = person.Address;
             PhoneNumber = person.PhoneNumber;
-            
+            Id = person.PersonId;
             CalcBalance();
+            GetMyGroups();
+            GetOtherGroups();
+            GetOtherEvents();
+            GetMyEvents();
+            GetTransactions();
             //initialize groups and ......
 
+        }
+        private void GetMyGroups()
+        {
+            _mygroups.Clear();
+            for(int i = 0; i < 5; i++)
+            {
+                Group group = new Group (i, "group", "we are a group");
+                _mygroups.Add(group);
+            }
+            
+
+        }
+
+        private void GetOtherGroups()
+        {
+            _othergroups.Clear();
+            for (int i = 0; i < 5; i++)
+            {
+                Group group = new Group(i, "group", "we are a group");
+                _othergroups.Add(group);
+            }
+
+
+        }
+
+        private void GetOtherEvents()
+        {
+            _otherevents.Clear();
+            for(int i = 0; i < 5; i++)
+            {
+                Event even = new Event(i, "eventname", i, "description0", "organizer", DateTime.Now, 3.5m);
+                _otherevents.Add(even);
+            }
+
+        }
+
+        private void GetMyEvents()
+        {
+            _otherevents.Clear();
+            for (int i = 0; i < 5; i++)
+            {
+                Event even = new Event(i, "eventname", i, "description0", "organizer", DateTime.Now, 3.5m);
+                _myevents.Add(even);
+            }
+
+        }
+
+        public void GetTransactions()
+        {
+
+            _transactions.Clear();
+            for(int i = 0; i < 5; i++)
+            {
+                Transaction transaction = new Transaction(i, 3.5m + i, "Payment", DateTime.Now, "event");
+                _transactions.Add(transaction);
+            }
         }
     }
 }

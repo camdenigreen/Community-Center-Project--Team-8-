@@ -73,11 +73,15 @@
     <Compile Include="DeletePersonControl.xaml.cs">
       <DependentUpon>DeletePersonControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PaymentView.cs" />
-    <Compile Include="PersonEventGroupEventArgs.cs" />
+    <Compile Include="LeaveEventControl.xaml.cs">
+      <DependentUpon>LeaveEventControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LeaveGroupControl.xaml.cs">
       <DependentUpon>LeaveGroupControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NullToBooleanConverter.cs" />
+    <Compile Include="PaymentView.cs" />
+    <Compile Include="PersonEventGroupEventArgs.cs" />
     <Compile Include="MainMenuButtonEventArgs.cs" />
     <Compile Include="Peron.AddEventControl.xaml.cs">
       <DependentUpon>Peron.AddEventControl.xaml</DependentUpon>
@@ -96,9 +100,6 @@
       <DependentUpon>UpdatePersonControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpdatePersonView.cs" />
-    <Compile Include="UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-    </Compile>
     <Page Include="AddEventControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LeaveEventControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,10 +175,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpdatePersonControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

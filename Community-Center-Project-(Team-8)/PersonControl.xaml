@@ -4,10 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Community_Center_Project__Team_8_"
+             xmlns:converters="clr-namespace:Community_Center_Project__Team_8_"
+
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
+
     <UserControl.Resources>
+        <converters:NullToBooleanConverter x:Key="NullToBooleanConverter"/>
+
+
+
         <Style TargetType="Button">
             <Style.Resources>
                 <Style TargetType="Border">
@@ -42,7 +49,7 @@
 
             <StackPanel Grid.Column="2" Margin="20,14,0,0">
                 <TextBlock  FontSize="20" Text="CurrentBalance:"/>
-                <TextBlock Text="{Binding Path=Balance, StringFormat=' {0:C}'}"/>
+                <TextBlock FontSize="20" Margin="20"  Text="{Binding Path=Balance, StringFormat=' {0:C}'}"/>
                 <Button x:Name="MakePayment" Click="ClickMakePayment" Content="Make Payment"/>
                 <Button  x:Name="Transactions" Content="View Transactions" Click="ClickViewTransactions"/>
 
@@ -75,19 +82,35 @@
 
             <StackPanel Grid.Row="0" Grid.Column="1"  Margin="20,14,0,0">
                 <TextBlock FontSize="20" Text="Groups"/>
-                <ListView  x:Name="MyGroups" ItemsSource="{Binding}" >
-                    <ListView ItemsSource="{ Binding MyGroups.Name}"/>
+                <ListView  x:Name="MyGroups" ItemsSource="{Binding MyGroups}" SelectionMode="Single" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <!-- Define the appearance of each item -->
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
                 </ListView>
-                <Button   x:Name="LeaveGroup" Content="Leave Group" Click="ClickLeaveGroup"/>
+                <Button   x:Name="LeaveGroup" Content="Leave Group" Click="ClickLeaveGroup"    IsEnabled="{Binding ElementName=MyListView, Path=SelectedItem, Converter={StaticResource NullToBooleanConverter}}"/>
 
             </StackPanel>
 
             <StackPanel  Margin="20,14,0,0" Grid.Row="1" Grid.Column="1">
                 <TextBlock FontSize="20" Text="Events"/>
-                <ListView  ItemsSource="{Binding}" >
-                    <ListView ItemsSource="{ Binding Groups.Events}"/>
+                <ListView x:Name="MyEvents" ItemsSource="{Binding MyEvents}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel >
+
+                               
+                                <TextBlock DockPanel.Dock="Left" Text="{Binding Name}" />
+                                <TextBlock DockPanel.Dock="Right" Text="{Binding Date}"/>
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                 </ListView>
-                <Button   x:Name="LeaveEvent" Content="Leave Group" Click="ClickLeaveEvent"/>
+                <Button   x:Name="LeaveEvent" Content="Leave Event" Click="ClickLeaveEvent"/>
 
             </StackPanel>
 
@@ -104,8 +127,9 @@
             <local:PaymentControl x:Name="PaymentDisplay" Visibility="Hidden"/>
             <local:PersonGroupsControl x:Name="GroupsPersonDisplay" Visibility="Hidden"/>
             <local:DeletePersonControl x:Name="DeletePersonDisplay" Visibility="Hidden"/>
-            <local:LeaveGroupControl x:Name="LeaveGroupDisplay" Visiblity="Hidden"/>
-            <local:UserControl1 x:Name="UserControl" Visibility="Hidden"/>
+            <local:LeaveGroupControl x:Name="LeaveGroupDisplay"  Visibility="Hidden"/>
+            <local:LeaveEventControl x:Name="LeaveEventDisplay" Visibility="Hidden"/>
+
         </Grid>
         <Grid x:Name="BackGrid" Margin="0,409,0,0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>

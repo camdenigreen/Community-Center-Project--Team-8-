@@ -26,9 +26,12 @@ namespace Community_Center_Project__Team_8_
             InitializeComponent();
             DeletePersonDisplay.DeletedPerson += ClickBack;
             LeaveGroupDisplay.LeftGroup += UpdateGroupsEvents;
+            LeaveEventDisplay.LeftEvent += UpdateGroupsEvents;
             GroupsPersonDisplay.JoinGroup += UpdateGroupsEvents;
             UpdatePersonDisplay.UpdatedInfo += UpdateInformation;
             PaymentDisplay.MakePayment += UpdateBalance;
+            EventPersonDisplay.JoinEvent += UpdateGroupsEvents;
+
         }
 
         private void UpdateBalance(object sender, EventArgs e)
@@ -43,10 +46,12 @@ namespace Community_Center_Project__Team_8_
         private void UpdateInformation(object sender, EventArgs e)
         {
             PersonView person = this.DataContext as PersonView;
-            person.FirstName = UpdatePersonDisplay.FirstName.Text.ToString();
-            person.LastName = UpdatePersonDisplay.LastName.Text.ToString();
-            person.Address = UpdatePersonDisplay.Address.Text.ToString();
-            person.PhoneNumber = UpdatePersonDisplay.PhoneNumber.Text.ToString();
+            string first = UpdatePersonDisplay.FirstName.Text.ToString();
+            string last = UpdatePersonDisplay.LastName.Text.ToString();
+            string address = UpdatePersonDisplay.Address.Text.ToString();
+            string number = UpdatePersonDisplay.PhoneNumber.Text.ToString();
+            person.UpdateInfo(first, last, number, address);
+
 
 
             prev_screen.Visibility = Visibility.Hidden;
@@ -90,6 +95,10 @@ namespace Community_Center_Project__Team_8_
 
         private void ClickBack(object sender, EventArgs e)
         {
+
+            prev_screen.Visibility = Visibility.Hidden;
+            ViewModifyPerson.Visibility = Visibility.Hidden;
+            PersonDisplay.Visibility = Visibility.Visible;
             ClickBackTriggered.Invoke(this, EventArgs.Empty);
             //rerun querries
 
@@ -112,7 +121,7 @@ namespace Community_Center_Project__Team_8_
             //UpdatePersonDisplay.DataContext = this.DataContext;
 
             PersonView person = DataContext as PersonView;
-            UpdatePersonDisplay.DataContext = new UpdatePersonView(person.Id);
+            UpdatePersonDisplay.DataContext = new UpdatePersonView(person);
 
         }
 
@@ -137,7 +146,9 @@ namespace Community_Center_Project__Team_8_
             ViewModifyPerson.Visibility = Visibility.Visible;
             EventPersonDisplay.Visibility = Visibility.Visible;
             
-            EventPersonDisplay.DataContext = this.DataContext;
+           // EventPersonDisplay.DataContext = this.DataContext;
+            PersonView person = this.DataContext as PersonView;
+            EventPersonDisplay.DataContext = person;
 
         }
         private void ClickJoinGroup(object sender, RoutedEventArgs e)
@@ -148,7 +159,7 @@ namespace Community_Center_Project__Team_8_
             GroupsPersonDisplay.Visibility = Visibility.Visible;
             GroupsPersonDisplay.DataContext = this.DataContext;
             PersonView person = this.DataContext as PersonView;
-            GroupsPersonDisplay.DataContext = person.OtherGroups;
+            GroupsPersonDisplay.DataContext = person;
         }
         private void ClickMakePayment(object sender, RoutedEventArgs e)
         {
@@ -196,12 +207,19 @@ namespace Community_Center_Project__Team_8_
                 ViewModifyPerson.Visibility = Visibility.Visible;
                 LeaveGroupDisplay.Visibility = Visibility.Visible;
                 LeaveGroupDisplay.DataContext = MyGroups.SelectedItem;
+           
 
-         }
+        }
 
             private void ClickLeaveEvent(object sender, RoutedEventArgs e)
         {
             // person = MembersListView.SelectedItem as Person;
+
+            prev_screen = LeaveEventDisplay;
+            PersonDisplay.Visibility = Visibility.Hidden;
+            ViewModifyPerson.Visibility = Visibility.Visible;
+            LeaveEventDisplay.Visibility = Visibility.Visible;
+            LeaveEventDisplay.DataContext = MyEvents.SelectedItem;
         }
 
 

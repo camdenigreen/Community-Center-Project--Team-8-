@@ -25,9 +25,9 @@
             </TextBlock>
             <StackPanel Margin="10" Orientation="Horizontal">
                 <TextBlock FontSize="16" Text="Enter Payment Amount: "/>
-            <TextBox x:Name="AmountBox" Width="120"   >
+            <TextBox x:Name="Amount" Width="120"     >
                 <TextBox.Text>
-                    <Binding Path="Paid" StringFormat=' {0:C}' UpdateSourceTrigger="PropertyChanged">
+                    <Binding Path="Amount" StringFormat=' {0:C}' UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
                             <ExceptionValidationRule/>
                         </Binding.ValidationRules>
@@ -41,14 +41,14 @@
 
             <StackPanel Margin="10" Orientation="Horizontal">
 
-                <TextBlock x:Name="ReasonBox" FontSize="16" Text="Reason:" />
-                <TextBox Margin="117,0,0,0" Width="120"/>
+                <TextBlock  FontSize="16" Text="Reason:" />
+                <TextBox Text ="{Binding Reason,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="Reason"  Margin="117,0,0,0" Width="120"/>
             </StackPanel>
      
 
         </StackPanel>
 
-        <Button x:Name="Finalize" Content="Finalize Payment" Grid.Row="1" Width="200" IsEnabled="{Binding Path=Finalize}" Click="ClickFinalize"/>
+        <Button x:Name="Finalize" Content="Finalize Payment" Grid.Row="1" Width="200" IsEnabled="{Binding Finalize}" Click="ClickFinalize"/>
 
 
     </Grid>

@@ -22,6 +22,7 @@
     <Grid>
         <Grid Name="PersonEventsDisplay">
             <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="7*"/>
                 <RowDefinition Height="1*"/>
 
@@ -32,8 +33,11 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Events" FontSize="20"   Grid.ColumnSpan="3"/>
 
-            <ListView Grid.ColumnSpan="3" Grid.Row="0" Name="EventsListView" ItemsSource="{Binding}" Visibility="Visible" SizeChanged="ListViewSizeChanged7Column" DockPanel.Dock="Top">
+
+
+            <ListView Grid.ColumnSpan="3" Grid.Row="1" Name="EventsListView" ItemsSource="{Binding}" Visibility="Visible" SizeChanged="ListViewSizeChanged7Column" DockPanel.Dock="Top">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding EventId}" Header="Id"/>
@@ -48,8 +52,8 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <DockPanel Grid.Row="1">
-                <Button Grid.Row="1" Grid.Column="0" DockPanel.Dock="Left" x:Name="SelectEvent" Content="Select Event" Click="ClickAddEvent"/>
+            <DockPanel Grid.Row="2">
+                <Button Grid.Row="2" Grid.Column="0" DockPanel.Dock="Left" x:Name="SelectEvent" Content="Select Event" Click="ClickAddEvent"/>
             </DockPanel>
 
         </Grid>

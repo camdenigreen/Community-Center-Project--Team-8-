@@ -7,12 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="Transactions" FontSize="20"/>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="0" Text="Transactions" FontSize="20"/>
 
 
 
 
-        <ListView Name="TransactionsListView" ItemsSource="{Binding Transactions}" Visibility="Collapsed" SizeChanged="ListViewSizeChanged4Column" DockPanel.Dock="Top">
+        <ListView Grid.Row="1" Name="TransactionsListView" ItemsSource="{Binding Transactions}" Visibility="Visible" SizeChanged="ListViewSizeChanged4Column" DockPanel.Dock="Top">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="Type"/>

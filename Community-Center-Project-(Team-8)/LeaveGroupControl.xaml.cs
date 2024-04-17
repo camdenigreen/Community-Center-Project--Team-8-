@@ -17,25 +17,27 @@ using DatabaseData;
 namespace Community_Center_Project__Team_8_
 {
     /// <summary>
-    /// Interaction logic for LeaveGroup.xaml
+    /// Interaction logic for LeaveGroupControl.xaml
     /// </summary>
-    public partial class LeaveGroup : UserControl
+    public partial class LeaveGroupControl : UserControl
     {
-        public LeaveGroup()
+        public LeaveGroupControl()
         {
             InitializeComponent();
         }
 
         public event EventHandler<PersonEventGroupEventArgs> LeftGroup;
 
-        private void ClickLeaveGroup(object sender,RoutedEventArgs e)
+        private void ClickLeaveGroup(object sender, RoutedEventArgs e)
         {
             //MessageBox.Show("left Group");
             Group group = this.DataContext as Group;
             int id = group.GroupId;
-            LeftGroup.Invoke(this, new PersonEventGroupEventArgs(group.GroupId,false,"group"));
             MessageBox.Show("Left Group #" + id);
+            LeftGroup.Invoke(this, new PersonEventGroupEventArgs(group.GroupId, false, "group"));
            
+
         }
+
     }
 }

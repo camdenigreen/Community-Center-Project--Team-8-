@@ -48,8 +48,14 @@ namespace Community_Center_Project__Team_8_
         private void ClickJoinGroup(object sender, RoutedEventArgs e)
         {
             Group group = GroupsListView.SelectedItem as Group;
-
-            JoinGroup.Invoke(this, new PersonEventGroupEventArgs(group.GroupId, true, "group"));
+            if (group != null)
+            {
+                JoinGroup.Invoke(this, new PersonEventGroupEventArgs(group.GroupId, true, "group"));
+            }
+            else
+            {
+                MessageBox.Show("no groups to add");
+            }
             /*
             PersonView person = this.DataContext as PersonView;
             if (person.JoinGroup(group.GroupId))

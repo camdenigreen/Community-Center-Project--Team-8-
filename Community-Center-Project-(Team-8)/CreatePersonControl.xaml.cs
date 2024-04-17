@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Community_Center_Project__Team_8_
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for CreatePersonControl.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class CreatePersonControl : UserControl
     {
-        public UserControl1()
+        public CreatePersonControl()
         {
             InitializeComponent();
         }
