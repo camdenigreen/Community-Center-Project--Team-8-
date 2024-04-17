@@ -20,8 +20,8 @@ Write-Host "Rebuilding database $Database on $Server..."
 <#
    If on your local machine, you can drop and re-create the database.
 #>
-& ".\Scripts\DropDatabase.ps1" -Database $Database
-& ".\Scripts\CreateDatabase.ps1" -Database $Database
+& ".\DropDatabase.ps1" -Database $Database
+& ".\CreateDatabase.ps1" -Database $Database
 
 <#
    If on the department's server, you don't have permissions to drop or create databases.
