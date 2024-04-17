@@ -1,4 +1,4 @@
-INSERT INTO People.Payments(PaymentID, PersonID, Amount, Reason, Date)
+INSERT INTO People.Payments(PaymentID, PersonID, Amount, Reason, [Date])
 (1, 2, 25, N'Donec quis orci eget orci vehicula condimentum.', N'2006-03-22 18:30:00'),
 (2, 4, 129, N'Etiam pretium iaculis justo.', N'2013-05-05 18:00:00'),
 (3, 4, 222, N'Etiam pretium iaculis justo.', N'2013-05-05 18:00:00'),

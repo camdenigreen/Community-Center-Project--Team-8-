@@ -1,4 +1,4 @@
-INSERT INTO People.People(PersonID, FirstName, LastName, Address, PhoneNumber, IsMember)
+INSERT INTO People.People(PersonID, FirstName, LastName, [Address], PhoneNumber, IsMember)
 VALUES(1, N'Nicolas', N'Hunton', N'7279 Arapahoe Crossing', N'(619) 3612136', 1),
 (2, N'Lorenza', N'Mulvany', N'329 Ronald Regan Lane', N'(701) 2649512', 1),
 (3, N'Felice', N'Hellwing', N'2788 Hudson Lane', N'(507) 2420277', 0),
