@@ -68,6 +68,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sql\Data\Events.EventAttendance.sql" />
+    <Content Include="Sql\Data\Events.Events.sql" />
+    <Content Include="Sql\Data\People.Charges.sql" />
+    <Content Include="Sql\Data\People.Groups.sql" />
+    <Content Include="Sql\Data\People.Payments.sql" />
+    <Content Include="Sql\Data\People.People.sql" />
+    <Content Include="Sql\Data\People.PeopleGroups.sql" />
     <Content Include="Sql\Schemas\Events.sql" />
     <Content Include="Sql\Schemas\People.sql" />
     <Content Include="Sql\Tables\DropTables.sql" />
@@ -80,7 +87,6 @@
     <Content Include="Sql\Tables\People.PeopleGroups.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sql\Data\" />
     <Folder Include="Sql\StoredProcedures\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
