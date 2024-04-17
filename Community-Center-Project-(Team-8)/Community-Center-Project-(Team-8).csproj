@@ -88,6 +88,9 @@
     <Compile Include="ShowGroupControl.xaml.cs">
       <DependentUpon>ShowGroupControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreatePersonControl.xaml.cs">
+      <DependentUpon>CreatePersonControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DeletePersonControl.xaml.cs">
       <DependentUpon>DeletePersonControl.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AggregatedQueryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreatePersonControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
