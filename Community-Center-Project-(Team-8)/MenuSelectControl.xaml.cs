@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseData.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DatabaseData;
+using System.Net;
+
 
 namespace Community_Center_Project__Team_8_
 {
@@ -23,9 +27,22 @@ namespace Community_Center_Project__Team_8_
         public MenuSelectControl()
         {
             InitializeComponent();
+            MembersDisplay.SwitchButton += ManageMainMenuButton;
+          
+           
         }
 
-        private void BackClick(object sender, RoutedEventArgs e)
+        private UserControl prev_screen;
+  
+        private void ManageMainMenuButton(object sender,MainMenuButtonEventArgs e)
+        {
+            BackGrid.Visibility = e.Visibility;
+        }
+
+
+
+
+        protected void BackClick(object sender, RoutedEventArgs e)
         {
             AggregatedQueryDisplay.Visibility = Visibility.Hidden;
             AggregatedQueryDisplay.Reset();
@@ -34,6 +51,7 @@ namespace Community_Center_Project__Team_8_
             GroupDisplay.Visibility = Visibility.Hidden;
             GroupDisplay.Reset();
             ControlsGrid.Visibility = Visibility.Hidden;
+            MembersDisplay.Visibility = Visibility.Hidden;
             MenuSelectButtonGrid.Visibility = Visibility.Visible;
         }
 
@@ -57,5 +75,15 @@ namespace Community_Center_Project__Team_8_
             ControlsGrid.Visibility = Visibility.Visible;
             GroupDisplay.Visibility = Visibility.Visible;
         }
+        private void MemberLookupClick(object sender, RoutedEventArgs e)
+        {
+            MenuSelectButtonGrid.Visibility = Visibility.Hidden;
+            ControlsGrid.Visibility = Visibility.Visible;
+            MembersDisplay.Visibility = Visibility.Visible;
+
+
+            
+        }
+
     }
 }

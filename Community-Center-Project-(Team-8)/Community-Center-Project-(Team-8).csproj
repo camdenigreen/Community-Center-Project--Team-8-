@@ -88,6 +88,36 @@
     <Compile Include="ShowGroupControl.xaml.cs">
       <DependentUpon>ShowGroupControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeletePersonControl.xaml.cs">
+      <DependentUpon>DeletePersonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveEventControl.xaml.cs">
+      <DependentUpon>LeaveEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveGroupControl.xaml.cs">
+      <DependentUpon>LeaveGroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NullToBooleanConverter.cs" />
+    <Compile Include="PaymentView.cs" />
+    <Compile Include="PersonEventGroupEventArgs.cs" />
+    <Compile Include="MainMenuButtonEventArgs.cs" />
+    <Compile Include="Peron.AddEventControl.xaml.cs">
+      <DependentUpon>Peron.AddEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonView.cs" />
+    <Compile Include="PaymentControl.xaml.cs">
+      <DependentUpon>PaymentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonGroupsControl.xaml.cs">
+      <DependentUpon>PersonGroupsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonTransactionsControl.xaml.cs">
+      <DependentUpon>PersonTransactionsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePersonControl.xaml.cs">
+      <DependentUpon>UpdatePersonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePersonView.cs" />
     <Page Include="AddEventControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +130,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DeletePersonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EventControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,10 +142,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LeaveEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LeaveGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AccessPersonEventArgs.cs" />
     <Compile Include="AddEventControl.xaml.cs">
       <DependentUpon>AddEventControl.xaml</DependentUpon>
     </Compile>
@@ -149,10 +192,44 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PaymentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Peron.AddEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonGroupsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonLookupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonTransactionsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdatePersonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MenuSelectControl.xaml.cs">
       <DependentUpon>MenuSelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonControl.xaml.cs">
+      <DependentUpon>PersonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLookupControl.xaml.cs">
+      <DependentUpon>PersonLookupControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

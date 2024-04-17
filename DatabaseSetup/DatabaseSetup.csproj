@@ -46,11 +46,29 @@
     <Content Include="Data\Events.Events.sql" />
     <Content Include="Data\People.Groups.sql" />
     <Content Include="Data\People.People.sql" />
+    <Content Include="Procedures\Charges.RetriveChargesByPersonId.sql" />
+    <Content Include="Procedures\Charges.MakeCharge.sql" />
+    <Content Include="Procedures\EventAttendance.InsertEvent.sql" />
+    <Content Include="Procedures\EventAttendance.RetrieveEventsByPersonId.sql" />
+    <Content Include="Procedures\EventAttendance.UpdateEventAttendance.sql" />
+    <Content Include="Procedures\Events.CreateEvents.sql" />
+    <Content Include="Procedures\Events.RetrieveEvents.sql" />
+    <Content Include="Procedures\Groups.CreateGroup.sql" />
+    <Content Include="Procedures\Groups.RetrieveGroups.sql" />
+    <Content Include="Procedures\Payments.FetchPaymentsById.sql" />
+    <Content Include="Procedures\Payments.InsertGivenPersonId.sql" />
+    <Content Include="Procedures\Payments.ViewAllPayments.sql" />
+    <Content Include="Procedures\People.AddPerson.sql" />
+    <Content Include="Procedures\People.RetrieveAllMembers.sql" />
+    <Content Include="Procedures\People.RetrieveBalance.sql" />
+    <Content Include="Procedures\People.RetrieveChargesAndPayments.sql" />
+    <Content Include="Procedures\People.RetrievePersonEvents.sql" />
+    <Content Include="Procedures\People.RetrievePersonGroups.sql" />
+    <Content Include="Procedures\People.UpdateMembership.sql" />
+    <Content Include="Procedures\Person.ChargesAndPayments.sql" />
     <Content Include="Tables.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Procedures\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
