@@ -15,7 +15,7 @@ namespace DatabaseData.DataDelegates
         private readonly int _personId;
 
         public RetrieveChargesByPersonIDDataDelegate(int personid)
-            : base("Charges.RetrieveChargesByPersonID")
+            : base("People.RetrieveChargesByPersonID")
         {
             _personId = personid;
         }
