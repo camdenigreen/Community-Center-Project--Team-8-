@@ -998,8 +998,10 @@ VALUES(3, 1),
 (1, 997),
 (1, 998),
 (2, 999),
-(1, 1000),
-(99, 1),
+(1, 1000)
+
+INSERT INTO People.PeopleGroups(GroupID, PersonID)
+VALUES(99, 1),
 (101, 1),
 (192, 1),
 (184, 1),
@@ -1998,8 +2000,10 @@ VALUES(3, 1),
 (139, 409),
 (104, 409),
 (100, 409),
-(21, 411),
-(124, 411),
+(21, 411)
+
+INSERT INTO People.PeopleGroups(GroupID, PersonID)
+VALUES(124, 411),
 (68, 411),
 (125, 411),
 (101, 412),
@@ -2998,8 +3002,10 @@ VALUES(3, 1),
 (115, 805),
 (104, 806),
 (185, 806),
-(24, 806),
-(40, 806),
+(24, 806)
+
+INSERT INTO People.PeopleGroups(GroupID, PersonID)
+VALUES(40, 806),
 (135, 807),
 (99, 807),
 (115, 807),

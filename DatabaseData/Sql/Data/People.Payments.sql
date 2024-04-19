@@ -1,5 +1,5 @@
 INSERT INTO People.Payments(PaymentID, PersonID, Amount, Reason, [Date])
-(1, 2, 25, N'Donec quis orci eget orci vehicula condimentum.', N'2006-03-22 18:30:00'),
+VALUES(1, 2, 25, N'Donec quis orci eget orci vehicula condimentum.', N'2006-03-22 18:30:00'),
 (2, 4, 129, N'Etiam pretium iaculis justo.', N'2013-05-05 18:00:00'),
 (3, 4, 222, N'Etiam pretium iaculis justo.', N'2013-05-05 18:00:00'),
 (4, 4, 101, N'Etiam pretium iaculis justo.', N'2013-05-05 18:00:00'),
@@ -999,8 +999,10 @@ INSERT INTO People.Payments(PaymentID, PersonID, Amount, Reason, [Date])
 (998, 519, 25, N'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', N'2024-08-11 18:00:00'),
 (999, 519, 35, N'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', N'2024-08-11 18:00:00'),
 (1000, 520, 6, N'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', N'2011-01-21 18:00:00'),
-(1001, 521, 18, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00'),
-(1002, 521, 88, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00'),
+(1001, 521, 18, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00')
+
+INSERT INTO People.Payments(PaymentID, PersonID, Amount, Reason, [Date])
+VALUES(1002, 521, 88, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00'),
 (1003, 521, 215, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00'),
 (1004, 522, 179, N'Pellentesque at nulla.', N'2011-01-22 18:30:00'),
 (1005, 522, 92, N'Pellentesque at nulla.', N'2011-01-22 18:30:00'),

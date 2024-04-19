@@ -1,4 +1,3 @@
-
 INSERT INTO Events.Events(EventID, [Name], GroupID, [Description], Organizer, [Date], Charge)
 VALUES(1, N'nulla mollis molestie', 155, N'Nunc purus.', N'Nicolas, Davis and Emmerich', N'2023-04-04 18:00:00', 15),
 (2, N'ac est', 119, N'In congue.', N'Kutch, Schulist and Kemmer', N'2025-03-02 18:00:00', 5),
@@ -999,8 +998,10 @@ VALUES(1, N'nulla mollis molestie', 155, N'Nunc purus.', N'Nicolas, Davis and Em
 (997, N'amet sem fusce', 14, N'Morbi a ipsum.', N'Mann and Sons', N'2022-06-29 12:00:00', 15),
 (998, N'suspendisse ornare consequat', 172, N'Maecenas ut massa quis augue luctus tincidunt.', N'Raynor Group', N'2006-11-16 12:00:00', 15),
 (999, N'tortor 2', 115, N'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', N'Hyatt, Osinski and Konopelski', N'2015-03-31 18:00:00', 20),
-(1000, N'quam turpis', 182, N'Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', N'Adams Inc', N'2014-01-12 18:00:00', 5),
-(1001, N'iaculis justo', 113, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'Kshlerin-Blanda', N'2017-11-13 18:30:00', 15),
+(1000, N'quam turpis', 182, N'Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', N'Adams Inc', N'2014-01-12 18:00:00', 5)
+
+INSERT INTO Events.Events(EventID, [Name], GroupID, [Description], Organizer, [Date], Charge)
+VALUES(1001, N'iaculis justo', 113, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'Kshlerin-Blanda', N'2017-11-13 18:30:00', 15),
 (1006, N'iaculis justo 0', 113, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'Kshlerin-Blanda', N'2017-11-20 18:30:00', 15),
 (1007, N'iaculis justo 1', 113, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'Kshlerin-Blanda', N'2017-11-27 18:30:00', 15),
 (1008, N'iaculis justo 2', 113, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'Kshlerin-Blanda', N'2017-12-04 18:30:00', 15),

@@ -998,8 +998,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (997, 67, 745, -25, N'Aenean lectus.', N'2023-07-08 12:00:00'),
 (998, 67, 777, -5, N'Nam tristique tortor eu pede.', N'2013-04-13 8:00:00'),
 (999, 67, 188, -10, N'In sagittis dui vel nisl.', N'2018-02-04 8:00:00'),
-(1000, 67, 245, -5, N'Vivamus tortor.', N'2011-11-06 18:00:00'),
-(1001, 67, 379, -5, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'2022-03-27 12:00:00'),
+(1000, 67, 245, -5, N'Vivamus tortor.', N'2011-11-06 18:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(1001, 67, 379, -5, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'2022-03-27 12:00:00'),
 (1002, 67, 399, -15, N'Duis aliquam convallis nunc.', N'2021-11-16 18:30:00'),
 (1003, 67, 25, -10, N'In hac habitasse platea dictumst.', N'2018-09-07 18:30:00'),
 (1004, 67, 222, -10, N'Integer a nibh.', N'2022-05-03 8:00:00'),
@@ -1998,8 +2000,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (1997, 139, 379, -5, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'2022-03-27 12:00:00'),
 (1998, 139, 399, -15, N'Duis aliquam convallis nunc.', N'2021-11-16 18:30:00'),
 (1999, 140, 454, -20, N'Donec posuere metus vitae ipsum.', N'2006-12-17 12:00:00'),
-(2000, 140, 586, -20, N'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', N'2020-06-13 18:00:00'),
-(2001, 140, 976, -15, N'Integer tincidunt ante vel ipsum.', N'2010-08-11 8:00:00'),
+(2000, 140, 586, -20, N'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', N'2020-06-13 18:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(2001, 140, 976, -15, N'Integer tincidunt ante vel ipsum.', N'2010-08-11 8:00:00'),
 (2002, 140, 144, -10, N'Sed ante.', N'2019-12-07 8:00:00'),
 (2003, 140, 266, -15, N'Integer ac leo.', N'2010-01-12 18:00:00'),
 (2004, 140, 698, -15, N'Vivamus vel nulla eget eros elementum pellentesque.', N'2006-04-18 8:00:00'),
@@ -2998,8 +3002,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (2997, 218, 202, -10, N'Nulla tellus.', N'2025-04-02 18:30:00'),
 (2998, 218, 365, -15, N'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', N'2005-04-27 8:00:00'),
 (2999, 218, 437, -10, N'Aenean auctor gravida sem.', N'2024-01-02 8:00:00'),
-(3000, 218, 467, -20, N'Nulla tempus.', N'2023-01-17 12:00:00'),
-(3001, 218, 1, -15, N'Nunc purus.', N'2023-04-04 18:00:00'),
+(3000, 218, 467, -20, N'Nulla tempus.', N'2023-01-17 12:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(3001, 218, 1, -15, N'Nunc purus.', N'2023-04-04 18:00:00'),
 (3002, 218, 137, -5, N'Duis ac nibh.', N'2011-02-27 8:00:00'),
 (3003, 218, 169, -10, N'Pellentesque at nulla.', N'2022-08-08 18:30:00'),
 (3004, 218, 394, -5, N'Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', N'2022-05-12 18:30:00'),
@@ -3998,8 +4004,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (3997, 309, 741, -5, N'Sed sagittis.', N'2008-02-08 12:00:00'),
 (3998, 309, 902, -25, N'Sed accumsan felis.', N'2008-10-02 18:30:00'),
 (3999, 309, 985, -25, N'Morbi porttitor lorem id ligula.', N'2006-10-17 12:00:00'),
-(4000, 310, 296, -20, N'Etiam faucibus cursus urna.', N'2024-05-27 18:00:00'),
-(4001, 310, 577, -10, N'Mauris lacinia sapien quis libero.', N'2013-05-01 18:00:00'),
+(4000, 310, 296, -20, N'Etiam faucibus cursus urna.', N'2024-05-27 18:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(4001, 310, 577, -10, N'Mauris lacinia sapien quis libero.', N'2013-05-01 18:00:00'),
 (4002, 310, 877, -5, N'Donec dapibus.', N'2011-10-21 18:30:00'),
 (4003, 310, 949, -5, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'2006-03-22 18:30:00'),
 (4004, 310, 68, -15, N'Morbi porttitor lorem id ligula.', N'2012-05-04 12:00:00'),
@@ -4998,8 +5006,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (4997, 374, 1064, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-06-09 18:30:00'),
 (4998, 374, 1065, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-06-16 18:30:00'),
 (4999, 374, 1066, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-06-23 18:30:00'),
-(5000, 374, 1067, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-06-30 18:30:00'),
-(5001, 374, 1068, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-07-07 18:30:00'),
+(5000, 374, 1067, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-06-30 18:30:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(5001, 374, 1068, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-07-07 18:30:00'),
 (5002, 374, 1069, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-07-14 18:30:00'),
 (5003, 374, 1070, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-07-21 18:30:00'),
 (5004, 374, 1071, -5, N'Mauris ullamcorper purus sit amet nulla.', N'2020-07-28 18:30:00'),
@@ -5998,8 +6008,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (5997, 443, 141, -25, N'Sed sagittis.', N'2013-08-15 8:00:00'),
 (5998, 443, 840, -10, N'Vivamus in felis eu sapien cursus vestibulum.', N'2006-02-21 8:00:00'),
 (5999, 444, 179, -20, N'Duis mattis egestas metus.', N'2022-03-27 12:00:00'),
-(6000, 444, 210, -5, N'Pellentesque at nulla.', N'2015-12-06 18:30:00'),
-(6001, 444, 383, -5, N'Maecenas ut massa quis augue luctus tincidunt.', N'2018-04-05 12:00:00'),
+(6000, 444, 210, -5, N'Pellentesque at nulla.', N'2015-12-06 18:30:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(6001, 444, 383, -5, N'Maecenas ut massa quis augue luctus tincidunt.', N'2018-04-05 12:00:00'),
 (6002, 444, 434, -10, N'Sed accumsan felis.', N'2021-02-26 18:30:00'),
 (6003, 444, 554, -20, N'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', N'2015-12-12 12:00:00'),
 (6004, 444, 680, -20, N'Phasellus sit amet erat.', N'2024-06-05 18:30:00'),
@@ -6998,8 +7010,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (6997, 515, 564, -5, N'Curabitur in libero ut massa volutpat convallis.', N'2006-10-30 12:00:00'),
 (6998, 516, 642, -10, N'Nam tristique tortor eu pede.', N'2004-12-11 12:00:00'),
 (6999, 516, 714, -15, N'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', N'2020-10-27 8:00:00'),
-(7000, 516, 289, -15, N'Nulla mollis molestie lorem.', N'2023-03-26 8:00:00'),
-(7001, 516, 473, -15, N'Pellentesque eget nunc.', N'2011-10-08 12:00:00'),
+(7000, 516, 289, -15, N'Nulla mollis molestie lorem.', N'2023-03-26 8:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(7001, 516, 473, -15, N'Pellentesque eget nunc.', N'2011-10-08 12:00:00'),
 (7002, 516, 649, -5, N'Duis at velit eu est congue elementum.', N'2018-12-12 8:00:00'),
 (7003, 516, 661, -10, N'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', N'2014-01-28 18:00:00'),
 (7004, 516, 676, -10, N'Nullam molestie nibh in lectus.', N'2021-07-09 18:00:00'),
@@ -7998,8 +8012,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (7997, 584, 756, -15, N'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', N'2010-08-16 8:00:00'),
 (7998, 584, 811, -25, N'Aliquam sit amet diam in magna bibendum imperdiet.', N'2022-10-13 18:00:00'),
 (7999, 584, 415, -5, N'Nulla facilisi.', N'2024-05-05 18:30:00'),
-(8000, 585, 289, -15, N'Nulla mollis molestie lorem.', N'2023-03-26 8:00:00'),
-(8001, 585, 473, -15, N'Pellentesque eget nunc.', N'2011-10-08 12:00:00'),
+(8000, 585, 289, -15, N'Nulla mollis molestie lorem.', N'2023-03-26 8:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(8001, 585, 473, -15, N'Pellentesque eget nunc.', N'2011-10-08 12:00:00'),
 (8002, 585, 649, -5, N'Duis at velit eu est congue elementum.', N'2018-12-12 8:00:00'),
 (8003, 585, 661, -10, N'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', N'2014-01-28 18:00:00'),
 (8004, 585, 676, -10, N'Nullam molestie nibh in lectus.', N'2021-07-09 18:00:00'),
@@ -8998,8 +9014,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (8997, 674, 636, -20, N'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', N'2006-05-10 18:00:00'),
 (8998, 674, 821, -25, N'Vivamus in felis eu sapien cursus vestibulum.', N'2015-08-24 18:30:00'),
 (8999, 674, 495, -25, N'Quisque id justo sit amet sapien dignissim vestibulum.', N'2008-05-08 18:00:00'),
-(9000, 674, 684, -15, N'In hac habitasse platea dictumst.', N'2020-09-08 12:00:00'),
-(9001, 674, 773, -15, N'In blandit ultrices enim.', N'2021-03-16 12:00:00'),
+(9000, 674, 684, -15, N'In hac habitasse platea dictumst.', N'2020-09-08 12:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(9001, 674, 773, -15, N'In blandit ultrices enim.', N'2021-03-16 12:00:00'),
 (9002, 674, 803, -10, N'Duis bibendum.', N'2020-07-29 18:00:00'),
 (9003, 674, 886, -15, N'Mauris sit amet eros.', N'2016-11-29 12:00:00'),
 (9004, 675, 135, -5, N'Mauris sit amet eros.', N'2016-08-14 8:00:00'),
@@ -9998,8 +10016,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (9997, 735, 416, -25, N'Phasellus sit amet erat.', N'2010-02-12 12:00:00'),
 (9998, 735, 492, -5, N'In eleifend quam a odio.', N'2022-08-29 12:00:00'),
 (9999, 735, 538, -15, N'Maecenas pulvinar lobortis est.', N'2005-12-08 18:00:00'),
-(10000, 735, 891, -15, N'Etiam pretium iaculis justo.', N'2008-12-31 18:00:00'),
-(10001, 735, 981, -25, N'Aenean auctor gravida sem.', N'2019-08-17 18:30:00'),
+(10000, 735, 891, -15, N'Etiam pretium iaculis justo.', N'2008-12-31 18:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(10001, 735, 981, -25, N'Aenean auctor gravida sem.', N'2019-08-17 18:30:00'),
 (10002, 735, 188, -10, N'In sagittis dui vel nisl.', N'2018-02-04 8:00:00'),
 (10003, 735, 245, -5, N'Vivamus tortor.', N'2011-11-06 18:00:00'),
 (10004, 735, 379, -5, N'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', N'2022-03-27 12:00:00'),
@@ -10998,8 +11018,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (10997, 815, 986, -15, N'Sed sagittis.', N'2013-05-05 18:00:00'),
 (10998, 816, 112, -5, N'Suspendisse potenti.', N'2023-12-19 8:00:00'),
 (10999, 816, 206, -5, N'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', N'2018-07-25 8:00:00'),
-(11000, 816, 406, -5, N'Nulla justo.', N'2014-02-28 8:00:00'),
-(11001, 816, 611, -20, N'Cras non velit nec nisi vulputate nonummy.', N'2018-07-28 12:00:00'),
+(11000, 816, 406, -5, N'Nulla justo.', N'2014-02-28 8:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(11001, 816, 611, -20, N'Cras non velit nec nisi vulputate nonummy.', N'2018-07-28 12:00:00'),
 (11002, 816, 813, -15, N'Donec ut mauris eget massa tempor convallis.', N'2011-11-16 18:30:00'),
 (11003, 816, 184, -25, N'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', N'2019-10-24 18:30:00'),
 (11004, 816, 618, -5, N'Maecenas rhoncus aliquam lacus.', N'2024-02-29 18:00:00'),
@@ -11998,8 +12020,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (11997, 892, 306, -10, N'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', N'2009-08-07 18:00:00'),
 (11998, 892, 515, -5, N'Proin interdum mauris non ligula pellentesque ultrices.', N'2005-11-27 18:30:00'),
 (11999, 892, 580, -10, N'Pellentesque eget nunc.', N'2013-02-14 18:30:00'),
-(12000, 892, 701, -5, N'Quisque id justo sit amet sapien dignissim vestibulum.', N'2015-05-29 18:00:00'),
-(12001, 892, 873, -25, N'Mauris ullamcorper purus sit amet nulla.', N'2006-01-18 18:30:00'),
+(12000, 892, 701, -5, N'Quisque id justo sit amet sapien dignissim vestibulum.', N'2015-05-29 18:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(12001, 892, 873, -25, N'Mauris ullamcorper purus sit amet nulla.', N'2006-01-18 18:30:00'),
 (12002, 893, 23, -20, N'Sed accumsan felis.', N'2013-03-30 18:00:00'),
 (12003, 893, 43, -5, N'In sagittis dui vel nisl.', N'2010-12-11 12:00:00'),
 (12004, 893, 711, -10, N'Nam dui.', N'2011-12-21 12:00:00'),
@@ -12998,8 +13022,10 @@ VALUES(1, 1, 115, -5, N'In tempor, turpis nec euismod scelerisque, quam turpis a
 (12997, 964, 356, -10, N'Curabitur at ipsum ac tellus semper interdum.', N'2009-02-28 8:00:00'),
 (12998, 964, 384, -5, N'Integer non velit.', N'2005-04-06 8:00:00'),
 (12999, 964, 444, -5, N'Morbi ut odio.', N'2009-04-15 18:30:00'),
-(13000, 964, 516, -25, N'Morbi vel lectus in quam fringilla rhoncus.', N'2022-06-13 18:00:00'),
-(13001, 964, 610, -25, N'Pellentesque viverra pede ac diam.', N'2020-02-27 18:00:00'),
+(13000, 964, 516, -25, N'Morbi vel lectus in quam fringilla rhoncus.', N'2022-06-13 18:00:00')
+
+INSERT INTO People.Charges(ChargeID, PersonID, EventID, Amount, Reason, [Date])
+VALUES(13001, 964, 610, -25, N'Pellentesque viverra pede ac diam.', N'2020-02-27 18:00:00'),
 (13002, 964, 716, -5, N'Morbi ut odio.', N'2012-07-07 12:00:00'),
 (13003, 964, 136, -25, N'Duis ac nibh.', N'2019-10-24 18:00:00'),
 (13004, 964, 156, -15, N'Maecenas ut massa quis augue luctus tincidunt.', N'2012-11-03 12:00:00'),
