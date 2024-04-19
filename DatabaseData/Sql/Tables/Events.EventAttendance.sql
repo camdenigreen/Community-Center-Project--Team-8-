@@ -6,7 +6,7 @@ BEGIN
         EventID INT FOREIGN KEY REFERENCES [Events].[Events](EventID) NOT NULL,
         DidAttend BIT NULL,
 
-        CONSTRAINT PK_Event_Attendance PRIMARY KEY 
+        CONSTRAINT PK_Event_Attendance_PersonID_EventID PRIMARY KEY 
         (
             PersonID,
             EventID
