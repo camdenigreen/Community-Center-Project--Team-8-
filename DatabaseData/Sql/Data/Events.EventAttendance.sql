@@ -1,5 +1,5 @@
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(115, 1, 0),
+VALUES(1, 0),
 (715, 1, 1),
 (832, 1, 1),
 (951, 1, 0),
@@ -1001,7 +1001,7 @@ VALUES(115, 1, 0),
 (245, 67, 1)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(379, 67, 1),
+VALUES(67, 1),
 (399, 67, 0),
 (25, 67, 1),
 (222, 67, 1),
@@ -2003,7 +2003,7 @@ VALUES(379, 67, 1),
 (586, 140, 0)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(976, 140, 0),
+VALUES(140, 0),
 (144, 140, 1),
 (266, 140, 0),
 (698, 140, 0),
@@ -3005,7 +3005,7 @@ VALUES(976, 140, 0),
 (467, 218, 1)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(1, 218, 1),
+VALUES(218, 1),
 (137, 218, 0),
 (169, 218, 1),
 (394, 218, 1),
@@ -4007,7 +4007,7 @@ VALUES(1, 218, 1),
 (296, 310, NULL)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(577, 310, 1),
+VALUES(310, 1),
 (877, 310, 0),
 (949, 310, 1),
 (68, 310, 0),
@@ -5009,7 +5009,7 @@ VALUES(577, 310, 1),
 (1067, 374, 0)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(1068, 374, 0),
+VALUES(374, 0),
 (1069, 374, 1),
 (1070, 374, 0),
 (1071, 374, 1),
@@ -6011,7 +6011,7 @@ VALUES(1068, 374, 0),
 (210, 444, 0)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(383, 444, 0),
+VALUES(444, 0),
 (434, 444, 0),
 (554, 444, 1),
 (680, 444, NULL),
@@ -7013,7 +7013,7 @@ VALUES(383, 444, 0),
 (289, 516, 0)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(473, 516, 0),
+VALUES(516, 0),
 (649, 516, 1),
 (661, 516, 1),
 (676, 516, 1),
@@ -8015,7 +8015,7 @@ VALUES(473, 516, 0),
 (289, 585, 1)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(473, 585, 0),
+VALUES(585, 0),
 (649, 585, 0),
 (661, 585, 0),
 (676, 585, 0),
@@ -9017,7 +9017,7 @@ VALUES(473, 585, 0),
 (684, 674, 0)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(773, 674, 0),
+VALUES(674, 0),
 (803, 674, 0),
 (886, 674, 1),
 (135, 675, 0),
@@ -10019,7 +10019,7 @@ VALUES(773, 674, 0),
 (891, 735, 1)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(981, 735, 1),
+VALUES(735, 1),
 (188, 735, 1),
 (245, 735, 0),
 (379, 735, 0),
@@ -11021,7 +11021,7 @@ VALUES(981, 735, 1),
 (406, 816, 1)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(611, 816, 0),
+VALUES(816, 0),
 (813, 816, 0),
 (184, 816, 1),
 (618, 816, 0),
@@ -12023,7 +12023,7 @@ VALUES(611, 816, 0),
 (701, 892, 0)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(873, 892, 1),
+VALUES(892, 1),
 (23, 893, 1),
 (43, 893, 1),
 (711, 893, 0),
@@ -13025,7 +13025,7 @@ VALUES(873, 892, 1),
 (516, 964, 1)
 
 INSERT INTO Events.EventAttendance(EventID, GroupID, DidAttend)
-VALUES(610, 964, 1),
+VALUES(964, 1),
 (716, 964, 1),
 (136, 964, 0),
 (156, 964, 0),
