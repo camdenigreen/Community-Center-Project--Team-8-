@@ -18,7 +18,6 @@ namespace DatabaseSetup
             const string DATABASE = @"communitycenter";
 
             string connectionString = string.Format(@"SERVER={0};DATABASE={1};INTEGRATED SECURITY=SSPI;", SERVER, DATABASE);
-
             Setup setupObject = new Setup(connectionString);
 
             setupObject.RebuildDatabase();

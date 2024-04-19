@@ -49,26 +49,195 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.6.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.6.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddGroupControl.xaml.cs">
+      <DependentUpon>AddGroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupControl.xaml.cs">
+      <DependentUpon>GroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchEventControl.xaml.cs">
+      <DependentUpon>SearchEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchGroupControl.xaml.cs">
+      <DependentUpon>SearchGroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowEventControl.xaml.cs">
+      <DependentUpon>ShowEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowGroupControl.xaml.cs">
+      <DependentUpon>ShowGroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePersonControl.xaml.cs">
+      <DependentUpon>CreatePersonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeletePersonControl.xaml.cs">
+      <DependentUpon>DeletePersonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveEventControl.xaml.cs">
+      <DependentUpon>LeaveEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveGroupControl.xaml.cs">
+      <DependentUpon>LeaveGroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NullToBooleanConverter.cs" />
+    <Compile Include="PaymentView.cs" />
+    <Compile Include="PersonEventGroupEventArgs.cs" />
+    <Compile Include="MainMenuButtonEventArgs.cs" />
+    <Compile Include="Peron.AddEventControl.xaml.cs">
+      <DependentUpon>Peron.AddEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonView.cs" />
+    <Compile Include="PaymentControl.xaml.cs">
+      <DependentUpon>PaymentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonGroupsControl.xaml.cs">
+      <DependentUpon>PersonGroupsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonTransactionsControl.xaml.cs">
+      <DependentUpon>PersonTransactionsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePersonControl.xaml.cs">
+      <DependentUpon>UpdatePersonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePersonView.cs" />
+    <Page Include="AddEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AggregatedQueryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreatePersonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeletePersonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LeaveEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LeaveGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AccessPersonEventArgs.cs" />
+    <Compile Include="AddEventControl.xaml.cs">
+      <DependentUpon>AddEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AggregatedQueryControl.xaml.cs">
+      <DependentUpon>AggregatedQueryControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventControl.xaml.cs">
+      <DependentUpon>EventControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MenuSelectControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PaymentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Peron.AddEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonGroupsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonLookupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonTransactionsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdatePersonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuSelectControl.xaml.cs">
+      <DependentUpon>MenuSelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonControl.xaml.cs">
+      <DependentUpon>PersonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLookupControl.xaml.cs">
+      <DependentUpon>PersonLookupControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +255,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +263,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{4a2b4cc0-5fd0-40ac-b513-2397b4d92b66}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseData\DatabaseData.csproj">
+      <Project>{09f62716-b55d-4f0b-9742-600429c05848}</Project>
+      <Name>DatabaseData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

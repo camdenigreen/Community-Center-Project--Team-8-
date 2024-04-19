@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Community_Center_Project__Team_8_.AddEventControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Community_Center_Project__Team_8_"
+             xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="982" d:DesignWidth="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Create Event" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                <TextBlock Text="Name"/>
+                <TextBox Name="NameTextBox" MinWidth="200"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                <TextBlock Text="Organizer"/>
+                <TextBox Name="OrganizerTextBox" MinWidth="200"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                <TextBlock Text="Description"/>
+                <TextBox Name="DescriptionTextBox" MinWidth="200" MaxWidth="200" MinLines="3"  MaxLines="3" TextWrapping="Wrap" Text="{Binding StartUpText}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                <TextBlock Text="GroupID (optional)"/>
+                <TextBox Name="GroupIDTextBox" MinWidth="100"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Charge (optional)"/>
+                <TextBox Name="ChargeTextBox" MinWidth="200"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Date"/>
+                <wpfTool:DateTimePicker Name="DateTimePicker" MinWidth="200"/>
+            </StackPanel>
+        </Grid>
+        <Button Grid.Column="1" Grid.Row="4" MaxWidth="150" MaxHeight="30" Click="CreateEventClick">Create</Button>
+    </Grid>
+</UserControl>

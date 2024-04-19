@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Community_Center_Project__Team_8_.PersonAddEventControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Community_Center_Project__Team_8_"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Style.Resources>
+
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="15"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid Name="PersonEventsDisplay">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Events" FontSize="20"   Grid.ColumnSpan="3"/>
+
+
+
+            <ListView Grid.ColumnSpan="3" Grid.Row="1" Name="EventsListView" ItemsSource="{Binding}" Visibility="Visible" SizeChanged="ListViewSizeChanged7Column" DockPanel.Dock="Top">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding EventId}" Header="Id"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header=" Name"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding GroupName}" Header="GroupName"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Organizer}" Header="Organizer"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Charge}" Header="Charge"/>
+                        
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <DockPanel Grid.Row="2">
+                <Button Grid.Row="2" Grid.Column="0" DockPanel.Dock="Left" x:Name="SelectEvent" Content="Select Event" Click="ClickAddEvent"/>
+            </DockPanel>
+
+        </Grid>
+
+
+
+    </Grid>
+</UserControl>

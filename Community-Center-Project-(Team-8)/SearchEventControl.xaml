@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Community_Center_Project__Team_8_.SearchEventControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Community_Center_Project__Team_8_"
+             mc:Ignorable="d" 
+             d:DesignHeight="982" d:DesignWidth="1920">
+    <Grid>
+        <Grid Name="SearchingGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Event ID"/>
+                    <TextBox Name="EventIdTextBox" MinWidth="100"/>
+                </StackPanel>
+                <Button Name="SearchByEventIdButton" Grid.Row="1" Width="150" FontSize="15" Click="SearchByEventIdClick">Search by Event ID</Button>
+                <StackPanel HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Event Name"/>
+                    <TextBox Name="EventNameTextbox" MinWidth="100"/>
+                </StackPanel>
+                <Button Name="SearchByEventNameButton" Grid.Row="1" Grid.Column="1" Width="175" FontSize="15" Click="SearchByEventNameClick">Search by Event Name</Button>
+                <Button Name="GoToEventButton" Grid.Column="2" FontSize="15" Click="GoToEventClick">Go to selected Event</Button>
+            </Grid>
+            <ListView Grid.Row="1" Name="SearchEventListView" ItemsSource="{Binding}" SizeChanged="ListViewSizeChanged7Column">
+                <ListView.View>
+                    <GridView x:Name="SearchEventGridView">
+                        <GridViewColumn DisplayMemberBinding="{Binding EventId}" Header="Id"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Event Name"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding GroupId}" Header="Group Id"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Organizer}" Header="Organizer"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Charge}" Header="Charge"/>
+                        <GridViewColumn Header="Description">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Description}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <local:ShowEventControl x:Name="ShowEventDisplay" Visibility="Hidden"/>
+    </Grid>
+</UserControl>

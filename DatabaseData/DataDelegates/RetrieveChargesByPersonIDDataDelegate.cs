@@ -35,7 +35,7 @@ namespace DatabaseData.DataDelegates
             while (reader.Read())
             {
                 list.Add(new Charge(
-                    reader.GetInt32("ChargeID"),
+                    reader.GetInt32("PaymentID"),
                     _personId,
                     reader.GetInt32("EventID"),
                     reader.GetValue<decimal>("Amount"),
