@@ -178,7 +178,12 @@ namespace Community_Center_Project__Team_8_
             PersonDisplay.Visibility = Visibility.Hidden;
             ViewModifyPerson.Visibility = Visibility.Visible;
             TransactionsPersonDisplay.Visibility = Visibility.Visible;
-            TransactionsPersonDisplay.DataContext = this.DataContext;
+            ChargeRepository chargeRepository = new ChargeRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            if (DataContext is PersonView p)
+            {
+                IReadOnlyList<Charge> charges = chargeRepository.RetreiveCharges(p.Id);
+                TransactionsPersonDisplay.DataContext = charges;
+            }
 
         }
         private void ClickDeletePerson(object sender, RoutedEventArgs e)
