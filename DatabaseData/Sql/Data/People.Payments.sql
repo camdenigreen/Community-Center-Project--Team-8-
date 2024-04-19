@@ -998,11 +998,11 @@ VALUES(2, 25, N'Donec quis orci eget orci vehicula condimentum.', N'2006-03-22 1
 (519, 26, N'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', N'2024-08-11 18:00:00'),
 (519, 25, N'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', N'2024-08-11 18:00:00'),
 (519, 35, N'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', N'2024-08-11 18:00:00'),
-(520, 6, N'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', N'2011-01-21 18:00:00'),
-(521, 18, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00')
+(520, 6, N'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', N'2011-01-21 18:00:00')
 
 INSERT INTO People.Payments(PersonID, Amount, Reason, [Date])
-VALUES(521, 88, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00'),
+VALUES(521, 18, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00'),
+(521, 88, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00'),
 (521, 215, N'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', N'2008-11-27 18:30:00'),
 (522, 179, N'Pellentesque at nulla.', N'2011-01-22 18:30:00'),
 (522, 92, N'Pellentesque at nulla.', N'2011-01-22 18:30:00'),
