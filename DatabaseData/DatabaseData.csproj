@@ -43,8 +43,14 @@
     <Compile Include="DataDelegates\CreatePersonDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchPersonDataDelegate.cs" />
     <Compile Include="DataDelegates\GetPersonDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveBalanceDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveChargesDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveEventsByPersonIDDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveEventsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveGroupsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrievePaymentsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrievePersonGroupsDataDelegate.cs" />
     <Compile Include="Models\ActiveGroup.cs" />
-    <Compile Include="DataDelegates\RetrieveChargesByPersonIDDataDelegate.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\EventRegistrants.cs" />
@@ -53,6 +59,7 @@
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonBalance.cs" />
+    <Compile Include="Models\PersonsEvent.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Repositories\ChargeRepository.cs" />
     <Compile Include="Repositories\EventRepository.cs" />

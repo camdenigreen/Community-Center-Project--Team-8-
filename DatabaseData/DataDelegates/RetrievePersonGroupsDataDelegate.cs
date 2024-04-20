@@ -37,7 +37,7 @@ namespace DatabaseData.DataDelegates
                     reader.GetString("Description")));
             }
 
-            return list.AsReadOnly() ;
+            return list.AsReadOnly();
         }
     }
 }
