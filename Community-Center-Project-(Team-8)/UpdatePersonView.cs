@@ -20,8 +20,23 @@ namespace Community_Center_Project__Team_8_
             _number = person.PhoneNumber;
 
         }
+        public UpdatePersonView(string firstname, string lastname, string address, string phonenumber)
+        {
+            _firstname = firstname;
+            LastName = lastname;
+            Address = address;
+            PhoneNumber = phonenumber;
 
-        private string _firstname;
+        }
+        public UpdatePersonView()
+        {
+          
+        }
+        private bool validphone()
+        {
+            return true;
+        }
+        private string _firstname="";
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -37,7 +52,7 @@ namespace Community_Center_Project__Team_8_
             }
         }
 
-        private string _lastname;
+        private string _lastname="";
 
         public string LastName
         {
@@ -53,7 +68,7 @@ namespace Community_Center_Project__Team_8_
             }
         }
 
-        private string _address;
+        private string _address="";
 
         public string Address
         {
@@ -68,7 +83,7 @@ namespace Community_Center_Project__Team_8_
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Finalize)));
             }
         }
-        private string _number;
+        private string _number="";
 
         public string PhoneNumber
         {
@@ -82,11 +97,12 @@ namespace Community_Center_Project__Team_8_
                 //validate phone number?set of correct codes.
                 _number = value;
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Finalize)));
+
             }
         }
 
        
-        public bool Finalize => FirstName.Length > 0 && LastName.Length > 0 && Address.Length > 0 && PhoneNumber.Length > 0;
+        public bool Finalize => _firstname.Length > 0 && _lastname.Length > 0 && _address.Length > 0 && validphone();
 
         public bool UpdateInfo()
         {

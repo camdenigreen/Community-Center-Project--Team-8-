@@ -1,21 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DatabaseData;
 using DatabaseData.Models;
+using Group = DatabaseData.Group;
 
 namespace Community_Center_Project__Team_8_
 {
-    public class PersonView : INotifyPropertyChanged
+    public class PersonView : INotifyPropertyChanged,INotifyCollectionChanged
     {
 
 
        // private Person _person;
 
         private int _id;
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -45,12 +51,16 @@ namespace Community_Center_Project__Team_8_
         {
             get
             {
+
                 return _balance;
             }
             private set
             {
-                _balance = value;
-      //        PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
+                // _balance = value;
+
+                CalcBalance();
+
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
             }
         }
         public void SetBalance()
@@ -61,11 +71,11 @@ namespace Community_Center_Project__Team_8_
         public decimal CalcBalance()
         {
             decimal res = 0;
-            Balance = res;
+            _balance = res;
 
-            //PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
             GetTransactions();
-            //PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Transactions)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Transactions)));
             return 0;
         }
         List<Group> _mygroups = new List<Group>();
@@ -131,27 +141,40 @@ namespace Community_Center_Project__Team_8_
             return false;
         }
 
-        public bool JoinEvent(int eventId)
+        public void JoinEvent(int eventId,Event even)
         {
+            //we could just get the event and transfer it from one array to the other?
+  
 
-            GetOtherEvents();
-            GetMyEvents();
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyEvents)));
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherEvents)));
-            return false;
+            _otherevents.Remove(even);
+            _myevents.Add(even);
+            
+            //does not cause any problems when events is initally empty
+           PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyEvents)));
+           PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherEvents)));
+            
         }
 
-        public void LeaveGroup(int id)
+        public void LeaveGroup(int id,Group group)
         {
+            _othergroups.Remove(group);
+            _mygroups.Add(group);
+            
 
-            GetOtherGroups();
-            GetMyGroups();
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyGroups)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherGroups)));
 
         }
-        public void LeaveEvent(int id)
+        public void LeaveEvent(int id,Event even)
         {
+            _otherevents.Add(even);
+            _myevents.Remove(even);
+            //something about the second event that its properties dont show
+            //mix up between what is being removed and what we have 
+            //have to invoke it on the other control
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyEvents)));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherEvents)));
+           // return false;
 
         }
 
@@ -210,7 +233,7 @@ namespace Community_Center_Project__Team_8_
                 return _paid;
             }
         }
-        public bool Finalize { get; }
+       
 
         //make sure that amount is >0 and paid >0 or not empty
 
@@ -226,13 +249,38 @@ namespace Community_Center_Project__Team_8_
             Address = person.Address;
             PhoneNumber = person.PhoneNumber;
             Id = person.PersonId;
-            CalcBalance();
             GetMyGroups();
             GetOtherGroups();
-            GetOtherEvents();
-            GetMyEvents();
+            //GetOtherEvents();
+           // GetMyEvents();
             GetTransactions();
+            // CalcBalance();
             //initialize groups and ......
+
+            //List<Event> events = new List<Event>();
+            for (int i = 0; i < 5; i++)
+            {
+                Event even = new Event(i, "name", 3, "description", " organizer", DateTime.Now, 3.5m);
+                OtherEvents.Add(even);
+
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                Event even = new Event(i, "name", 3, "description", " organizer", DateTime.Now, 3.5m);
+                OtherEvents.Add(even);
+
+            }
+
+
+        }
+
+        public PersonView(string firstname,string lastname, string address, string phonenumber)
+        {
+            _firstname = firstname;
+            LastName = lastname;
+            Address = address;
+            PhoneNumber = phonenumber;
 
         }
         private void GetMyGroups()
@@ -243,9 +291,25 @@ namespace Community_Center_Project__Team_8_
                 Group group = new Group (i, "group", "we are a group");
                 _mygroups.Add(group);
             }
-            
-
         }
+
+        private bool validphone()
+        {
+            // Regular expression pattern to match valid phone numbers
+            string pattern = @"^\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{4}$";
+
+            // Create a Regex object
+            Regex regex = new Regex(pattern);
+
+            // Match the phone number against the pattern
+            Match match = regex.Match(PhoneNumber);
+
+            // Return true if the phone number matches the pattern, false otherwise
+            return match.Success;
+        }
+
+        public bool Finalize => _firstname.Length > 0 && LastName.Length > 0 && Address.Length > 0 && validphone();
+
 
         private void GetOtherGroups()
         {
@@ -272,7 +336,7 @@ namespace Community_Center_Project__Team_8_
 
         private void GetMyEvents()
         {
-            _otherevents.Clear();
+            _myevents.Clear();
             for (int i = 0; i < 5; i++)
             {
                 Event even = new Event(i, "eventname", i, "description0", "organizer", DateTime.Now, 3.5m);

@@ -37,7 +37,7 @@
 
 
 
-            <ListView Grid.ColumnSpan="3" Grid.Row="1" Name="EventsListView" ItemsSource="{Binding}" Visibility="Visible" SizeChanged="ListViewSizeChanged7Column" DockPanel.Dock="Top">
+            <ListView Grid.ColumnSpan="3" Grid.Row="1" Name="EventsListView" ItemsSource="{Binding OtherEvents}" Visibility="Visible" SizeChanged="ListViewSizeChanged7Column" DockPanel.Dock="Top">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding EventId}" Header="Id"/>

@@ -68,21 +68,23 @@ namespace Community_Center_Project__Team_8_
                 if (e.Action == true)
                 {
                     person.JoinGroup(e.Id);
+                    EventPersonDisplay.DataContext = person.OtherEvents;
+                    //EventPersonDisplay.EventsListView.Items.Refresh();
                 }
                 else
                 {
-                    person.LeaveGroup(e.Id);
+                    person.LeaveGroup(e.Id,e.Group);
                 }
             }
             else if(e.Type == "event")
             {
                 if (e.Action == true)
                 {
-                    person.JoinEvent(e.Id);
+                    person.JoinEvent(e.Id,e.Event);
                 }
                 else
                 {
-                    person.LeaveEvent(e.Id);
+                    person.LeaveEvent(e.Id,e.Event);
                 }
 
             }
@@ -159,6 +161,7 @@ namespace Community_Center_Project__Team_8_
             GroupsPersonDisplay.Visibility = Visibility.Visible;
             GroupsPersonDisplay.DataContext = this.DataContext;
             PersonView person = this.DataContext as PersonView;
+           
             GroupsPersonDisplay.DataContext = person;
         }
         private void ClickMakePayment(object sender, RoutedEventArgs e)
@@ -178,6 +181,7 @@ namespace Community_Center_Project__Team_8_
             PersonDisplay.Visibility = Visibility.Hidden;
             ViewModifyPerson.Visibility = Visibility.Visible;
             TransactionsPersonDisplay.Visibility = Visibility.Visible;
+            
             TransactionsPersonDisplay.DataContext = this.DataContext;
 
         }
