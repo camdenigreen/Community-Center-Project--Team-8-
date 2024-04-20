@@ -8,7 +8,7 @@ namespace DatabaseData
 {
     public interface IPaymentRepository
     {
-        IReadOnlyList<Charge> RetrievePayments(int personId);
+        IReadOnlyList<Payment> RetrievePayments(int personId);
 
         Payment CreatePayment(int personId, int? eventId, decimal amount, string reason, DateTime date);
     }

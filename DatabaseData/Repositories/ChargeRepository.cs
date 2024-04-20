@@ -24,7 +24,7 @@ namespace DatabaseData
 
         public IReadOnlyList<Charge> RetreiveCharges(int personId)
         {
-            RetrieveChargesByPersonIDDataDelegate data = new RetrieveChargesByPersonIDDataDelegate(personId);
+            RetrieveChargesDataDelegate data = new RetrieveChargesDataDelegate(personId);
             return _executor.ExecuteReader(data);
         }
     }

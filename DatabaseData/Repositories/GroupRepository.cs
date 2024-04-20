@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess;
+using DatabaseData.DataDelegates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,13 @@ namespace DatabaseData
 {
     public class GroupRepository : IGroupRepository
     {
+        private readonly CommandExecutor _executor;
+
+        public GroupRepository(string connectionString)
+        {
+            _executor = new CommandExecutor(connectionString);
+        }
+
         public void AddPersonToGroup(int personId, string groupId)
         {
             throw new NotImplementedException();
@@ -18,14 +27,16 @@ namespace DatabaseData
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<Group> RetrieveGroups()
+        public IReadOnlyList<Group> RetrieveGroups(int groupID, string groupName)
         {
-            throw new NotImplementedException();
+            RetrieveGroupsDataDelegate data = new RetrieveGroupsDataDelegate(groupID, groupName);
+            return _executor.ExecuteReader(data);
         }
 
-        public IReadOnlyList<Group> RetrieveGroups(int personId)
+        public IReadOnlyList<Group> RetrieveGroups(int personID)
         {
-            throw new NotImplementedException();
+            RetrievePersonGroupsDataDelegate data = new RetrievePersonGroupsDataDelegate(personID);
+            return _executor.ExecuteReader(data);
         }
     }
 }

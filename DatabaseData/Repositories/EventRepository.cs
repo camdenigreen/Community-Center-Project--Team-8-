@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess;
+using DatabaseData.DataDelegates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,13 @@ namespace DatabaseData
 {
     public class EventRepository : IEventRepository
     {
+        private readonly CommandExecutor _executor;
+
+        public EventRepository(string connectionString)
+        {
+            _executor = new CommandExecutor(connectionString);
+        }
+
         public void AddPersonToEvent(int personId, int eventId)
         {
             throw new NotImplementedException();
@@ -18,14 +27,16 @@ namespace DatabaseData
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<Event> RetrieveEvents()
+        public IReadOnlyList<Event> RetrieveEvents(int eventID, string eventName)
         {
-            throw new NotImplementedException();
+            RetrieveEventsDataDelegate data = new RetrieveEventsDataDelegate(eventID, eventName);
+            return _executor.ExecuteReader(data);
         }
 
-        public IReadOnlyList<Event> RetrieveEvents(int personId)
+        public IReadOnlyList<Event> RetrieveEvents(int personID)
         {
-            throw new NotImplementedException();
+            RetrieveEventsByPersonIDDataDelegate data = new RetrieveEventsByPersonIDDataDelegate(personID);
+            return _executor.ExecuteReader(data);
         }
 
         public void SetPersonsEventAttendance(int personId, int eventId, bool attended)

@@ -8,7 +8,7 @@ namespace DatabaseData
 {
     public interface IGroupRepository
     {
-        IReadOnlyList<Group> RetrieveGroups();
+        IReadOnlyList<Group> RetrieveGroups(int groupID, string groupName);
 
         IReadOnlyList<Group> RetrieveGroups(int personId);
 
