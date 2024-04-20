@@ -106,6 +106,25 @@
     <Content Include="Sql\Data\People.PeopleGroups.sql" />
     <Content Include="Sql\Schemas\Events.sql" />
     <Content Include="Sql\Schemas\People.sql" />
+    <Content Include="Sql\StoredProcedures\Charges.MakeCharge.sql" />
+    <Content Include="Sql\StoredProcedures\Charges.RetrieveChargesByPersonId.sql" />
+    <Content Include="Sql\StoredProcedures\EventAttendance.UpdateEventAttendance.sql" />
+    <Content Include="Sql\StoredProcedures\Events.CreateEvents.sql" />
+    <Content Include="Sql\StoredProcedures\Events.RetrieveEvents.sql" />
+    <Content Include="Sql\StoredProcedures\Events.RetrieveEventsByPersonID.sql" />
+    <Content Include="Sql\StoredProcedures\Groups.CreateGroup.sql" />
+    <Content Include="Sql\StoredProcedures\Groups.RetrieveGroups.sql" />
+    <Content Include="Sql\StoredProcedures\Payments.FetchPaymentsById.sql" />
+    <Content Include="Sql\StoredProcedures\Payments.InsertGivenPersonId.sql" />
+    <Content Include="Sql\StoredProcedures\Payments.ViewAllPayments.sql" />
+    <Content Include="Sql\StoredProcedures\People.AddPerson.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrieveAllMembers.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrieveBalance.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrieveChargesAndPayments.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrievePersonEvents.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrievePersonGroups.sql" />
+    <Content Include="Sql\StoredProcedures\People.UpdateMembership.sql" />
+    <Content Include="Sql\StoredProcedures\Person.ChargesAndPayments.sql" />
     <Content Include="Sql\Tables\DropTables.sql" />
     <Content Include="Sql\Tables\Events.EventAttendance.sql" />
     <Content Include="Sql\Tables\Events.Events.sql" />
@@ -115,8 +134,6 @@
     <Content Include="Sql\Tables\People.People.sql" />
     <Content Include="Sql\Tables\People.PeopleGroups.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sql\StoredProcedures\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
