@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE RetrieveEvents
+CREATE OR ALTER PROCEDURE Events.RetrieveEvents
 AS
 
 SELECT E.EventID, E.Organizer, E.[Name], E.[Date], E.[Description], G.[Name] AS GroupName, E.Charge

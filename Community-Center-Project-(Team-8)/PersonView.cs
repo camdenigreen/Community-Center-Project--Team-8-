@@ -13,15 +13,10 @@ using Group = DatabaseData.Group;
 
 namespace Community_Center_Project__Team_8_
 {
-    public class PersonView : INotifyPropertyChanged,INotifyCollectionChanged
+    public class PersonView : INotifyPropertyChanged
     {
 
-
-       // private Person _person;
-
         private int _id;
-
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -42,8 +37,6 @@ namespace Community_Center_Project__Team_8_
         public string Address { get; set; }
 
         public int Id { get; private set; }
-
-
 
 
         private decimal _balance;
@@ -143,16 +136,18 @@ namespace Community_Center_Project__Team_8_
 
         public void JoinEvent(int eventId,Event even)
         {
-            //we could just get the event and transfer it from one array to the other?
-  
-
+            
             _otherevents.Remove(even);
             _myevents.Add(even);
             
-            //does not cause any problems when events is initally empty
+            
            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyEvents)));
            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherEvents)));
             
+        }
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(propertyName)));
         }
 
         public void LeaveGroup(int id,Group group)
@@ -169,12 +164,9 @@ namespace Community_Center_Project__Team_8_
         {
             _otherevents.Add(even);
             _myevents.Remove(even);
-            //something about the second event that its properties dont show
-            //mix up between what is being removed and what we have 
-            //have to invoke it on the other control
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyEvents)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherEvents)));
-           // return false;
+          
 
         }
 
@@ -233,9 +225,6 @@ namespace Community_Center_Project__Team_8_
                 return _paid;
             }
         }
-       
-
-        //make sure that amount is >0 and paid >0 or not empty
 
         public void Delete()
         {
@@ -260,17 +249,17 @@ namespace Community_Center_Project__Team_8_
             //List<Event> events = new List<Event>();
             for (int i = 0; i < 5; i++)
             {
-                Event even = new Event(i, "name", 3, "description", " organizer", DateTime.Now, 3.5m);
+                Event even = new Event(i, $"name{i}", 3, "description", " organizer", DateTime.Now, 3.5m);
                 OtherEvents.Add(even);
 
             }
-
-            for (int i = 0; i < 5; i++)
+            /*
+            for (int i = 5; i < 10; i++)
             {
-                Event even = new Event(i, "name", 3, "description", " organizer", DateTime.Now, 3.5m);
+                Event even = new Event(i, $"name{i}", 3, "description", " organizer", DateTime.Now, 3.5m);
                 OtherEvents.Add(even);
 
-            }
+            }*/
 
 
         }
@@ -295,16 +284,13 @@ namespace Community_Center_Project__Team_8_
 
         private bool validphone()
         {
-            // Regular expression pattern to match valid phone numbers
+            
             string pattern = @"^\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{4}$";
 
-            // Create a Regex object
             Regex regex = new Regex(pattern);
-
-            // Match the phone number against the pattern
+          
             Match match = regex.Match(PhoneNumber);
 
-            // Return true if the phone number matches the pattern, false otherwise
             return match.Success;
         }
 

@@ -26,8 +26,8 @@
         <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="8*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="1.2*"/>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -37,15 +37,15 @@
         </Grid.ColumnDefinitions>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="First Name"/>
+                <TextBlock Text="First Name" />
                 <TextBox Name="FirstNameTextBox" MinWidth="100"/>
             </StackPanel>
-            <Button Name="SearchByFirstNameButton" Grid.Row="1" Width="150" FontSize="15" Click="SearchByFirstNameClick" >Search by First Name</Button>
+            <Button Margin="0,0,0,0" Name="SearchByFirstNameButton" Grid.Row="1" Width="150" Height="30" FontSize="15" Click="SearchByFirstNameClick" >Search by First Name</Button>
             <StackPanel HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center">
-                <TextBlock Text="First Name"/>
+                <TextBlock Text="Last Name"/>
                 <TextBox Name="LastNameTextbox" MinWidth="100"/>
             </StackPanel>
-            <Button Name="SearchByGroupNameButton" Grid.Row="1" Grid.Column="1" Width="175" FontSize="15" Click="SearchByLastNameClick">Search by Last Name</Button>
+            <Button Margin="0,0,0,0" Name="SearchByLastNameButton" Grid.Row="1" Grid.Column="1" Width="150" Height="30" FontSize="15" Click="SearchByLastNameClick">Search by Last Name</Button>
 
 
 
@@ -65,8 +65,8 @@
             </ListView.View>
         </ListView>
         <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="560,10,20,0">
-             <Button Grid.Row="3"  DockPanel.Dock="Left" x:Name="SelectPerson"  Content="Select Person" Click="ClickSelectPerson"/>
-                <Button Grid.Row="3"  DockPanel.Dock="Right" x:Name="CreatePerson" Content="Create Person" Click="ClickCreatePerson"/>
+                <Button Grid.Row="3"  Margin="0,0,10,15" DockPanel.Dock="Left" x:Name="SelectPerson"  Content="Select Person" Click="ClickSelectPerson"/>
+                <Button Grid.Row="3"  Margin="0,0,10,15" DockPanel.Dock="Right" x:Name="CreatePerson" Content="Create Person" Click="ClickCreatePerson"/>
             </StackPanel>
 
           

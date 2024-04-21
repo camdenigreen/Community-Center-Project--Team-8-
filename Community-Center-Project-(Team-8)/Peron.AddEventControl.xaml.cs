@@ -57,24 +57,21 @@ namespace Community_Center_Project__Team_8_
         {
             //all events that a person is not in 
             Event even = EventsListView.SelectedItem as Event;
-            //PersonView person=this.DataContext as PersonView;
+            PersonView person=this.DataContext as PersonView;
             
            
             if (even != null)
             {
                 MessageBox.Show($"Event #{even.EventId.ToString()} added");
                 JoinEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventId, true, "event",even));
-                
-                
+                person.OnPropertyChanged(nameof(person.OtherEvents));
+
             }
             else
             {
                 MessageBox.Show("no event to add");
             }
-            //have to change my events for the person
-            //redrwa the dashboard for events
-            //redraw the dashboard for person's  upcoming eevents section
-            //same for groups
+       
 
 
 

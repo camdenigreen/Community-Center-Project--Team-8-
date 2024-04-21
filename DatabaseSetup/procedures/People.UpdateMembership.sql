@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE UpdateMembership
+CREATE OR ALTER PROCEDURE People.UpdateMembership
     @PersonID INT
 AS
 

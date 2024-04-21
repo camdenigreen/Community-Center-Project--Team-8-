@@ -101,18 +101,16 @@ namespace Community_Center_Project__Team_8_
         }
         
             protected void ReturnToMembers(object sender,EventArgs e)
-        {
+         {
 
             PersonDisplay.Visibility = Visibility.Hidden;
             prev_screen.Visibility = Visibility.Hidden;
             PersonControlGrid.Visibility = Visibility.Hidden;
             MembersDisplay.Visibility = Visibility.Visible;
             SwitchButton.Invoke(this, new MainMenuButtonEventArgs(Visibility.Visible));
+            MembersListView.Items.Refresh();
             
-        
-            
-
-            }
+        }
 
         private void ClickCreatePerson(object sender,RoutedEventArgs e)
         {

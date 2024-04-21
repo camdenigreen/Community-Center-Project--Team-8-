@@ -24,6 +24,7 @@
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Margin" Value="15"/>
             <Setter Property="Height" Value="30"/>
+            <Setter Property="Width"  Value="190"/>
         </Style>
         <Style TargetType="TextBlock">
             
@@ -68,14 +69,19 @@
 
 
             <StackPanel  Grid.Column="0" Margin="20,14,0,0">
+             
 
-                <TextBlock FontSize="20" Text="Information: "/>
-                <TextBlock FontSize="12" Text="{Binding Path=PersonId, StringFormat='Person ID: {0}'}"/>
+                <TextBlock Margin="10,0,15,15" FontSize="20" Text="Information: "/>
+                <StackPanel Margin="20,0,15,15">
+                    
+               
+                <TextBlock   Text="{Binding Path=Id, StringFormat='Person ID: {0}'}"/>
                 <TextBlock x:Name="FirstName" Text="{Binding Path=FirstName, StringFormat='First Name: {0}' }"/>
                 <TextBlock x:Name="LastName" Text="{Binding Path=LastName, StringFormat='Last Name: {0}' }"/>
                 <TextBlock x:Name="Address" Text="{Binding Path=Address, StringFormat='Address: {0}' }"/>
                 <TextBlock x:Name="PhoneNumber" Text="{Binding Path=PhoneNumber, StringFormat='PhoneNumber: {0}' }"/>
                 <Button x:Name="UpdateInfo" Content="Update Information" Click="ClickUpdateInfo"/>
+                </StackPanel>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,40,0,0">
