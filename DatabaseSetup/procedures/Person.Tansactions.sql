@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE ChargesAndPayments
+﻿CREATE OR ALTER PROCEDURE Person.Transactions
     @PersonID INT
 AS
 

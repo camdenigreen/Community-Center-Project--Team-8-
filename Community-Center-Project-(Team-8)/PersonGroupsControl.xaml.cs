@@ -51,6 +51,8 @@ namespace Community_Center_Project__Team_8_
             if (group != null)
             {
                 JoinGroup.Invoke(this, new PersonEventGroupEventArgs(group.GroupId, true, "group"));
+                MessageBox.Show($"Group #{group.GroupId.ToString()} added");
+
             }
             else
             {

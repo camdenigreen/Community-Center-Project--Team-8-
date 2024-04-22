@@ -4,15 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Community_Center_Project__Team_8_"
-             xmlns:converters="clr-namespace:Community_Center_Project__Team_8_"
+            
 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
 
     <UserControl.Resources>
-        <converters:NullToBooleanConverter x:Key="NullToBooleanConverter"/>
-
+      
 
 
         <Style TargetType="Button">
@@ -25,6 +24,13 @@
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Margin" Value="15"/>
             <Setter Property="Height" Value="30"/>
+            <Setter Property="Width"  Value="190"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            
+                <Setter Property="FontSize" Value="16"/>
+                
+            
         </Style>
     </UserControl.Resources>
     <Grid >
@@ -32,7 +38,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="14*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid  Grid.Row="0" x:Name="PersonDisplay">
@@ -63,14 +69,19 @@
 
 
             <StackPanel  Grid.Column="0" Margin="20,14,0,0">
+             
 
-                <TextBlock FontSize="20" Text="Information: "/>
-                <TextBlock FontSize="12" Text="{Binding Path=PersonId, StringFormat='Person ID: {0}'}"/>
+                <TextBlock Margin="10,0,15,15" FontSize="20" Text="Information: "/>
+                <StackPanel Margin="20,0,15,15">
+                    
+               
+                <TextBlock   Text="{Binding Path=Id, StringFormat='Person ID: {0}'}"/>
                 <TextBlock x:Name="FirstName" Text="{Binding Path=FirstName, StringFormat='First Name: {0}' }"/>
                 <TextBlock x:Name="LastName" Text="{Binding Path=LastName, StringFormat='Last Name: {0}' }"/>
                 <TextBlock x:Name="Address" Text="{Binding Path=Address, StringFormat='Address: {0}' }"/>
                 <TextBlock x:Name="PhoneNumber" Text="{Binding Path=PhoneNumber, StringFormat='PhoneNumber: {0}' }"/>
                 <Button x:Name="UpdateInfo" Content="Update Information" Click="ClickUpdateInfo"/>
+                </StackPanel>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,40,0,0">
@@ -91,7 +102,7 @@
                     </ListView.ItemTemplate>
 
                 </ListView>
-                <Button   x:Name="LeaveGroup" Content="Leave Group" Click="ClickLeaveGroup"    IsEnabled="{Binding ElementName=MyListView, Path=SelectedItem, Converter={StaticResource NullToBooleanConverter}}"/>
+                <Button   x:Name="LeaveGroup" Content="Leave Group" Click="ClickLeaveGroup"    IsEnabled="{Binding ElementName=MyListView, Path=SelectedItem}"/>
 
             </StackPanel>
 
@@ -101,8 +112,6 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel >
-
-                               
                                 <TextBlock DockPanel.Dock="Left" Text="{Binding Name}" />
                                 <TextBlock DockPanel.Dock="Right" Text="{Binding Date}"/>
 
@@ -129,6 +138,7 @@
             <local:DeletePersonControl x:Name="DeletePersonDisplay" Visibility="Hidden"/>
             <local:LeaveGroupControl x:Name="LeaveGroupDisplay"  Visibility="Hidden"/>
             <local:LeaveEventControl x:Name="LeaveEventDisplay" Visibility="Hidden"/>
+            <local:CreatePersonControl x:Name="CreatePersonDisplay" Visibility="Hidden"/>
 
         </Grid>
         <Grid x:Name="BackGrid" Margin="0,409,0,0" Grid.RowSpan="2">

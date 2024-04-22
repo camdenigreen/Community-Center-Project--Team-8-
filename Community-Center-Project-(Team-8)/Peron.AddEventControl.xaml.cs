@@ -26,14 +26,6 @@ namespace Community_Center_Project__Team_8_
         {
             InitializeComponent();
 
-            List<Event> events = new List<Event>();
-            for (int i = 0; i < 10; i++)
-            {
-                Event even= new Event(i, "name", 3, "description", " organizer", DateTime.Now,3.5m);
-                events.Add(even);
-
-            }
-            EventsListView.DataContext = events;
 
         }
 
@@ -65,22 +57,23 @@ namespace Community_Center_Project__Team_8_
         {
             //all events that a person is not in 
             Event even = EventsListView.SelectedItem as Event;
-            //PersonView person=this.DataContext as PersonView;
+            PersonView person=this.DataContext as PersonView;
             
-
+           
             if (even != null)
             {
                 MessageBox.Show($"Event #{even.EventId.ToString()} added");
-                JoinEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventId, true, "event"));
+                JoinEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventId, true, "event",even));
+                person.OnPropertyChanged(nameof(person.OtherEvents));
+
             }
             else
             {
                 MessageBox.Show("no event to add");
             }
-            //have to change my events for the person
-            //redrwa the dashboard for events
-            //redraw the dashboard for person's  upcoming eevents section
-            //same for groups
+       
+
+
 
         }
 

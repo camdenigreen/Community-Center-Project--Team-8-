@@ -100,7 +100,6 @@
     <Compile Include="LeaveGroupControl.xaml.cs">
       <DependentUpon>LeaveGroupControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NullToBooleanConverter.cs" />
     <Compile Include="PaymentView.cs" />
     <Compile Include="PersonEventGroupEventArgs.cs" />
     <Compile Include="MainMenuButtonEventArgs.cs" />
@@ -224,6 +223,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpdatePersonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowGroupControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
