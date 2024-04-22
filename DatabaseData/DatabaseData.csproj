@@ -75,6 +75,7 @@
     <Compile Include="DataDelegates\UpdateGroupMembershipDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateMembershipDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdatePhoneNumberDataDelegate.cs" />
+    <Compile Include="IRepositories\ITransactionRepository.cs" />
     <Compile Include="Models\ActiveGroup.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\Event.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Repositories\PersonRepository.cs" />
     <Compile Include="DataDelegates\UpdateLastNameDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateInformationDataDelegate.cs" />
+    <Compile Include="Repositories\TransactionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data" />

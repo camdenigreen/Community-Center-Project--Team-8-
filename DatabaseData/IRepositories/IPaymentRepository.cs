@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseData
+namespace DatabaseData.IRepository
 {
     public interface IPaymentRepository
     {

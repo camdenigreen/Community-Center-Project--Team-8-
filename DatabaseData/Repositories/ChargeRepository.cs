@@ -22,7 +22,7 @@ namespace DatabaseData
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<Charge> RetreiveCharges(int personId)
+        public IReadOnlyList<Charge> RetrieveCharges(int personId)
         {
             RetrieveChargesDataDelegate data = new RetrieveChargesDataDelegate(personId);
             return _executor.ExecuteReader(data);

@@ -1,6 +1,6 @@
 CREATE OR ALTER PROCEDURE People.UpdateLastName
     @PersonID INT,
-    @LastName LastName
+    @LastName NVARCHAR(5)
 AS 
 
 UPDATE People.People
