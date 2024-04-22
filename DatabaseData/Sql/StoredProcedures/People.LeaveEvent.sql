@@ -1,9 +1,8 @@
 ﻿CREATE OR ALTER PROCEDURE People.LeaveEvent
-	@PersonId INT 
+    @PersonId INT
 AS
 
-UPDATE [Events].[EventAttendance] 
-SET PersonID=NULL
-WHERE PersonId=@PersonId
+UPDATE Events.EventAttendance
+SET PersonID = NULL
+WHERE PersonId = @PersonId
 GO
-

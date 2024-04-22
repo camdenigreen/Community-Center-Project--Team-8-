@@ -4,7 +4,7 @@ CREATE OR ALTER PROCEDURE People.UpdateFirstName
 AS
 
 UPDATE People.People
-SET FirstName=@FirstName
-WHERE PersonID=@PersonID
-    
+SET FirstName = @FirstName
+WHERE PersonID = @PersonID
+
 GO

@@ -1,11 +1,18 @@
-﻿CREATE OR ALTER PROCEDURE [Events].RetrievPersonEvents
- @PersonId INT
+﻿CREATE OR ALTER PROCEDURE Events.RetrievPersonEvents
+    @PersonId INT
 AS
 
-SELECT E.Name,E.[Date]
-FROM [Events].[Events] E
-	JOIN [Events].[EventAttendance] EA ON EA.EventID=E.EventID
-WHERE EA.PersonID=@PersonId
+SELECT
+    E.EventID,
+    E.Name,
+    E.GroupID,
+    E.Description,
+    E.Organizer,
+    E.Date,
+    E.Charge
+FROM Events.Events AS E
+INNER JOIN Events.EventAttendance AS EA ON E.EventID = EA.EventID
+WHERE EA.PersonID = @PersonId
 ORDER BY E.Date ASC;
 
 GO

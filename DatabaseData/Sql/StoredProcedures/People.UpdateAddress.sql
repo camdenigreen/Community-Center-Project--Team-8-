@@ -1,10 +1,10 @@
 CREATE OR ALTER PROCEDURE People.UpdateAddress
     @PersonID INT,
     @Address NVARCHAR(100)
-AS 
+AS
 
 UPDATE People.People
-SET [Address]=@Address
-WHERE PersonID=@PersonID
-    
+SET Address = @Address
+WHERE PersonID = @PersonID
+
 GO
