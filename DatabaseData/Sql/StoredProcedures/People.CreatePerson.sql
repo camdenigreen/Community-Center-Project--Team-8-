@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE AddPerson
+CREATE OR ALTER PROCEDURE People.CreatePerson
 	@FirstName NVARCHAR(50),
 	@LastName NVARCHAR(50),
 	@Address NVARCHAR(100),
@@ -9,5 +9,6 @@ AS
 INSERT People.People(FirstName,LastName,[Address],PhoneNumber)
 VALUES( @FirstName, @LastName, @Address, @PhoneNumber);
 
-SET @PersonID =SCOPE_IDENTITY();
+SET @PersonID = SCOPE_IDENTITY();
+
 GO

@@ -73,13 +73,6 @@ namespace Community_Center_Project__Team_8_
             ListViewDockPanel.Visibility = Visibility.Visible;
             PastEventsListView.Visibility = Visibility.Visible;
 
-            List<PastEvent> list = new List<PastEvent>();
-            for (int i = 0; i < 1000; i++)
-            {
-                PastEvent past = new PastEvent(i, "Back to school bash", DateTime.Now, 1000, 500, 50, 2, 2, 2);
-                list.Add(past);
-            }
-            PastEventsListView.DataContext = list;
         }
 
         private void GroupActiveMembersClick(object sender, RoutedEventArgs e)
@@ -88,13 +81,6 @@ namespace Community_Center_Project__Team_8_
             ListViewDockPanel.Visibility = Visibility.Visible;
             ActiveGroupsListView.Visibility = Visibility.Visible;
 
-            List<ActiveGroup> list = new List<ActiveGroup>();
-            for (int i = 0; i < 100; i++)
-            {
-                ActiveGroup ag = new ActiveGroup(i, "Group that is active", 100, 99, 99);
-                list.Add(ag);
-            }
-            ActiveGroupsListView.DataContext = list;
         }
 
 

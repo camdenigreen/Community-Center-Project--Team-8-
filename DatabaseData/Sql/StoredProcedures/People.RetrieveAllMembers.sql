@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE RetrieveAllMembers
+CREATE OR ALTER PROCEDURE People.RetrieveAllMembers
 	@PersonID INT,
 	@FirstName NVARCHAR(50),
 	@LastName NVARCHAR(50),

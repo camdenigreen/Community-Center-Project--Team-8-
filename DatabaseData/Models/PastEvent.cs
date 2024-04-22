@@ -13,7 +13,6 @@ namespace DatabaseData.Models
         public string Name { get; }
 
         public DateTime Date { get; }
-
         public int Registrants { get; }
 
         public int Attendees { get; }
@@ -26,9 +25,9 @@ namespace DatabaseData.Models
 
         public double MTDPercentage { get; }
 
-        public PastEvent(int eventId, string name, DateTime date, int registrants, int attendees, double percentage, int mTDRegistrants, int mTDAttendees, double mTDPercentage)
+        public PastEvent(int eventID, string name, DateTime date, int registrants, int attendees, double percentage, int mTDRegistrants, int mTDAttendees, double mTDPercentage)
         {
-            EventId = eventId;
+            EventId = eventID;
             Name = name;
             Date = date;
             Registrants = registrants;

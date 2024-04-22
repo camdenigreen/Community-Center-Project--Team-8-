@@ -8,11 +8,11 @@ namespace DatabaseData
 {
     public class Event
     {
-        public int EventId { get; }
+        public int EventID { get; }
 
         public string Name { get; }
 
-        public int? GroupId { get; }
+        public int? GroupID { get; }
 
         public string Description { get; }
 
@@ -24,9 +24,9 @@ namespace DatabaseData
 
         public Event(int eventId, string name, int? groupId, string description, string organizer, DateTime date, decimal charge)
         {
-            EventId = eventId;
+            EventID = eventId;
             Name = name;
-            GroupId = groupId;
+            GroupID = groupId;
             Description = description;
             Organizer = organizer;
             Date = date;

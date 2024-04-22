@@ -12,7 +12,6 @@ namespace DatabaseData.Models
 
         public decimal Amount { get; }
 
-
         public string Type { get; }
 
         public DateTime Date { get; }

@@ -26,14 +26,5 @@ namespace DatabaseData
             PhoneNumber = phoneNumber;
             Balance = balance;
         }
-
-        public PersonBalance(Person person, decimal balance)
-        {
-            PersonId = person.PersonId;
-            FirstName = person.FirstName;
-            LastName = person.LastName;
-            PhoneNumber = person.PhoneNumber;
-            Balance = balance;
-        }
     }
 }
