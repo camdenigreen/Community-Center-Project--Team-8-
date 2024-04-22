@@ -113,7 +113,7 @@
     <Content Include="Sql\StoredProcedures\Events.RetrieveEvents.sql" />
     <Content Include="Sql\StoredProcedures\Events.RetrieveEventsByPersonID.sql" />
     <Content Include="Sql\StoredProcedures\Groups.CreateGroup.sql" />
-    <Content Include="Sql\StoredProcedures\Groups.RetrieveGroups.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrieveGroups.sql" />
     <Content Include="Sql\StoredProcedures\Payments.FetchPaymentsById.sql" />
     <Content Include="Sql\StoredProcedures\Payments.InsertGivenPersonId.sql" />
     <Content Include="Sql\StoredProcedures\Payments.ViewAllPayments.sql" />

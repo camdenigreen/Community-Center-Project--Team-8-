@@ -16,7 +16,7 @@ namespace DatabaseData.DataDelegates
         private readonly string _groupName;
 
         public RetrieveGroupsDataDelegate(int? groupID, string groupName)
-            : base("Groups.RetrieveGroups")
+            : base("People.RetrieveGroups")
         {
             _groupID = groupID;
             _groupName = groupName;

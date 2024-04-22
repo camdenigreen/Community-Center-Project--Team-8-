@@ -44,6 +44,9 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseDa
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\Tables\People.Charges.sql"
 
 Write-Host "Storing procedures..."
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\StoredProcedures\People.RetrieveGroups.sql"
+
+
 
 Write-Host "Inserting data..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\Data\People.People.sql"

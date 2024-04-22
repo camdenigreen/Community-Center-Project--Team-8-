@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -50,16 +51,35 @@ namespace Community_Center_Project__Team_8_
 
         private void SearchByGroupIdClick(object sender, RoutedEventArgs e)
         {
-            //DATA VALIDATION
-            //Run query
-            //change data context
+            int i;
+            if (Int32.TryParse(GroupIdTextBox.Text, out i))
+            {
+                GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Group> groups = groupRepository.RetrieveGroups(i, null);
+                SearchGroupListView.DataContext = groups;
+            }
+            else if (String.IsNullOrEmpty(GroupIdTextBox.Text))
+            {
+                GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Group> groups = groupRepository.RetrieveGroups(null, null);
+                SearchGroupListView.DataContext = groups;
+            }
         }
 
         private void SearchByGroupNameClick(object sender, RoutedEventArgs e)
         {
-            //DATA VALIDATION
-            //Run query
-            //change data context
+            if (GroupNameTextbox.Text.Length<=50)
+            {
+                GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Group> groups = groupRepository.RetrieveGroups(null, GroupNameTextbox.Text);
+                SearchGroupListView.DataContext = groups;
+            }
+            else if (String.IsNullOrEmpty(GroupNameTextbox.Text))
+            {
+                GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Group> groups = groupRepository.RetrieveGroups(null, null);
+                SearchGroupListView.DataContext = groups;
+            }
         }
 
         private void GoToGroupClick(object sender, RoutedEventArgs e)
