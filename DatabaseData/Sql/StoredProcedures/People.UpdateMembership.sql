@@ -1,9 +1,9 @@
-CREATE OR ALTER PROCEDURE UpdateMembership
+CREATE OR ALTER PROCEDURE People.UpdateMembership
     @PersonID INT
 AS
 
-
 UPDATE People.People
-    SET IsMember = 0
-    WHERE PersonID = @PersonID;
+SET IsMember = 0
+WHERE PersonID = @PersonID;
+
 GO

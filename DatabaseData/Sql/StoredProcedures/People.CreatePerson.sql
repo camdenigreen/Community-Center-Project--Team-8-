@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE AddPerson
+CREATE OR ALTER PROCEDURE People.CreatePerson
 	@FirstName NVARCHAR(50),
 	@LastName NVARCHAR(50),
 	@Address NVARCHAR(100),

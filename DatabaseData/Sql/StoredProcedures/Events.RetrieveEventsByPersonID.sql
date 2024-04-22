@@ -1,10 +1,9 @@
-CREATE OR ALTER PROCEDURE [Events].RetrieveEventsByPersonID
-   @PersonID INT
+CREATE OR ALTER PROCEDURE [Events].RetriveEventsByPersonId
+    @PersonID INT
 AS
 
-SELECT E.EventID, E.GroupID, E.[Description], E.Organizer, E.[Date], E.Charge, E.[Name]
-FROM [Events].EventAttendance EA
-    INNER JOIN People.People P ON EA.PersonID = P.PersonID
-    INNER JOIN [Events].[Events] E ON EA.EventID = E.EventID
-    WHERE E.PersonID = @PersonID;
+SELECT E.EventID, E.Organizer, E.[Name], E.[Date], E.[Description], E.Charge
+FROM [Events].[Events] E
+    INNER JOIN [Events].EventAttendance EA ON EA.PersonID=@PersonID
+
 GO

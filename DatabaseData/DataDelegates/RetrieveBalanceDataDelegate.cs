@@ -10,7 +10,7 @@ using DataAccess.Exceptions;
 
 namespace DatabaseData.DataDelegates
 {
-    internal class RetrieveBalanceDataDelegate : DataReaderDelegate<decimal>
+    public class RetrieveBalanceDataDelegate : DataReaderDelegate<decimal>
     {
         private readonly int _personID;
 

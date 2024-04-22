@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE Charges.MakeCharge
+CREATE OR ALTER PROCEDURE Person.CreateCharge
     @PersonID  INT,
     @Amount  MONEY,
     @Reason  NVARCHAR(MAX),
@@ -11,4 +11,5 @@ INSERT People.Charges(PersonID, EventID, Amount, Reason, [Date])
 Values(@PersonID, @EventID, @Amount, @Reason, @Date)  
 
 SET @ChargesID=SCOPE_IDENTITY();
+
 GO

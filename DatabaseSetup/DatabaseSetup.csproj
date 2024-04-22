@@ -49,14 +49,18 @@
     <Content Include="Procedures\Charges.RetriveChargesByPersonId.sql" />
     <Content Include="Procedures\Charges.MakeCharge.sql" />
     <Content Include="Procedures\EventAttendance.InsertEvent.sql" />
+    <Content Include="Procedures\EventAttendance.InsertPerson.sql" />
     <Content Include="Procedures\EventAttendance.RetrieveEventsByPersonId.sql" />
     <Content Include="Procedures\EventAttendance.UpdateEventAttendance.sql" />
     <Content Include="Procedures\Events.CreateEvents.sql" />
     <Content Include="Procedures\Events.RetrieveEvents.sql" />
+    <Content Include="Procedures\Events.RetrieveEventsByPersonId.sql" />
+    <Content Include="Procedures\Events.RetrievePeople.sql" />
     <Content Include="Procedures\Events.UpcomingEventsAggregated.sql" />
     <Content Include="Procedures\Groups.ActiveMembers.sql" />
     <Content Include="Procedures\Groups.CreateGroup.sql" />
     <Content Include="Procedures\Groups.RetrieveGroups.sql" />
+    <Content Include="Procedures\Groups.RetrieveGroupsByPersonId.sql" />
     <Content Include="Procedures\Payments.FetchPaymentsById.sql" />
     <Content Include="Procedures\Payments.InsertGivenPersonId.sql" />
     <Content Include="Procedures\Payments.ViewAllPayments.sql" />
@@ -68,7 +72,13 @@
     <Content Include="Procedures\People.RetrieveChargesAndPayments.sql" />
     <Content Include="Procedures\People.RetrievePersonEvents.sql" />
     <Content Include="Procedures\People.RetrievePersonGroups.sql" />
+    <Content Include="Procedures\People.UpdateAddress.sql" />
+    <Content Include="Procedures\People.UpdateFirstName.sql" />
+    <Content Include="Procedures\People.UpdateLastName.sql" />
     <Content Include="Procedures\People.UpdateMembership.sql" />
+    <Content Include="Procedures\People.UpdatePhoneNumber.sql" />
+    <Content Include="Procedures\PeopleGroups.AddPersonToGroup.sql" />
+    <Content Include="Procedures\PeopleGroups.UpdateGroupMembership.sql" />
     <Content Include="Procedures\Person.ChargesAndPayments.sql" />
     <Content Include="Tables.sql" />
   </ItemGroup>

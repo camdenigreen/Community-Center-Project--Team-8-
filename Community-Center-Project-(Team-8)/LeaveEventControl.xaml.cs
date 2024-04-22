@@ -31,9 +31,9 @@ namespace Community_Center_Project__Team_8_
         private void ClickLeaveEvent(object sender, RoutedEventArgs e)
         {
             Event even = this.DataContext as Event;
-            int id = even.EventId;
+            int id = even.EventID;
             MessageBox.Show("Left Event #" + id);
-            LeftEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventId, false, "event",even));
+            LeftEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventID, false, "event",even));
         }
     }
 }

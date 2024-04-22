@@ -62,8 +62,8 @@ namespace Community_Center_Project__Team_8_
            
             if (even != null)
             {
-                MessageBox.Show($"Event #{even.EventId.ToString()} added");
-                JoinEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventId, true, "event",even));
+                MessageBox.Show($"Event #{even.EventID.ToString()} added");
+                JoinEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventID, true, "event",even));
                 
                 
             }

@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE Payments.FetchPaymentsById
+CREATE OR ALTER PROCEDURE People.CreatePayment
     @PersonID  INT,
     @Amount  MONEY,
     @Reason  NVARCHAR(MAX),
@@ -14,4 +14,5 @@ VALUES(
     @Date
 );
 SET @PaymentId=SCOPE_IDENTITY();
+
 GO
