@@ -50,10 +50,14 @@
     <Compile Include="DataDelegates\FetchPersonDataDelegate.cs" />
     <Compile Include="DataDelegates\GetPersonDataDelegate.cs" />
     <Compile Include="DataDelegates\InsertEventAttendanceDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveActiveMembersDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveAllMembersDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveBalanceDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveChargesAndPaymentsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveChargesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveEventsByPersonIDDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveEventsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveGroupsByPersonIDDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveNegativeBalancesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePastEventsDataDelegate.cs" />
@@ -61,7 +65,11 @@
     <Compile Include="DataDelegates\RetrievePersonGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveUpcomingEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\UpcomingEventsAggregatedDataDelegate.cs" />
+    <Compile Include="DataDelegates\UpdateAddressDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateEventAttendanceDataDelegate.cs" />
+    <Compile Include="DataDelegates\UpdateFirstNameDataDelegate.cs" />
+    <Compile Include="DataDelegates\UpdateMembershipDataDelegate.cs" />
+    <Compile Include="DataDelegates\UpdatePhoneNumberDataDelegate.cs" />
     <Compile Include="Models\ActiveGroup.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\Event.cs" />
@@ -83,6 +91,7 @@
     <Compile Include="IRepositories\IPersonRepository.cs" />
     <Compile Include="Repositories\PaymentRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
+    <Compile Include="DataDelegates\UpdateLastNameDataDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data" />
@@ -124,7 +133,7 @@
     <Content Include="Sql\StoredProcedures\Events.RetrieveEvents.sql" />
     <Content Include="Sql\StoredProcedures\People.CreateGroup.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveGroups.sql" />
-    <Content Include="Sql\StoredProcedures\People.RetrievePaymentsById.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrievePaymentsByPersonID.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveAllMembers.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveBalance.sql" />
     <Content Include="Sql\StoredProcedures\Events.RetrievePersonEvents.sql" />
@@ -132,12 +141,12 @@
     <Content Include="Sql\StoredProcedures\People.UpdateMembership.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveChargesAndPayments.sql" />
     <Content Include="Sql\StoredProcedures\Events.InsertEventAttendance.sql" />
-    <Content Include="Sql\StoredProcedures\Events.RetrieveEventAttendanceByPersonId.sql" />
+    <Content Include="Sql\StoredProcedures\Events.RetrieveEventAttendanceByPersonID.sql" />
     <Content Include="Sql\StoredProcedures\Events.CreateEvent.sql" />
-    <Content Include="Sql\StoredProcedures\Events.RetrieveEventsByPersonId.sql" />
+    <Content Include="Sql\StoredProcedures\Events.RetrieveEventsByPersonID.sql" />
     <Content Include="Sql\StoredProcedures\Events.UpcomingEventsAggregated.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveActiveMembers.sql" />
-    <Content Include="Sql\StoredProcedures\People.RetrieveGroupsByPersonId.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrieveGroupsByPersonID.sql" />
     <Content Include="Sql\StoredProcedures\People.CreatePayment.sql" />
     <Content Include="Sql\StoredProcedures\People.CreatePerson.sql" />
     <Content Include="Sql\StoredProcedures\People.NegativeBalance.sql" />

@@ -13,7 +13,7 @@ namespace DatabaseData.DataDelegates
         private readonly int _personID;
 
         public RetrievePaymentsDataDelegate(int personID)
-            : base("People.RetrievePayments")
+            : base("People.RetrievePaymentsByPersonID")
         {
             _personID = personID;
         }

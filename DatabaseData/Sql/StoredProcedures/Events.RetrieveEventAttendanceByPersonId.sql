@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE [Events].RetrieveEventAttendanceByPersonId
+CREATE OR ALTER PROCEDURE [Events].RetrieveEventAttendanceByPersonID
    @PersonID INT
 AS
 

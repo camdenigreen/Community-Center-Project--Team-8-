@@ -11,7 +11,8 @@ namespace DatabaseData.DataDelegates
 {
     public class RetrieveNegativeBalancesDataDelegate : DataReaderDelegate<IReadOnlyList<PersonBalance>>
     {
-        public RetrieveNegativeBalancesDataDelegate() : base("People.NegativeBalance")
+        public RetrieveNegativeBalancesDataDelegate()
+            : base("People.NegativeBalance")
         {
         }
 

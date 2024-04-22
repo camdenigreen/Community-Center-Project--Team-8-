@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE UpdateAddress
+CREATE OR ALTER PROCEDURE People.UpdateLastName
     @PersonID INT,
     @LastName LastName
     

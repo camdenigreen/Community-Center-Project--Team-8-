@@ -1,4 +1,4 @@
-CREATE PROCEDURE People.RetrieveGroupsByPerson
+CREATE PROCEDURE People.RetrieveGroupsByPersonID
 	@PersonID INT
 AS
 

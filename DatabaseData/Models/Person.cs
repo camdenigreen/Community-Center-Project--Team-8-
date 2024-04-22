@@ -24,7 +24,7 @@ namespace DatabaseData
      
 
    
-        public Person(int personId, string firstName, string lastName, string address, string phoneNumber, byte isMember)
+        public Person(int personId, string firstName, string lastName, string address, string phoneNumber, bool isMember)
         {
             PersonId = personId;
             FirstName = firstName;

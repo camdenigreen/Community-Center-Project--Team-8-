@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE People.RetrievePaymentsById
+CREATE OR ALTER PROCEDURE People.RetrievePaymentsByID
     @PersonID INT
 AS
 
