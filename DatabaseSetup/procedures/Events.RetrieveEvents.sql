@@ -5,7 +5,7 @@ AS
 
 SELECT E.EventID, E.Organizer, E.[Name], E.[Date], E.[Description], G.[Name] AS GroupName, E.Charge
 FROM [Events].[Events] E
-    INNER JOIN People.Groups G ON E.GroupID = G.GroupID;
+    INNER JOIN People.Groups G ON E.GroupID = G.GroupID
 WHERE (
         (@EventID IS NOT NULL AND @EventID = E.EventID)
         OR  
