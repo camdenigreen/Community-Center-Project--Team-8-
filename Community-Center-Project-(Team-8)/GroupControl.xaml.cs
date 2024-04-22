@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,6 +56,9 @@ namespace Community_Center_Project__Team_8_
             GroupControlsDisplay.Visibility = Visibility.Visible;
             SearchGroupDisplay.Visibility = Visibility.Visible;
             SearchGroupDisplay.SearchingGrid.Visibility = Visibility.Visible;
+            GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<Group> groups = groupRepository.RetrieveGroups(null, null);
+            SearchGroupDisplay.SearchGroupListView.DataContext = groups;
         }
     }
 }

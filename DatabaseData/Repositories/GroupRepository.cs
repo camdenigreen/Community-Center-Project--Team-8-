@@ -27,7 +27,7 @@ namespace DatabaseData
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<Group> RetrieveGroups(int groupID, string groupName)
+        public IReadOnlyList<Group> RetrieveGroups(int? groupID, string groupName)
         {
             RetrieveGroupsDataDelegate data = new RetrieveGroupsDataDelegate(groupID, groupName);
             return _executor.ExecuteReader(data);
