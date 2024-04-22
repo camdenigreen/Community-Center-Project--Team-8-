@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataDelegates\AddPersonToGroupDataDelegate.cs" />
-    <Compile Include="DataDelegates\AggregatedPreviousEvents.cs" />
     <Compile Include="DataDelegates\CreateChargeDataDelegate.cs" />
     <Compile Include="DataDelegates\CreateEventDataDelegate.cs" />
     <Compile Include="DataDelegates\CreateGroupDataDelegate.cs" />
@@ -50,6 +49,8 @@
     <Compile Include="DataDelegates\FetchPersonDataDelegate.cs" />
     <Compile Include="DataDelegates\GetPersonDataDelegate.cs" />
     <Compile Include="DataDelegates\InsertEventAttendanceDataDelegate.cs" />
+    <Compile Include="DataDelegates\LeaveEventDataDelegate.cs" />
+    <Compile Include="DataDelegates\LeaveGroupDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveActiveMembersDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveAllMembersDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveBalanceDataDelegate.cs" />
@@ -60,6 +61,8 @@
     <Compile Include="DataDelegates\RetrieveGroupsByPersonIDDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveNegativeBalancesDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveOtherEventsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveOtherGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePastEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePaymentsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePersonGroupsDataDelegate.cs" />
@@ -69,6 +72,7 @@
     <Compile Include="DataDelegates\UpdateAddressDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateEventAttendanceDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateFirstNameDataDelegate.cs" />
+    <Compile Include="DataDelegates\UpdateGroupMembershipDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateMembershipDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdatePhoneNumberDataDelegate.cs" />
     <Compile Include="Models\ActiveGroup.cs" />
@@ -161,6 +165,10 @@
     <Content Include="Sql\StoredProcedures\People.UpdateGroupMembership.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveTransactions.sql" />
     <Content Include="Sql\StoredProcedures\People.UpdateInformation.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrieveOtherGroups.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrieveOtherEvents.sql" />
+    <Content Include="Sql\StoredProcedures\People.LeaveGroup.sql" />
+    <Content Include="Sql\StoredProcedures\People.LeaveEvent.sql" />
     <Content Include="Sql\Tables\DropTables.sql" />
     <Content Include="Sql\Tables\Events.EventAttendance.sql" />
     <Content Include="Sql\Tables\Events.Events.sql" />
