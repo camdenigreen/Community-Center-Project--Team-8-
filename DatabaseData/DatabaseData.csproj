@@ -49,6 +49,7 @@
     <Compile Include="DataDelegates\RetrieveEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveNegativeBalancesDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrievePastEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePaymentsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePersonGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveUpcomingEventsDataDelegate.cs" />
