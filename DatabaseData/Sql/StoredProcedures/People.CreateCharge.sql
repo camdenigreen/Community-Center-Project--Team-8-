@@ -1,15 +1,15 @@
-CREATE OR ALTER PROCEDURE Person.CreateCharge
+CREATE OR ALTER PROCEDURE People.CreateCharge
     @PersonID  INT,
     @Amount  MONEY,
     @Reason  NVARCHAR(MAX),
     @Date  DATETIME2(7),
     @EventID INT,
-    @ChargesID INT OUTPUT
+    @ChargeID INT OUTPUT
 AS
 
 INSERT People.Charges(PersonID, EventID, Amount, Reason, [Date])
 Values(@PersonID, @EventID, @Amount, @Reason, @Date)  
 
-SET @ChargesID=SCOPE_IDENTITY();
+SET @ChargeID=SCOPE_IDENTITY();
 
 GO

@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace DatabaseData.Models
 {
-    public class PastEvent
+    public class PastEvent : Event
     {
-        public int EventId { get; }
-
-        public string Name { get; }
-
-        public DateTime Date { get; }
-
         public int Registrants { get; }
 
         public int Attendees { get; }
@@ -26,11 +20,9 @@ namespace DatabaseData.Models
 
         public double MTDPercentage { get; }
 
-        public PastEvent(int eventId, string name, DateTime date, int registrants, int attendees, double percentage, int mTDRegistrants, int mTDAttendees, double mTDPercentage)
+        public PastEvent(int eventID, string name, int? groupID, string description, string organizer, DateTime date, decimal charge, int registrants, int attendees, double percentage, int mTDRegistrants, int mTDAttendees, double mTDPercentage)
+            : base(eventID, name, groupID, description, organizer, date, charge)
         {
-            EventId = eventId;
-            Name = name;
-            Date = date;
             Registrants = registrants;
             Attendees = attendees;
             Percentage = percentage;

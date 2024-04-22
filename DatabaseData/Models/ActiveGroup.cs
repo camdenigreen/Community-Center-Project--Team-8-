@@ -6,31 +6,25 @@ using System.Threading.Tasks;
 
 namespace DatabaseData.Models
 {
-    public class ActiveGroup
+    public class ActiveGroup : Group
     {
-        public int GroupId { get; }
-
-        public string Name { get; }
-
         public int TotalMembers { get; }
 
         public int ActiveMembers { get; }
 
         public double PercentageOfActiveMembers { get; }
 
-        public ActiveGroup(int groupId, string name, int totalMembers, int activeMembers, double percentageOfActiveMembers)
+        public ActiveGroup(int groupID, string name, string description, int totalMembers, int activeMembers, double percentageOfActiveMembers)
+            : base(groupID, name, description)
         {
-            GroupId = groupId;
-            Name = name;
             TotalMembers = totalMembers;
             ActiveMembers = activeMembers;
             PercentageOfActiveMembers = percentageOfActiveMembers;
         }
 
-        public ActiveGroup(Group group, int totalMembers, int activeMembers, double percentageOfActiveMembers) 
+        public ActiveGroup(Group g, int totalMembers, int activeMembers, double percentageOfActiveMembers)
+            : base(g.GroupId, g.Name, g.Description)
         {
-            GroupId = group.GroupId;
-            Name = group.Name;
             TotalMembers = totalMembers;
             ActiveMembers = activeMembers;
             PercentageOfActiveMembers = percentageOfActiveMembers;

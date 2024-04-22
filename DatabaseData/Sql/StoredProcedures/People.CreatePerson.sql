@@ -9,6 +9,6 @@ AS
 INSERT People.People(FirstName,LastName,[Address],PhoneNumber)
 VALUES( @FirstName, @LastName, @Address, @PhoneNumber);
 
-SET @PersonID =SCOPE_IDENTITY();
+SET @PersonID = SCOPE_IDENTITY();
 
 GO

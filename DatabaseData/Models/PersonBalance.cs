@@ -6,41 +6,19 @@ using System.Threading.Tasks;
 
 namespace DatabaseData.Models
 {
-    public class PersonBalance
+    public class PersonBalance : Person
     {
-        public int PersonId { get; }
-
-        public string FirstName { get; }
-
-        public string LastName { get; }
-
-        public string Address { get; }
-
-        public string PhoneNumber { get; }
-
-        public byte IsMember { get; }
-
         public decimal Balance { get; }
 
-        public PersonBalance(int personId, string firstName, string lastName, string address, string phoneNumber, byte isMember, decimal balance)
+        public PersonBalance(int personID, string firstName, string lastName, string address, string phoneNumber, byte isMember, decimal balance)
+            : base(personID, firstName, lastName, address, phoneNumber, isMember)
         {
-            PersonId = personId;
-            FirstName = firstName;
-            LastName = lastName;
-            Address = address;
-            PhoneNumber = phoneNumber;
-            IsMember = isMember;
             Balance = balance;
         }
 
-        public PersonBalance(Person person, decimal balance)
+        public PersonBalance(Person p, decimal balance)
+            : base(p.PersonId, p.FirstName, p.LastName, p.Address, p.PhoneNumber, p.IsMember)
         {
-            PersonId = person.PersonId;
-            FirstName = person.FirstName;
-            LastName = person.LastName;
-            Address = person.Address;
-            PhoneNumber = person.PhoneNumber;
-            IsMember = person.IsMember;
             Balance = balance;
         }
     }

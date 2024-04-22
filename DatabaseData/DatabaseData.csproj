@@ -42,11 +42,15 @@
   <ItemGroup>
     <Compile Include="DataDelegates\AddPersonToGroupDataDelegate.cs" />
     <Compile Include="DataDelegates\AggregatedPreviousEvents.cs" />
+    <Compile Include="DataDelegates\CreateChargeDataDelegate.cs" />
     <Compile Include="DataDelegates\CreateEventDataDelegate.cs" />
+    <Compile Include="DataDelegates\CreateGroupDataDelegate.cs" />
+    <Compile Include="DataDelegates\CreatePaymentDataDelegate.cs" />
     <Compile Include="DataDelegates\CreatePersonDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchPersonDataDelegate.cs" />
     <Compile Include="DataDelegates\GetPersonDataDelegate.cs" />
     <Compile Include="DataDelegates\InsertEventAttendanceDataDelegate.cs" />
+    <Compile Include="DataDelegates\NegativeBalanceDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveBalanceDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveChargesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveEventsByPersonIDDataDelegate.cs" />
@@ -118,7 +122,7 @@
     <Content Include="Sql\StoredProcedures\Events.RetrieveEvents.sql" />
     <Content Include="Sql\StoredProcedures\People.CreateGroup.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveGroups.sql" />
-    <Content Include="Sql\StoredProcedures\People.FetchPaymentsById.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrievePaymentsById.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveAllMembers.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveBalance.sql" />
     <Content Include="Sql\StoredProcedures\Events.RetrievePersonEvents.sql" />
