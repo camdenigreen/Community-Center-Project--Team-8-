@@ -45,8 +45,8 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseDa
 
 Write-Host "Storing procedures..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\StoredProcedures\People.RetrieveGroups.sql"
-
-
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseSetup\Procedures\Events.UpcomingEventsAggregated.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseSetup\Procedures\People.NegativeBalance.sql"
 
 Write-Host "Inserting data..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\Data\People.People.sql"

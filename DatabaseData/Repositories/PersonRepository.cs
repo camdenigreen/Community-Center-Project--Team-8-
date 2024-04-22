@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
+using DatabaseData.DataDelegates;
 
 namespace DatabaseData
 {
@@ -34,6 +35,12 @@ namespace DatabaseData
         public IReadOnlyList<Person> RetrievePersons()
         {
             throw new NotImplementedException();
+        }
+
+        public IReadOnlyList<PersonBalance> RetrieveNegativeBalances()
+        {
+            RetrieveNegativeBalancesDataDelegate data = new RetrieveNegativeBalancesDataDelegate();
+            return _executor.ExecuteReader(data);
         }
     }
 }

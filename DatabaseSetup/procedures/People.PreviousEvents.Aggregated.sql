@@ -1,13 +1,13 @@
-﻿CREATE OR ALTER PROCEDURE AddPerson
+﻿CREATE OR ALTER PROCEDURE People.PreviousEventsAggregated
 	AS
 
 
 DECLARE @CurrentDate DATE
 SET @CurrentDate =GETDATE();
 
-WITH EventTotalCte(EventID, [Date], EventMonth,EventYear,Registrants,Attendees,AttendanceRatio )AS 
+WITH EventTotalCte(EventID, Name, [Date], EventMonth,EventYear,Registrants,Attendees,AttendanceRatio )AS 
 	(
-	SELECT E.EventID, E.Date,MONTH(E.Date),YEAR(E.Date),SUM(EA.PersonID),(
+	SELECT E.EventID, E.Name, E.Date,MONTH(E.Date),YEAR(E.Date),SUM(EA.PersonID),(
 	SELECT SUM(EA1.PersonID)
 	FROM [Events]. EventAttendance EA1
 	WHERE EA1.DidAttend=1
@@ -24,7 +24,7 @@ WITH EventTotalCte(EventID, [Date], EventMonth,EventYear,Registrants,Attendees,A
 	GROUP BY E.EventID,E.Date,MONTH(E.Date),YEAR(E.Date)
 	
 	) 
-	SELECT ET.EventID, ET.Date, ET.Registrants, ET.Attendees, ET.AttendanceRatio,
+	SELECT ET.EventID, ET.Name, ET.Date, ET.Registrants, ET.Attendees, ET.AttendanceRatio,
 	SUM(ET.Registrants) OVER(
 	PARTITION BY ET.EventYear,ET.EventMonth
 	ORDER BY ET.EventMonth

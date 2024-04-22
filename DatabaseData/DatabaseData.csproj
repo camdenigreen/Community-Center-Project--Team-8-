@@ -48,8 +48,10 @@
     <Compile Include="DataDelegates\RetrieveEventsByPersonIDDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveGroupsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveNegativeBalancesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePaymentsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePersonGroupsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveUpcomingEventsDataDelegate.cs" />
     <Compile Include="Models\ActiveGroup.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\Event.cs" />

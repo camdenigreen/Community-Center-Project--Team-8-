@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using DatabaseData.DataDelegates;
+using DatabaseData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,18 @@ namespace DatabaseData
         public void SetPersonsEventAttendance(int personId, int eventId, bool attended)
         {
             throw new NotImplementedException();
+        }
+
+        public IReadOnlyList<EventRegistrants> RetrieveEventAttendence()
+        {
+            RetrieveUpcomingEventsDataDelegate data = new RetrieveUpcomingEventsDataDelegate();
+            return _executor.ExecuteReader(data);
+        }
+
+        public IReadOnlyList<PastEvent> RetrievePastEvents()
+        {
+            RetrievePastEventsDataDelegate data = new RetrievePastEventsDataDelegate();
+            return _executor.ExecuteReader(data);
         }
     }
 }

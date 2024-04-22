@@ -49,17 +49,9 @@ namespace Community_Center_Project__Team_8_
             ListViewDockPanel.Visibility = Visibility.Visible;
             NegativeBalanceListView.Visibility = Visibility.Visible;
 
-            // DO QUERY
-            // SET DATACONTEXT
-            List<PersonBalance> list = new List<PersonBalance>();
-            for (int i = 0; i < 10; i++)
-            {
-                Person camden = new Person(i, "Camden", "Green", "16429 W 139th Circle", "913-624-no", 1);
-                PersonBalance camdenPoor = new PersonBalance(camden, -1000.99m);
-                list.Add(camdenPoor);
-            }
-            NegativeBalanceListView.DataContext = list;
-
+            PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<PersonBalance> people = personRepository.RetrieveNegativeBalances();
+            NegativeBalanceListView.DataContext = people;
         }
 
        
@@ -70,13 +62,9 @@ namespace Community_Center_Project__Team_8_
             ListViewDockPanel.Visibility = Visibility.Visible;
             UpcomingEventsListView.Visibility = Visibility.Visible;
 
-            List<EventRegistrants> eventRegistrants = new List<EventRegistrants>();
-            for (int i = 0; i < 10; i++)
-            {
-                EventRegistrants eventRegistrant = new EventRegistrants(i, "Back to school bash", null, "1", "camden", DateTime.Now, 0m, 1000);
-                eventRegistrants.Add(eventRegistrant);
-            }
-            UpcomingEventsListView.DataContext = eventRegistrants;
+            EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<EventRegistrants> events = eventRepository.RetrieveEventAttendence();
+            UpcomingEventsListView.DataContext = events;
         }
 
         private void PastEventsClick(object sender, RoutedEventArgs e)

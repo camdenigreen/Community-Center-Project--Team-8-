@@ -48,7 +48,7 @@
                         <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="First Name"/>
                         <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Last Name"/>
                         <GridViewColumn DisplayMemberBinding="{Binding PhoneNumber}" Header="Phone Number"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Balance}" Header="Balance"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Balance, StringFormat=$0.00}" Header="Balance"/>
                     </GridView>
                 </ListView.View>
             </ListView>

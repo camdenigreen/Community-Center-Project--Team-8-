@@ -3,12 +3,16 @@
 AS
 
 
-SELECT P.PersonID,P.FirstName,P.LastName,P.PhoneNumber, SUM(C.Amount)-SUM(Pa.Amount) AS Balance
-FROM [People].People P
-LEFT JOIN People.Payments Pa ON Pa.PersonID=P.PersonID
-JOIN People.Charges C on C.PersonID=P.PersonID
-GROUP BY P.PersonID,P.FirstName,P.LastName,P.PhoneNumber
-HAVING SUM(C.Amount)-SUM(Pa.Amount) >0
+SELECT ag.PersonID, P.FirstName,P.LastName,P.PhoneNumber, SUM(ag.Amount) AS Balance
+FROM
+    (
+    SELECT ct.PersonID, ct.Amount FROM People.Charges ct
+    UNION ALL
+    SELECT pt.PersonID, pt.Amount FROM People.Payments pt
+    ) ag 
+    INNER JOIN People.People P ON ag.PersonID = P.PersonID
+GROUP BY ag.PersonID,P.FirstName,P.LastName,P.PhoneNumber
+HAVING SUM(ag.Amount) < 0
 ORDER BY Balance ASC;
 
 GO

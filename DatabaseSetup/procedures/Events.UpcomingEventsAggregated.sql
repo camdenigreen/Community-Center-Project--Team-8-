@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE AddPerson
+﻿CREATE OR ALTER PROCEDURE Events.UpcomingEventsAggregated
 	AS
 
 
@@ -14,5 +14,4 @@ GROUP BY E.EventID,E.Name,E.Date
 ORDER BY Registrants DESC
 
 
-SET @PersonID =SCOPE_IDENTITY();
 GO
