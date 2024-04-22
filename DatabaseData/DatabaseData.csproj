@@ -40,6 +40,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataDelegates\AddPersonToGroupDataDelegate.cs" />
+    <Compile Include="DataDelegates\AggregatedPreviousEvents.cs" />
     <Compile Include="DataDelegates\CreateEventDataDelegate.cs" />
     <Compile Include="DataDelegates\CreatePersonDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchPersonDataDelegate.cs" />
@@ -117,7 +119,6 @@
     <Content Include="Sql\StoredProcedures\People.CreateGroup.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveGroups.sql" />
     <Content Include="Sql\StoredProcedures\People.FetchPaymentsById.sql" />
-    <Content Include="Sql\StoredProcedures\People.AddPerson.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveAllMembers.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveBalance.sql" />
     <Content Include="Sql\StoredProcedures\Events.RetrievePersonEvents.sql" />
