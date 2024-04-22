@@ -63,6 +63,7 @@
     <Compile Include="DataDelegates\RetrievePastEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePaymentsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePersonGroupsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveTransactionsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveUpcomingEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\UpcomingEventsAggregatedDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateAddressDataDelegate.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Repositories\PaymentRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
     <Compile Include="DataDelegates\UpdateLastNameDataDelegate.cs" />
+    <Compile Include="DataDelegates\UpdateInformationDataDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data" />
@@ -157,6 +159,8 @@
     <Content Include="Sql\StoredProcedures\People.UpdatePhoneNumber.sql" />
     <Content Include="Sql\StoredProcedures\People.AddPersonToGroup.sql" />
     <Content Include="Sql\StoredProcedures\People.UpdateGroupMembership.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrieveTransactions.sql" />
+    <Content Include="Sql\StoredProcedures\People.UpdateInformation.sql" />
     <Content Include="Sql\Tables\DropTables.sql" />
     <Content Include="Sql\Tables\Events.EventAttendance.sql" />
     <Content Include="Sql\Tables\Events.Events.sql" />

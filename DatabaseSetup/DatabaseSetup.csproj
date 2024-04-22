@@ -48,7 +48,6 @@
     <Content Include="Data\People.People.sql" />
     <Content Include="Procedures\Charges.RetriveChargesByPersonId.sql" />
     <Content Include="Procedures\Charges.MakeCharge.sql" />
-    <Content Include="Procedures\EventAttendance.InsertEvent.sql" />
     <Content Include="Procedures\EventAttendance.InsertPerson.sql" />
     <Content Include="Procedures\EventAttendance.RetrieveEventsByPersonId.sql" />
     <Content Include="Procedures\EventAttendance.UpdateEventAttendance.sql" />
@@ -69,7 +68,6 @@
     <Content Include="Procedures\People.PreviousEvents.Aggregated.sql" />
     <Content Include="Procedures\People.RetrieveAllMembers.sql" />
     <Content Include="Procedures\People.RetrieveBalance.sql" />
-    <Content Include="Procedures\People.RetrieveChargesAndPayments.sql" />
     <Content Include="Procedures\People.RetrievePersonEvents.sql" />
     <Content Include="Procedures\People.RetrievePersonGroups.sql" />
     <Content Include="Procedures\People.UpdateAddress.sql" />
@@ -79,7 +77,14 @@
     <Content Include="Procedures\People.UpdatePhoneNumber.sql" />
     <Content Include="Procedures\PeopleGroups.AddPersonToGroup.sql" />
     <Content Include="Procedures\PeopleGroups.UpdateGroupMembership.sql" />
-    <Content Include="Procedures\Person.ChargesAndPayments.sql" />
+    <Content Include="Procedures\Person.AddEvent.sql" />
+    <Content Include="Procedures\Person.AddGroup.sql" />
+    <Content Include="Procedures\Person.LeaveEvent.sql" />
+    <Content Include="Procedures\Person.LeaveGroup.sql" />
+    <Content Include="Procedures\Person.RetrieveOtherEvents.sql" />
+    <Content Include="Procedures\Person.RetrieveOtherGroups.sql" />
+    <Content Include="Procedures\Person.Tansactions.sql" />
+    <Content Include="Procedures\Person.UpdateInformation.sql" />
     <Content Include="Tables.sql" />
   </ItemGroup>
   <ItemGroup />
