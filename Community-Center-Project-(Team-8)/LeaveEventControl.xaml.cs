@@ -33,7 +33,7 @@ namespace Community_Center_Project__Team_8_
             Event even = this.DataContext as Event;
             int id = even.EventId;
             MessageBox.Show("Left Event #" + id);
-            LeftEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventId, false, "event"));
+            LeftEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventId, false, "event",even));
         }
     }
 }

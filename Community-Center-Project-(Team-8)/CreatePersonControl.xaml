@@ -6,11 +6,106 @@
              xmlns:local="clr-namespace:Community_Center_Project__Team_8_"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Style.Resources>
+
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="Width" Value="150"/>
+        </Style>
+        <Style TargetType="TextBox">
+
+
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="20,0,10,20" />
+            <Setter Property="Height" Value="30"/>
+        </Style>
+        <Style TargetType="TextBlock">
+
+
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="15"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
 
-        <TextBlock Text="Create New Person"/>
-        <Button Content="button"/>
+        
+        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="CreatePersonInfo">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="2*"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Create New Person" HorizontalAlignment="Center"  Grid.Row="0" FontSize="26"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+            
+                <TextBlock Text="First Name: " Grid.Column="0" Grid.Row="0"/>
+                <TextBox x:Name="FirstName"  Text="{Binding FirstName,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0"/>
+                <TextBlock Text="Last Name: " Grid.Column="0" Grid.Row="1"/>
+                <TextBox x:Name="LastName" Text="{Binding LastName,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
+                <TextBlock Text="PhoneNumber: " Grid.Column="0" Grid.Row="2"/>
+                <TextBox x:Name="PhoneNumber" Text="{Binding PhoneNumber,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2"/>
+                <TextBlock Text="Address: " Grid.Column="0" Grid.Row="3"/>
+                <TextBox x:Name="Address" Text="{Binding Address,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="3" AcceptsReturn="True"/>
+
+
+
+            </Grid>
+            <Button x:Name="Create"  Height="28" Content="Create" Click="ClickCreate" Grid.Row="2" Width="130" IsEnabled="{Binding Finalize}"/>
+          
+
+        </Grid>
+
+        <Grid x:Name="ConfirmInformation" Visibility="Hidden">
+            <StackPanel Margin="140,20,20,20">
+                <TextBlock Margin="230,100,0,40" Text="Confirm Information" FontSize="23"/>
+                <TextBlock Text="{Binding FirstName}"/>
+                <TextBlock Text="{Binding LastName}"/>
+                <TextBlock Text="{Binding Address}"/>
+                <TextBlock Text="{Binding PhoneNumber}"/>
+                <Button Content="Proceed" Click="ClickConfirmCreate" Width="100" HorizontalAlignment="Center" Margin="0,20,180,20" />
+
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="Back" Grid.Row="1">
+            <Button Content="Back" Click="ClickBack" Width="100" HorizontalAlignment="Right"/>
+        </Grid>
 
 
     </Grid>
+  
 </UserControl>

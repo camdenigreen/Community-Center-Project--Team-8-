@@ -27,6 +27,9 @@ namespace Community_Center_Project__Team_8_
         {
             InitializeComponent();
             PersonDisplay.ClickBackTriggered += ReturnToMembers;
+            CreatePersonDisplay.ClickBackTriggered += ReturnToMembers;
+
+
 
             List<Person> members = new List<Person>();
             for (int i = 0; i < 10; i++)
@@ -42,7 +45,7 @@ namespace Community_Center_Project__Team_8_
 
         public event EventHandler<MainMenuButtonEventArgs> SwitchButton;
 
-        public event EventHandler<AccessPersonEventArgs> AccessPerson;
+        
 
         private UserControl prev_screen;
         
@@ -92,20 +95,20 @@ namespace Community_Center_Project__Team_8_
                 PersonDisplay.Visibility = Visibility.Visible;
                 prev_screen = PersonDisplay;
                 PersonDisplay.DataContext = new PersonView(person);
-                //PersonDisplay.DataContext=new PersonView(person);
+               
 
             }
         }
         
             protected void ReturnToMembers(object sender,EventArgs e)
-            {
+        {
 
             PersonDisplay.Visibility = Visibility.Hidden;
+            prev_screen.Visibility = Visibility.Hidden;
             PersonControlGrid.Visibility = Visibility.Hidden;
             MembersDisplay.Visibility = Visibility.Visible;
             SwitchButton.Invoke(this, new MainMenuButtonEventArgs(Visibility.Visible));
-            //reset the members incase of information changing
-            //get a new list of members.
+            
         
             
 
@@ -113,18 +116,42 @@ namespace Community_Center_Project__Team_8_
 
         private void ClickCreatePerson(object sender,RoutedEventArgs e)
         {
+            MembersDisplay.Visibility = Visibility.Hidden;
+
+          
+
+
+            SwitchButton.Invoke(this, new MainMenuButtonEventArgs(Visibility.Hidden));
+            PersonControlGrid.Visibility = Visibility.Visible;
+            PersonDisplay.Visibility = Visibility.Hidden;
+            CreatePersonDisplay.Visibility = Visibility.Visible;
+            prev_screen = CreatePersonDisplay;
+    
+            CreatePersonDisplay.DataContext = new UpdatePersonView();
+           
+           
+
+        }
+
+        private void SearchByFirstNameClick(object sender,RoutedEventArgs e)
+        {
+
+        }
+        private void SearchByLastNameClick(object sender, RoutedEventArgs e)
+        {
 
         }
 
 
-           
 
 
-          
 
-        
 
-      
+
+
+
+
+
 
     }
 }

@@ -34,7 +34,7 @@ namespace Community_Center_Project__Team_8_
             Group group = this.DataContext as Group;
             int id = group.GroupId;
             MessageBox.Show("Left Group #" + id);
-            LeftGroup.Invoke(this, new PersonEventGroupEventArgs(group.GroupId, false, "group"));
+            LeftGroup.Invoke(this, new PersonEventGroupEventArgs(group.GroupId, false, "group",group));
            
 
         }

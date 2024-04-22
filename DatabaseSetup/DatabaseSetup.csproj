@@ -53,12 +53,16 @@
     <Content Include="Procedures\EventAttendance.UpdateEventAttendance.sql" />
     <Content Include="Procedures\Events.CreateEvents.sql" />
     <Content Include="Procedures\Events.RetrieveEvents.sql" />
+    <Content Include="Procedures\Events.UpcomingEventsAggregated.sql" />
+    <Content Include="Procedures\Groups.ActiveMembers.sql" />
     <Content Include="Procedures\Groups.CreateGroup.sql" />
     <Content Include="Procedures\Groups.RetrieveGroups.sql" />
     <Content Include="Procedures\Payments.FetchPaymentsById.sql" />
     <Content Include="Procedures\Payments.InsertGivenPersonId.sql" />
     <Content Include="Procedures\Payments.ViewAllPayments.sql" />
     <Content Include="Procedures\People.AddPerson.sql" />
+    <Content Include="Procedures\People.NegativeBalance.sql" />
+    <Content Include="Procedures\People.PreviousEvents.Aggregated.sql" />
     <Content Include="Procedures\People.RetrieveAllMembers.sql" />
     <Content Include="Procedures\People.RetrieveBalance.sql" />
     <Content Include="Procedures\People.RetrieveChargesAndPayments.sql" />
