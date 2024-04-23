@@ -40,6 +40,12 @@ namespace DatabaseData
             return _executor.ExecuteReader(data);
         }
 
+        public IReadOnlyList<Event> RetrieveOtherEvents(int personID)
+        {
+            RetrieveOtherEventsDataDelegate data = new RetrieveOtherEventsDataDelegate(personID);
+            return _executor.ExecuteReader(data);
+        }
+
         public void SetPersonsEventAttendance(int personId, int eventId, bool attended)
         {
             throw new NotImplementedException();

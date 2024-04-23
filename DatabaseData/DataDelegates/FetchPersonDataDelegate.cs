@@ -40,8 +40,9 @@ namespace DatabaseData.DataDelegates
                 reader.GetString("FirstName"),
                 reader.GetString("LastName"),
                 reader.GetString("Address"),
-                reader.GetString("PhoneNumber"),
-                reader.GetByte("IsMebmer"));
+                reader.GetString("PhoneNumber")
+                );
+                //reader.GetByte("IsMember"));
         }
     }
 }

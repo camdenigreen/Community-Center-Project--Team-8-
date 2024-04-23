@@ -38,7 +38,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="14*"/>
+            <RowDefinition Height="12*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid  Grid.Row="0" x:Name="PersonDisplay">
@@ -91,8 +91,9 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row="0" Grid.Column="1"  Margin="20,14,0,0">
-                <TextBlock FontSize="20" Text="Groups"/>
+            <DockPanel Grid.Row="0" Grid.Column="1"  Margin="20,14,0,0">
+                <TextBlock DockPanel.Dock="Top" FontSize="20" Text="Groups"/>
+                <Button  DockPanel.Dock="Bottom" x:Name="LeaveGroup" Content="Leave Group" Click="ClickLeaveGroup"    IsEnabled="{Binding ElementName=MyListView, Path=SelectedItem}"/>
                 <ListView  x:Name="MyGroups" ItemsSource="{Binding MyGroups}" SelectionMode="Single" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -102,12 +103,13 @@
                     </ListView.ItemTemplate>
 
                 </ListView>
-                <Button   x:Name="LeaveGroup" Content="Leave Group" Click="ClickLeaveGroup"    IsEnabled="{Binding ElementName=MyListView, Path=SelectedItem}"/>
+                
 
-            </StackPanel>
+            </DockPanel>
 
-            <StackPanel  Margin="20,14,0,0" Grid.Row="1" Grid.Column="1">
-                <TextBlock FontSize="20" Text="Events"/>
+            <DockPanel Margin="20,14,0,0" Grid.Row="1" Grid.Column="1">
+                <TextBlock DockPanel.Dock="Top" FontSize="20" Text="Events"/>
+                <Button DockPanel.Dock="Bottom"   x:Name="LeaveEvent" Content="Leave Event" Click="ClickLeaveEvent"/>
                 <ListView x:Name="MyEvents" ItemsSource="{Binding MyEvents}" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -119,9 +121,9 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button   x:Name="LeaveEvent" Content="Leave Event" Click="ClickLeaveEvent"/>
+             
 
-            </StackPanel>
+            </DockPanel>
 
 
 
@@ -141,12 +143,12 @@
             <local:CreatePersonControl x:Name="CreatePersonDisplay" Visibility="Hidden"/>
 
         </Grid>
-        <Grid x:Name="BackGrid" Margin="0,409,0,0" Grid.RowSpan="2">
+        <Grid x:Name="BackGrid" Margin="0,409,0,0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Name="BackButton" Grid.Column="1" MinWidth="100" Margin="1" HorizontalAlignment="Right" Click="ClickBack">Back</Button>
+            <Button Name="BackButton"  Grid.Row="1" Grid.Column="1" MinWidth="100" Margin="1" HorizontalAlignment="Right" Click="ClickBack">Back</Button>
         </Grid>
 
     </Grid>

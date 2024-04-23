@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Person.RetrievPersonEvents
+﻿CREATE OR ALTER PROCEDURE Person.RetrieveOtherEvents
  @PersonId INT
 
 AS

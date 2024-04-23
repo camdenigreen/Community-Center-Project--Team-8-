@@ -40,7 +40,7 @@ namespace DatabaseData.DataDelegates
             command.Parameters.AddWithValue("LastName", _lastName);
             command.Parameters.AddWithValue("PhoneNumber", _phoneNumber);
             command.Parameters.AddWithValue("Address", _address);
-            command.Parameters.AddWithValue("IsMember", _isMember);
+           // command.Parameters.AddWithValue("IsMember", _isMember);
 
             SqlParameter parameter = command.Parameters.Add("PersonID", SqlDbType.Int);
             parameter.Direction = ParameterDirection.Output;
@@ -48,7 +48,7 @@ namespace DatabaseData.DataDelegates
 
         public override Person Translate(Command command)
         {
-            return new Person(command.GetParameterValue<int>("PersonID"), _firstName, _lastName, _address, _phoneNumber, _isMember);
+            return new Person(command.GetParameterValue<int>("PersonID"), _firstName, _lastName, _address, _phoneNumber );
         }
     }
 }

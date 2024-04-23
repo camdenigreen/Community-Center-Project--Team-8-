@@ -8,7 +8,7 @@ namespace DatabaseData.Models
 {
    public  class Transaction
     {
-        public int TransactionId { get; }
+        
 
         public decimal Amount { get; }
 
@@ -19,9 +19,9 @@ namespace DatabaseData.Models
         public string Reason { get; }
 
 
-        public Transaction(int id,decimal amount, string type, DateTime date,string reason)
+        public Transaction(decimal amount, string type, DateTime date,string reason)
         {
-            TransactionId = id;
+
             Amount = amount;
             Type = type;
             Date = date;

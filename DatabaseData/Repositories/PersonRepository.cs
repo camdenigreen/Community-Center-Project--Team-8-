@@ -19,12 +19,15 @@ namespace DatabaseData
 
         public Person CreatePerson(string firstName, string lastName, string address, string phoneNumber, byte isMember)
         {
-            throw new NotImplementedException();
+            CreatePersonDataDelegate data = new CreatePersonDataDelegate(firstName, lastName, phoneNumber, address, isMember);
+       
+            return _executor.ExecuteReader<Person>((DataAccess.IDataDelegates.IDataReaderDelegate<Person>)data);
         }
 
         public Person FetchPerson(int personId)
         {
-            throw new NotImplementedException();
+            FetchPersonDataDelegate data = new FetchPersonDataDelegate(personId);
+            return _executor.ExecuteReader(data);
         }
 
         public Person GetPerson(string phoneNumber)
@@ -34,7 +37,8 @@ namespace DatabaseData
 
         public IReadOnlyList<Person> RetrievePersons()
         {
-            throw new NotImplementedException();
+            RetrieveAllMembersDataDelegate data = new RetrieveAllMembersDataDelegate();
+            return _executor.ExecuteReader(data);
         }
 
         public IReadOnlyList<PersonBalance> RetrieveNegativeBalances()

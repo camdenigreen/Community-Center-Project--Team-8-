@@ -31,14 +31,14 @@ namespace Community_Center_Project__Team_8_
 
 
 
-            List<Person> members = new List<Person>();
+        /*    List<Person> members = new List<Person>();
             for (int i = 0; i < 10; i++)
             {
-                Person person = new Person(i, "Tinaye", "Kutesa", "1602 Hillcrest Drive", "785-31717", 1);
+                Person person = new Person(i, "Tinaye", "Kutesa", "1602 Hillcrest Drive", "785-31717");
 
                 members.Add(person);
             }
-            MembersListView.DataContext = members;
+            MembersListView.DataContext = members;*/
             
            
         }
@@ -94,8 +94,11 @@ namespace Community_Center_Project__Team_8_
                 PersonControlGrid.Visibility = Visibility.Visible;
                 PersonDisplay.Visibility = Visibility.Visible;
                 prev_screen = PersonDisplay;
-                PersonDisplay.DataContext = new PersonView(person);
+                PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
                
+                PersonDisplay.DataContext = new PersonView(person);
+              
+
 
             }
         }

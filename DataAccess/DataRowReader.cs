@@ -75,6 +75,12 @@ namespace DataAccess
 
         private T GetValue<T>(string name, Func<int, T> getter)
         {
+
+            int ordinal = GetOrdinal(name);
+            if (_reader.IsDBNull(ordinal))
+            {
+                return default;
+            }
             return getter(GetOrdinal(name));
         }
 

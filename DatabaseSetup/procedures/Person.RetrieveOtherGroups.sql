@@ -10,5 +10,5 @@ WHERE NOT EXISTS(
 
 	SELECT * FROM PG
 	WHERE PG.PersonID=@PersonId)
-ORDER BY E.Date ASC;
+
 GO

@@ -3,16 +3,16 @@
 
 AS
 SELECT
+    G.GroupID,
     G.Name,
     G.Description
 FROM People.Groups AS G
-INNER JOIN People.PeopleGroups AS PG ON G.GroupID = PG.GroupID
+--INNER JOIN People.PeopleGroups  PG ON G.GroupID = PG.GroupID
 
 WHERE
     NOT EXISTS (
 
-        SELECT * FROM PG
-        WHERE PG.PersonID = @PersonId
-    )
-ORDER BY E.Date ASC;
+        SELECT * FROM People.PeopleGroups PG
+        WHERE PG.PersonID = 1 AND G.GroupID = PG.GroupID
+    );
 GO

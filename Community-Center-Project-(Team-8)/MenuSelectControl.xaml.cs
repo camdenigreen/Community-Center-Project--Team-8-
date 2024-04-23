@@ -80,9 +80,12 @@ namespace Community_Center_Project__Team_8_
             MenuSelectButtonGrid.Visibility = Visibility.Hidden;
             ControlsGrid.Visibility = Visibility.Visible;
             MembersDisplay.Visibility = Visibility.Visible;
+            PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<Person> people = personRepository.RetrievePersons();
+            MembersDisplay.MembersListView.DataContext = people;
 
 
-            
+
         }
 
     }
