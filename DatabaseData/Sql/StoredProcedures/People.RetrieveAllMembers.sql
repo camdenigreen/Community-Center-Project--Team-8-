@@ -6,7 +6,7 @@ SELECT
     P.PersonID,
     P.FirstName,
     P.LastName,
-    P.[Address],
+    P.Address,
     P.PhoneNumber,
     P.IsMember
 FROM People.People AS P

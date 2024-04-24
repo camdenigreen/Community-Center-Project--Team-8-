@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE [Events].RetrieveEvents
+CREATE OR ALTER PROCEDURE Events.RetrieveEvents
     @EventID INT,
     @EventName NVARCHAR(50)
 AS
@@ -12,7 +12,7 @@ SELECT
     E.GroupID,
     G.Name AS GroupName,
     E.Charge
-FROM [Events].[Events] AS E
+FROM Events.Events AS E
 INNER JOIN People.Groups AS G ON E.GroupID = G.GroupID
 WHERE (
     (@EventID IS NOT NULL AND @EventID = E.EventID)
