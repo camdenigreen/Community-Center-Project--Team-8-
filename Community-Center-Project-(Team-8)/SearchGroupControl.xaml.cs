@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DatabaseData;
+using DatabaseData.IRepository;
 
 namespace Community_Center_Project__Team_8_
 {

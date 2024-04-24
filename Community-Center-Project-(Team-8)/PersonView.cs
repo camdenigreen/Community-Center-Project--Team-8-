@@ -9,14 +9,13 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DatabaseData;
 using DatabaseData.Models;
+using DatabaseData.Repositories;
 using Group = DatabaseData.Group;
 
 namespace Community_Center_Project__Team_8_
 {
     public class PersonView : INotifyPropertyChanged
     {
-
-        private int _id;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -203,6 +202,8 @@ namespace Community_Center_Project__Team_8_
 
         public bool MakePayment(decimal payment)
         {
+            _balance -= payment;
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
             return false;
         }
         private decimal _paid=0;
@@ -238,16 +239,38 @@ namespace Community_Center_Project__Team_8_
             Address = person.Address;
             PhoneNumber = person.PhoneNumber;
             Id = person.PersonId;
-            GetMyGroups();
-            GetOtherGroups();
+            GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<Group> groups = groupRepository.RetrieveGroups(Id);
+            _mygroups.AddRange(groups);
+
+            IReadOnlyList<Group> othergroups = groupRepository.RetrieveOtherGroups(Id);
+            _mygroups.AddRange(othergroups);
+
+            EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<Event> events = eventRepository.RetrieveEvents(Id);
+            _myevents.AddRange(events);
+
+            IReadOnlyList<Event> otherevents = eventRepository.RetrieveOtherEvents(Id);
+            _otherevents.AddRange(otherevents);
+
+            TransactionRepository transactionRepository = new TransactionRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<Transaction> transactions = transactionRepository.RetrieveTransactions(Id);
+            _transactions.AddRange(transactions);
+
+            BalanceRepository balanceRepository = new BalanceRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            _balance = balanceRepository.RetrieveBalance(Id);
+
+
+            //GetMyGroups();
+            //GetOtherGroups();
             //GetOtherEvents();
-           // GetMyEvents();
-            GetTransactions();
+            // GetMyEvents();
+            //GetTransactions();
             // CalcBalance();
             //initialize groups and ......
 
             //List<Event> events = new List<Event>();
-            for (int i = 0; i < 5; i++)
+            /*for (int i = 0; i < 5; i++)
             {
                 Event even = new Event(i, $"name{i}", 3, "description", " organizer", DateTime.Now, 3.5m);
                 OtherEvents.Add(even);
@@ -337,7 +360,7 @@ namespace Community_Center_Project__Team_8_
             _transactions.Clear();
             for(int i = 0; i < 5; i++)
             {
-                Transaction transaction = new Transaction(i, 3.5m + i, "Payment", DateTime.Now, "event");
+                Transaction transaction = new Transaction( 3.5m + i, "Payment", DateTime.Now, "event");
                 _transactions.Add(transaction);
             }
         }

@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE Events.UpcomingEventsAggregated
+﻿CREATE OR ALTER PROCEDURE [Events].UpcomingEventsAggregated
 AS
 
 DECLARE @CurrentDate DATE

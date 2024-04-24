@@ -4,15 +4,20 @@
 AS
 SELECT
     E.Name,
-    E.Date
-FROM Events.Events AS E
-INNER JOIN Events.EventAttendance AS EA ON E.EventID = EA.EventID
+    E.Date,
+	E.GroupID,
+	E.Description,
+	E.Organizer,
+	E.Date,
+	E.Charge,
+    E.EventID
+FROM [Events].[Events] AS E
 WHERE
     NOT EXISTS (
 
-        SELECT * FROM
-            EA
-        WHERE EA.PersonID = @PersonId
+        SELECT *
+        FROM  [Events].EventAttendance AS EA 
+        WHERE EA.PersonID =1 AND E.EventID=EA.EventID
     )
 ORDER BY E.Date ASC;
 GO

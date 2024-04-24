@@ -14,7 +14,7 @@ namespace DatabaseData.DataDelegates
         private readonly int _personID;
 
         public RetrieveEventsByPersonIDDataDelegate(int personID)
-            : base("Events.RetrieveEventsByPersonID")
+            : base("RetriveEventsByPersonID")
         {
             _personID = personID;
         }
@@ -39,7 +39,9 @@ namespace DatabaseData.DataDelegates
                     reader.GetString("Description"),
                     reader.GetString("Organizer"),
                     reader.GetDateTime("Date", DateTimeKind.Utc),
-                    reader.GetInt32("Charge"),
+             
+                    reader.GetValue<Decimal>("Charge"),
+
                     reader.GetBoolean("DidAttend")));
             }
 

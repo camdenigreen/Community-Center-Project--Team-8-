@@ -33,7 +33,7 @@ namespace DatabaseData.DataDelegates
             while (reader.Read())
             {
                 list.Add(new Transaction(
-                    reader.GetInt32("ID"),
+                  
                     reader.GetValue<decimal>("Amount"),
                     reader.GetString("Type"),
                     reader.GetDateTime("Date", DateTimeKind.Utc),

@@ -38,5 +38,10 @@ namespace DatabaseData
             RetrievePersonGroupsDataDelegate data = new RetrievePersonGroupsDataDelegate(personID);
             return _executor.ExecuteReader(data);
         }
+        public IReadOnlyList<Group> RetrieveOtherGroups(int personID)
+        {
+            RetrievePersonOtherGroupsDataDelegate data = new RetrievePersonOtherGroupsDataDelegate(personID);
+            return _executor.ExecuteReader(data);
+        }
     }
 }

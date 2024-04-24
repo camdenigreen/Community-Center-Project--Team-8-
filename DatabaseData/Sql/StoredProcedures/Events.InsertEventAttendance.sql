@@ -6,7 +6,7 @@ CREATE OR ALTER PROCEDURE Events.InsertEventAttendance
     @EventAttendanceID INT OUTPUT
 AS
 
-INSERT Events.EventAttendance (PersonID, EventID, DidAttend)
+INSERT [Events].EventAttendance (PersonID, EventID, DidAttend)
 VALUES (@PersonID, @EventID, @DidAttend);
 
 INSERT People.Charges (PersonID, EventID, Amount, Reason, Date)
@@ -16,7 +16,7 @@ SELECT
     @Amount,
     E.Name,
     GETDATE()
-FROM Events.Event AS E
+FROM [Events].Event AS E
 WHERE E.EventID = @EventID
 
 SET @EventAttendanceID = SCOPE_IDENTITY();

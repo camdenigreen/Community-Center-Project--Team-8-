@@ -26,8 +26,8 @@ namespace DatabaseData.DataDelegates
                     reader.GetString("FirstName"),
                     reader.GetString("LastName"),
                     reader.GetString("Address"),
-                    reader.GetString("PhoneNumber"),
-                    reader.GetBoolean("IsMember")));
+                    reader.GetString("PhoneNumber")));
+                  
             }
 
             return list;

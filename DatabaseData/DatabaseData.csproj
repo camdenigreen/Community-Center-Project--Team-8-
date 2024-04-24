@@ -66,6 +66,7 @@
     <Compile Include="DataDelegates\RetrievePastEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePaymentsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePersonGroupsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrievePersonOtherGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTransactionsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveUpcomingEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\UpcomingEventsAggregatedDataDelegate.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="DataDelegates\UpdateGroupMembershipDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateMembershipDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdatePhoneNumberDataDelegate.cs" />
+    <Compile Include="IRepositories\IBalanceRepository.cs" />
     <Compile Include="IRepositories\ITransactionRepository.cs" />
     <Compile Include="Models\ActiveGroup.cs" />
     <Compile Include="Models\Charge.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Models\PersonBalance.cs" />
     <Compile Include="Models\PersonsEvent.cs" />
     <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Repositories\BalanceRepository.cs" />
     <Compile Include="Repositories\ChargeRepository.cs" />
     <Compile Include="Repositories\EventRepository.cs" />
     <Compile Include="Repositories\GroupRepository.cs" />

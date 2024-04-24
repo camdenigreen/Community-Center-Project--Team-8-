@@ -83,7 +83,7 @@
     <Content Include="Procedures\Person.LeaveGroup.sql" />
     <Content Include="Procedures\Person.RetrieveOtherEvents.sql" />
     <Content Include="Procedures\Person.RetrieveOtherGroups.sql" />
-    <Content Include="Procedures\Person.Tansactions.sql" />
+    <Content Include="Procedures\People.RetrieveTransactions.sql" />
     <Content Include="Procedures\Person.UpdateInformation.sql" />
     <Content Include="Tables.sql" />
   </ItemGroup>

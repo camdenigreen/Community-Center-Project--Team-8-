@@ -21,19 +21,19 @@ WITH EventTotalCte (
         SUM(EA.PersonID),
         (
             SELECT SUM(EA1.PersonID)
-            FROM Events.EventAttendance AS EA1
+            FROM [Events].EventAttendance AS EA1
             WHERE EA1.DidAttend = 1
         ) AS Attendees,
         (
             SELECT SUM(EA1.PersonID)
-            FROM Events.EventAttendance AS EA1
+            FROM [Events].EventAttendance AS EA1
             WHERE
                 EA1.DidAttend
                 = 1
-                / (SELECT SUM(EA1.PersonID) FROM Events.EventAttendance AS EA1)
+                / (SELECT SUM(EA1.PersonID) FROM [Events].EventAttendance AS EA1)
         ) AS AttendanceRatio
-    FROM Events.Events AS E
-    INNER JOIN Events.EventAttendance AS EA ON E.EventID = EA.EventID
+    FROM [Events].[Events] AS E
+    INNER JOIN [Events].EventAttendance AS EA ON E.EventID = EA.EventID
     WHERE E.Date <= @CurrentDate
     GROUP BY E.EventID, E.Date, MONTH(E.Date), YEAR(E.Date)
 
