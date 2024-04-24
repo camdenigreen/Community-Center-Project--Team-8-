@@ -42,7 +42,7 @@
                         <GridViewColumn DisplayMemberBinding="{Binding GroupID}" Header="Group Id"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Organizer}" Header="Organizer"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Charge}" Header="Charge"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Charge, StringFormat=$0.00}" Header="Charge"/>
                         <GridViewColumn Header="Description">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>

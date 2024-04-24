@@ -57,7 +57,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock Text="Charge: "/>
-                    <TextBlock Text="{Binding Path=Charge}" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Path=Charge, StringFormat=$0.00}" TextWrapping="Wrap"/>
                 </StackPanel>
             </Grid>
             <StackPanel VerticalAlignment="Center" Grid.Column="3">

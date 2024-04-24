@@ -84,7 +84,7 @@
                         <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Group Name"/>
                         <GridViewColumn DisplayMemberBinding="{Binding TotalMembers}" Header="Total Members"/>
                         <GridViewColumn DisplayMemberBinding="{Binding ActiveMembers}" Header="Active Members"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding PercentageOfActiveMembers}" Header="Percentage"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding PercentageOfActiveMembers, StringFormat=0.00}" Header="Percentage"/>
                     </GridView>
                 </ListView.View>
             </ListView>
