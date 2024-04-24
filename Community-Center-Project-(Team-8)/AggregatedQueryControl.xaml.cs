@@ -72,6 +72,9 @@ namespace Community_Center_Project__Team_8_
             ButtonGrid.Visibility = Visibility.Hidden;
             ListViewDockPanel.Visibility = Visibility.Visible;
             PastEventsListView.Visibility = Visibility.Visible;
+            EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<PastEvent> events = eventRepository.RetrievePastEvents();
+            PastEventsListView.DataContext = events;
 
         }
 
@@ -80,7 +83,9 @@ namespace Community_Center_Project__Team_8_
             ButtonGrid.Visibility = Visibility.Hidden;
             ListViewDockPanel.Visibility = Visibility.Visible;
             ActiveGroupsListView.Visibility = Visibility.Visible;
-
+            GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<ActiveGroup> activeGroups = groupRepository.RetrieveActiveMembers();
+            ActiveGroupsListView.DataContext = activeGroups;
         }
 
 

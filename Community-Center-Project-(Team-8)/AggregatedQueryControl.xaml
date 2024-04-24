@@ -70,10 +70,10 @@
                         <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Registrants}" Header="Registrants"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Attendees}" Header="Attendees"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Percentage}" Header="Percentage"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Percentage, StringFormat=0.00}" Header="Percentage"/>
                         <GridViewColumn DisplayMemberBinding="{Binding MTDRegistrants}" Header="MTD Registrants"/>
                         <GridViewColumn DisplayMemberBinding="{Binding MTDAttendees}" Header="MTD Attendees"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding MTDPercentage}" Header="MTD Percentage"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding MTDPercentage, StringFormat=0.00}" Header="MTD Percentage"/>
                     </GridView>
                 </ListView.View>
             </ListView>

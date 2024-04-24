@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using DatabaseData.DataDelegates;
+using DatabaseData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,12 @@ namespace DatabaseData
         public IReadOnlyList<Group> RetrieveOtherGroups(int personID)
         {
             RetrievePersonOtherGroupsDataDelegate data = new RetrievePersonOtherGroupsDataDelegate(personID);
+            return _executor.ExecuteReader(data);
+        }
+
+        public IReadOnlyList<ActiveGroup> RetrieveActiveMembers()
+        {
+            RetrieveActiveMembersDataDelegate data = new RetrieveActiveMembersDataDelegate();
             return _executor.ExecuteReader(data);
         }
     }

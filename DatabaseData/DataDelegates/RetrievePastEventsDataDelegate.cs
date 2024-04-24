@@ -11,7 +11,7 @@ namespace DatabaseData.DataDelegates
 {
     internal class RetrievePastEventsDataDelegate : DataReaderDelegate<IReadOnlyList<PastEvent>>
     {
-        public RetrievePastEventsDataDelegate() : base("People.PreviousEventsAggregated")
+        public RetrievePastEventsDataDelegate() : base("People.AggregatedPreviousEvents")
         {
         }
 
@@ -30,7 +30,7 @@ namespace DatabaseData.DataDelegates
                     reader.GetValue<Double>("AttendanceRatio"),
                     reader.GetInt32("MtdRegistrants"),
                     reader.GetInt32("MtdAttendees"),
-                    reader.GetValue<Double>("MtdAttendenceRatio")
+                    reader.GetValue<Double>("MtdAttendanceRatio")
                     ));
             }
 
