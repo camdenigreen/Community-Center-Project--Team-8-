@@ -23,11 +23,15 @@ namespace DatabaseData
         public void  LeaveEvent(int personId, int eventId)
         {
             LeaveEventDataDelegate data = new LeaveEventDataDelegate(personId, eventId);
+            _executor.ExecuteNonQuery(data);
+
         }
 
         public void AddPersonToEvent(int personId, int eventId,decimal charge)
         {
             InsertEventAttendanceDataDelegate data = new InsertEventAttendanceDataDelegate(personId, eventId, 0, charge);
+            _executor.ExecuteNonQuery(data);
+
         }
 
         public Event CreateEvent(string name, int groupId, string description, string organizer, DateTime date, decimal charge)
@@ -57,6 +61,7 @@ namespace DatabaseData
         public void SetPersonsEventAttendance(int personId, int eventId, bool attended)
         {
             throw new NotImplementedException();
+
         }
 
         public IReadOnlyList<EventRegistrants> RetrieveEventAttendence()

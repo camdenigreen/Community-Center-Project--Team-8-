@@ -20,6 +20,7 @@ namespace DatabaseData
         public void AddPersonToGroup(int personId, int groupId)
         {
             AddPersonToGroupDataDelegate data = new AddPersonToGroupDataDelegate(personId, groupId);
+            _executor.ExecuteNonQuery(data);
            
         }
 
@@ -49,7 +50,9 @@ namespace DatabaseData
         public void LeaveGroup(int personId,int groupId)
         {
             LeaveGroupDataDelegate data = new LeaveGroupDataDelegate(personId, groupId);
-         
+            _executor.ExecuteNonQuery(data);
+
+
         }
     }
 }
