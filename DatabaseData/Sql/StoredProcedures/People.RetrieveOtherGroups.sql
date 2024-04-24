@@ -12,7 +12,7 @@ FROM People.Groups AS G
 WHERE
     NOT EXISTS (
 
-        SELECT * FROM People.PeopleGroups PG
+        SELECT * FROM People.PeopleGroups AS PG
         WHERE PG.PersonID = 1 AND G.GroupID = PG.GroupID
     );
 GO

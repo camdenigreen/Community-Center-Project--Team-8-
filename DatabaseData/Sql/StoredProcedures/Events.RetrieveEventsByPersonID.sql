@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE  RetriveEventsByPersonID
+CREATE OR ALTER PROCEDURE RetriveEventsByPersonID
     @PersonID INT
 AS
 
@@ -9,7 +9,7 @@ SELECT
     E.Date,
     E.Description,
     E.Charge
-FROM [Events].[Events] AS E
-INNER JOIN [Events].EventAttendance AS EA ON EA.PersonID = @PersonID
+FROM Events.Events AS E
+INNER JOIN Events.EventAttendance AS EA ON EA.PersonID = @PersonID
 
 GO
