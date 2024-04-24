@@ -14,6 +14,8 @@ namespace DatabaseData
 
         Group CreateGroup(string name, string Description);
 
-        void AddPersonToGroup(int personId, string groupId);
+        void AddPersonToGroup(int personId, int groupId);
+
+        void LeaveGroup(int personId, int groupId);
     }
 }

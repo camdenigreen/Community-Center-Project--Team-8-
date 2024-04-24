@@ -17,14 +17,16 @@ namespace DatabaseData
             _executor = new CommandExecutor(connectionString);
         }
 
-        public void AddPersonToGroup(int personId, string groupId)
+        public void AddPersonToGroup(int personId, int groupId)
         {
-            throw new NotImplementedException();
+            AddPersonToGroupDataDelegate data = new AddPersonToGroupDataDelegate(personId, groupId);
+           
         }
 
         public Group CreateGroup(string name, string Description)
         {
-            throw new NotImplementedException();
+            CreateGroupDataDelegate data = new CreateGroupDataDelegate(name, Description);
+            return _executor.ExecuteNonQuery(data);
         }
 
         public IReadOnlyList<Group> RetrieveGroups(int? groupID, string groupName)
@@ -42,6 +44,12 @@ namespace DatabaseData
         {
             RetrievePersonOtherGroupsDataDelegate data = new RetrievePersonOtherGroupsDataDelegate(personID);
             return _executor.ExecuteReader(data);
+        }
+
+        public void LeaveGroup(int personId,int groupId)
+        {
+            LeaveGroupDataDelegate data = new LeaveGroupDataDelegate(personId, groupId);
+         
         }
     }
 }

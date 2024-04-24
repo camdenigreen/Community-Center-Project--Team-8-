@@ -6,16 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseData.DataDelegates
+namespace DatabaseData
 {
     public class LeaveEventDataDelegate : DataDelegate
     {
         private readonly int _personID;
+        private readonly int _eventID;
 
-        public LeaveEventDataDelegate(int personID)
+        public LeaveEventDataDelegate(int personID,int eventID)
             : base("People.LeaveEvent")
         {
             _personID = personID;
+            _eventID = eventID;
         }
 
         public override void PrepareCommand(Command command)
@@ -23,6 +25,7 @@ namespace DatabaseData.DataDelegates
             base.PrepareCommand(command);
 
             command.Parameters.AddWithValue("PersonID", _personID);
+            command.Parameters.AddWithValue("EventID", _eventID);
         }
     }
 }

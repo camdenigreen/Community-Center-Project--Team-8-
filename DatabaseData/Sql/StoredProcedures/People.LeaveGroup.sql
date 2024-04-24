@@ -1,8 +1,8 @@
 ﻿CREATE OR ALTER PROCEDURE People.LeaveGroup
-    @PersonId INT
+    @PersonId INT,
+    @GroupId INT
 AS
+DELETE FROM People.PeopleGroups
+WHERE PersonID=@PersonId AND GroupID=@GroupId;
 
-UPDATE People.PeopleGroups
-SET PersonID = NULL
-WHERE PersonId = @PersonId
 GO

@@ -14,8 +14,10 @@ namespace DatabaseData
 
         Event CreateEvent(string name, int groupId, string description, string organizer, DateTime date, decimal charge);
 
-        void AddPersonToEvent(int personId, int eventId);
+        void AddPersonToEvent(int personId, int eventId,decimal charge);
 
         void SetPersonsEventAttendance(int personId, int eventId, bool attended);
+
+        void LeaveEvent(int personId, int eventId);
     }
 }

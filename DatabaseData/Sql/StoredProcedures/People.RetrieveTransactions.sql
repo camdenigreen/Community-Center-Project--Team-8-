@@ -9,7 +9,7 @@ SELECT
     H.Reason
 FROM (
     SELECT
-        N'Paymnt' AS Type,
+        N'Payment' AS Type,
         P.Amount,
         P.Date,
         P.Reason

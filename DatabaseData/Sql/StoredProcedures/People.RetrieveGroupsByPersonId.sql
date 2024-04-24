@@ -7,6 +7,6 @@ SELECT
     G.Description
 FROM People.Groups AS G
 INNER JOIN People.PeopleGroups AS PG ON G.GroupID = PG.GroupID
-WHERE PG.PersonID = @PersonID
+AND  PG.PersonID = @PersonID
 
 GO

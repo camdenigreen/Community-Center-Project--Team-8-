@@ -19,6 +19,9 @@ namespace Community_Center_Project__Team_8_
             _address = person.Address;
             _number = person.PhoneNumber;
 
+          //  PersonRepository repository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+           // repository.UpdateInformation(Id, _address, _firstname, _lastname, _number);
+
         }
         public UpdatePersonView(string firstname, string lastname, string address, string phonenumber)
         {

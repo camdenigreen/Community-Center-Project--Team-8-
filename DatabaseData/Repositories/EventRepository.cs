@@ -13,19 +13,27 @@ namespace DatabaseData
     {
         private readonly CommandExecutor _executor;
 
+
+
         public EventRepository(string connectionString)
         {
             _executor = new CommandExecutor(connectionString);
         }
 
-        public void AddPersonToEvent(int personId, int eventId)
+        public void  LeaveEvent(int personId, int eventId)
         {
-            throw new NotImplementedException();
+            LeaveEventDataDelegate data = new LeaveEventDataDelegate(personId, eventId);
+        }
+
+        public void AddPersonToEvent(int personId, int eventId,decimal charge)
+        {
+            InsertEventAttendanceDataDelegate data = new InsertEventAttendanceDataDelegate(personId, eventId, 0, charge);
         }
 
         public Event CreateEvent(string name, int groupId, string description, string organizer, DateTime date, decimal charge)
         {
-            throw new NotImplementedException();
+            CreateEventDataDelegate data = new CreateEventDataDelegate(name, groupId, description, organizer, date, charge);
+            return _executor.ExecuteNonQuery(data);
         }
 
         public IReadOnlyList<Event> RetrieveEvents(int eventID, string eventName)

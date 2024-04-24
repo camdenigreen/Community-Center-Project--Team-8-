@@ -16,6 +16,9 @@ namespace Community_Center_Project__Team_8_
 {
     public class PersonView : INotifyPropertyChanged
     {
+        public EventRepository eventRepository= new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+        public GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -37,20 +40,18 @@ namespace Community_Center_Project__Team_8_
 
         public int Id { get; private set; }
 
-
         private decimal _balance;
         public decimal Balance
         {
             get
             {
-
                 return _balance;
             }
             private set
             {
                 // _balance = value;
 
-                CalcBalance();
+                //CalcBalance();
 
                 //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
             }
@@ -60,23 +61,14 @@ namespace Community_Center_Project__Team_8_
             _balance = 0;
         }
 
-        public decimal CalcBalance()
-        {
-            decimal res = 0;
-            _balance = res;
-
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
-            GetTransactions();
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Transactions)));
-            return 0;
-        }
+    
+    
         List<Group> _mygroups = new List<Group>();
         public List<Group> MyGroups { private set 
             
             {
-                
+               
                 //query the database for groups based on id
-
             }
             get {
                 return _mygroups;
@@ -116,16 +108,20 @@ namespace Community_Center_Project__Team_8_
             }
             get
             {
-
                 return _otherevents;
             }
         }
 
-        public bool JoinGroup(int groupId)
+        public bool JoinGroup(int groupId,Group group)
         {
 
-            GetOtherGroups();
-            GetMyGroups();
+           // GetOtherGroups();
+            //GetMyGroups();
+            _othergroups.Remove(group);
+            _mygroups.Add(group);
+            //GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            groupRepository.AddPersonToGroup(Id, groupId);
+
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyGroups)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherGroups)));
 
@@ -135,11 +131,11 @@ namespace Community_Center_Project__Team_8_
 
         public void JoinEvent(int eventId,Event even)
         {
-            
+            eventRepository.AddPersonToEvent(Id, eventId,even.Charge);
             _otherevents.Remove(even);
             _myevents.Add(even);
-            
-            
+            _balance += even.Charge;
+                      
            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyEvents)));
            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherEvents)));
             
@@ -149,38 +145,43 @@ namespace Community_Center_Project__Team_8_
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(propertyName)));
         }
 
-        public void LeaveGroup(int id,Group group)
+        public void LeaveGroup(int groupId,Group group)
         {
-            _othergroups.Remove(group);
-            _mygroups.Add(group);
+            GroupRepository groupRep= new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+
+            groupRep.LeaveGroup(Id, groupId);
+            _othergroups.Add(group);
+            _mygroups.Remove(group);
             
 
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyGroups)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherGroups)));
 
         }
-        public void LeaveEvent(int id,Event even)
+        public void LeaveEvent(int eventId,Event even)
         {
+            eventRepository.LeaveEvent(Id, eventId);
+
             _otherevents.Add(even);
             _myevents.Remove(even);
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(MyEvents)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(OtherEvents)));
-          
-
+         
         }
 
         public void UpdateInfo(string firstName,string lastName,string phoneNumber, string address)
         {
+            PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            personRepository.UpdateInformation(Id, address, firstName, lastName, phoneNumber);
             FirstName = firstName;
             LastName = lastName;
             PhoneNumber = phoneNumber;
             Address = address;
-
+            
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(LastName)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Address)));
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(PhoneNumber)));
-
             
         }
 
@@ -200,9 +201,12 @@ namespace Community_Center_Project__Team_8_
         public string Info =>$"{FirstName} {LastName} #{Id.ToString()}";
 
 
-        public bool MakePayment(decimal payment)
+        public bool MakePayment(decimal payment,string reason,DateTime time)
         {
             _balance -= payment;
+            Transaction transaction = new Transaction(payment, "Payment", time, reason);
+            _transactions.Add(transaction);
+            //reason , a
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Balance)));
             return false;
         }
@@ -229,10 +233,15 @@ namespace Community_Center_Project__Team_8_
 
         public void Delete()
         {
+            //set is Member to null, go back to the member look up
+            PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            personRepository.UpdateMembership(Id);
+
 
         }
         public PersonView(Person person)
         {
+            //same object
            // _person = person;
             _firstname = person.FirstName;
             LastName = person.LastName;
@@ -244,7 +253,7 @@ namespace Community_Center_Project__Team_8_
             _mygroups.AddRange(groups);
 
             IReadOnlyList<Group> othergroups = groupRepository.RetrieveOtherGroups(Id);
-            _mygroups.AddRange(othergroups);
+            _othergroups.AddRange(othergroups);
 
             EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
             IReadOnlyList<Event> events = eventRepository.RetrieveEvents(Id);
@@ -258,7 +267,7 @@ namespace Community_Center_Project__Team_8_
             _transactions.AddRange(transactions);
 
             BalanceRepository balanceRepository = new BalanceRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
-            _balance = balanceRepository.RetrieveBalance(Id);
+            _balance = -balanceRepository.RetrieveBalance(Id);
 
 
             //GetMyGroups();

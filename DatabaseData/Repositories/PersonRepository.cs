@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
+using DatabaseData.DataDelagates;
 using DatabaseData.DataDelegates;
 
 namespace DatabaseData
@@ -30,6 +31,12 @@ namespace DatabaseData
             return _executor.ExecuteReader(data);
         }
 
+        public Person UpdateMembership(int personId)
+        {
+            UpdateMembershipDataDelegate data = new UpdateMembershipDataDelegate(personId);
+            return _executor.ExecuteReader<Person>((DataAccess.IDataDelegates.IDataReaderDelegate<Person>)data);
+        }
+
         public Person GetPerson(string phoneNumber)
         {
             throw new NotImplementedException();
@@ -40,7 +47,12 @@ namespace DatabaseData
             RetrieveAllMembersDataDelegate data = new RetrieveAllMembersDataDelegate();
             return _executor.ExecuteReader(data);
         }
+        public Person UpdateInformation(int id, string address,string firstName,string lastName, string phoneNumber)
+        {
+            UpdateInformationDataDelegate data = new UpdateInformationDataDelegate(id, address, firstName, lastName, phoneNumber);
+            return _executor.ExecuteReader<Person>((DataAccess.IDataDelegates.IDataReaderDelegate<Person>)data);
 
+        }
         public IReadOnlyList<PersonBalance> RetrieveNegativeBalances()
         {
             RetrieveNegativeBalancesDataDelegate data = new RetrieveNegativeBalancesDataDelegate();
