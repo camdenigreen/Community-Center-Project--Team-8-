@@ -1,5 +1,5 @@
 ﻿CREATE OR ALTER PROCEDURE Person.UpdateInformation
-   @PersonId INT,
+   @PersonId INT OUTPUT,
    @Address NVARCHAR(100),
    @FirstName NVARCHAR(50),
    @LastName NVARCHAR(50),
@@ -14,5 +14,7 @@ SET
 	PhoneNumber=@PhoneNumber
 
 WHERE PersonID=@PersonId;
+SET @PersonID =SCOPE_IDENTITY();
+
 
 GO

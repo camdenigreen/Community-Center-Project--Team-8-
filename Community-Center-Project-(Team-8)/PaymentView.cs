@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.ComponentModel;
+using DatabaseData;
+
 namespace Community_Center_Project__Team_8_
 {
     public class PaymentView:INotifyPropertyChanged
@@ -32,7 +34,7 @@ namespace Community_Center_Project__Team_8_
             }
 
         }
-        private string _reason;
+        private string _reason = "";
         public string Reason { get
             {
                 return _reason;
@@ -56,8 +58,14 @@ namespace Community_Center_Project__Team_8_
         }
         public bool Finalize => Amount > 0 && Reason.Length > 0;
 
-        public void MakePayment()
+        public DateTime MakePayment()
         {
+            PaymentRepository paymentRepository = new PaymentRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            DateTime time;
+            paymentRepository.CreatePayment(Id, Amount, Reason, time=DateTime.Now);
+            //send the id,amount,reason,time to the transaction array
+            return time;
+            //connection string, 
 
         }
     }

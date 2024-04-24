@@ -16,3 +16,5 @@ HAVING SUM(ag.Amount) < 0
 ORDER BY Balance ASC;
 
 GO
+
+

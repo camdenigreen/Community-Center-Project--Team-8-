@@ -48,7 +48,7 @@ namespace DatabaseData.DataDelegates
                     reader.GetString("FirstName"),
                     reader.GetString("LastName"),
                     reader.GetString("Address"),
-                    reader.GetString("Address")));
+                    reader.GetString("PhoneNumber")));
             }
 
             return list;

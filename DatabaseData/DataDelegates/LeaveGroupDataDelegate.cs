@@ -6,16 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseData.DataDelegates
+namespace DatabaseData
 {
     public class LeaveGroupDataDelegate : DataDelegate
     {
         private readonly int _personID;
+        private readonly int _groupID;
 
-        public LeaveGroupDataDelegate(int personID)
+        public LeaveGroupDataDelegate(int personID,int groupID)
             : base("People.LeaveGroup")
         {
             _personID = personID;
+            _groupID = groupID;
         }
 
         public override void PrepareCommand(Command command)
@@ -23,6 +25,7 @@ namespace DatabaseData.DataDelegates
             base.PrepareCommand(command);
 
             command.Parameters.AddWithValue("PersonID", _personID);
+            command.Parameters.AddWithValue("GroupID", _groupID);
         }
     }
 }

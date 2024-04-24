@@ -76,6 +76,7 @@
     <Compile Include="GroupControl.xaml.cs">
       <DependentUpon>GroupControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PaymentEventArgs.cs" />
     <Compile Include="SearchEventControl.xaml.cs">
       <DependentUpon>SearchEventControl.xaml</DependentUpon>
     </Compile>

@@ -7,7 +7,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseData.Sql.StoredProcedures
+namespace DatabaseData.DataDelagates
 {
     public class UpdateInformationDataDelegate : DataDelegate
     {

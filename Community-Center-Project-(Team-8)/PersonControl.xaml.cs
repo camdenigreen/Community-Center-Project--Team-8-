@@ -34,11 +34,12 @@ namespace Community_Center_Project__Team_8_
 
         }
 
-        private void UpdateBalance(object sender, EventArgs e)
+        private void UpdateBalance(object sender, PaymentEventArgs e)
         {
 
             PersonView person = this.DataContext as PersonView;
-            person.CalcBalance();
+            person.MakePayment(e.Amount,e.Reason,e.Time);
+            //person.CalcBalance();
             TransactionsPersonDisplay.TransactionsListView.Items.Refresh();
             ClickBack(sender, new RoutedEventArgs());
             
@@ -69,12 +70,10 @@ namespace Community_Center_Project__Team_8_
             {
                 if (e.Action == true)
                 {
-                    person.JoinGroup(e.Id);
+                    person.JoinGroup(e.Id,e.Group);
                     
                     GroupsPersonDisplay.GroupsListView.Items.Refresh();
                     MyGroups.Items.Refresh();
- 
-
 
                 }
                 else
@@ -82,8 +81,6 @@ namespace Community_Center_Project__Team_8_
                     person.LeaveGroup(e.Id,e.Group);
                     GroupsPersonDisplay.GroupsListView.Items.Refresh();
                     MyGroups.Items.Refresh();
-
-
                 }
             }
             else if(e.Type == "event")
@@ -93,8 +90,6 @@ namespace Community_Center_Project__Team_8_
                     person.JoinEvent(e.Id,e.Event);
                     MyEvents.Items.Refresh();
                     EventPersonDisplay.EventsListView.Items.Refresh();
-
-
                 }
                 else
                 {
@@ -209,11 +204,6 @@ namespace Community_Center_Project__Team_8_
             DeletePersonDisplay.Visibility = Visibility.Visible;
             DeletePersonDisplay.DataContext = this.DataContext;
 
-            //move to deleteperson control
-            //dlete person question
-            //yes
-            //show person deleted
-            //go back to the members screen.
 
         }
 

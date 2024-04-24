@@ -12,13 +12,13 @@ namespace DatabaseData.DataDelegates
     {
         private readonly int _personID;
 
-        private readonly string _groupName;
+        private readonly int _groupID;
 
-        public AddPersonToGroupDataDelegate(int personID, string groupName)
+        public AddPersonToGroupDataDelegate(int personID, int groupID)
             : base("People.AddPersonToGroup")
         {
             _personID = personID;
-            _groupName = groupName;
+            _groupID = groupID;
         }
 
         public override void PrepareCommand(Command command)
@@ -26,7 +26,7 @@ namespace DatabaseData.DataDelegates
             base.PrepareCommand(command);
 
             command.Parameters.AddWithValue("PersonID", _personID);
-            command.Parameters.AddWithValue("GroupName", _groupName);
+            command.Parameters.AddWithValue("GroupID", _groupID);
         }
     }
 }

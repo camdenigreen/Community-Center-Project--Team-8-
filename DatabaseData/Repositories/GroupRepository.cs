@@ -18,9 +18,10 @@ namespace DatabaseData
             _executor = new CommandExecutor(connectionString);
         }
 
-        public void AddPersonToGroup(int personId, string groupId)
+        public void AddPersonToGroup(int personId, int groupId)
         {
-            throw new NotImplementedException();
+            AddPersonToGroupDataDelegate data = new AddPersonToGroupDataDelegate(personId, groupId);
+           
         }
 
         public Group CreateGroup(string name, string description)
@@ -50,6 +51,12 @@ namespace DatabaseData
         {
             RetrieveActiveMembersDataDelegate data = new RetrieveActiveMembersDataDelegate();
             return _executor.ExecuteReader(data);
+        }
+
+        public void LeaveGroup(int personId,int groupId)
+        {
+            LeaveGroupDataDelegate data = new LeaveGroupDataDelegate(personId, groupId);
+         
         }
     }
 }

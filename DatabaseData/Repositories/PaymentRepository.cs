@@ -19,9 +19,10 @@ namespace DatabaseData
             _executor = new CommandExecutor(connectionString);
         }
 
-        public Payment CreatePayment(int personId, int? eventId, decimal amount, string reason, DateTime date)
+        public Payment CreatePayment(int personId, decimal amount, string reason, DateTime date)
         {
-            throw new NotImplementedException();
+            CreatePaymentDataDelegate data = new CreatePaymentDataDelegate(personId, amount, reason, date);
+            return _executor.ExecuteNonQuery<Payment>(data);
         }
 
         public IReadOnlyList<Payment> RetrievePayments(int personID)
