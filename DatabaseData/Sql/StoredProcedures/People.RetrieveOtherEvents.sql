@@ -1,6 +1,7 @@
 ﻿CREATE OR ALTER PROCEDURE People.RetrieveOtherEvents
     @PersonId INT
 
+
 AS
 SELECT
     E.Name,
@@ -17,7 +18,7 @@ WHERE
 
         SELECT *
         FROM  [Events].EventAttendance AS EA 
-        WHERE EA.PersonID =1 AND E.EventID=EA.EventID
+        WHERE EA.PersonID =@PersonId AND E.EventID=EA.EventID
     )
 ORDER BY E.Date ASC;
 GO

@@ -50,7 +50,7 @@ namespace Community_Center_Project__Team_8_
             Group group = GroupsListView.SelectedItem as Group;
             if (group != null)
             {
-                JoinGroup.Invoke(this, new PersonEventGroupEventArgs(group.GroupId, true, "group"));
+                JoinGroup.Invoke(this, new PersonEventGroupEventArgs(group.GroupId, true, "group",group));
                 MessageBox.Show($"Group #{group.GroupId.ToString()} added");
 
             }

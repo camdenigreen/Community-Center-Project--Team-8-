@@ -23,7 +23,7 @@ namespace DatabaseData.DataDelegates
         private readonly byte _isMember;
 
         public CreatePersonDataDelegate(string firstName, string lastName, string phoneNumber, string address, byte isMember)
-            : base("Person.CreatePerson")
+            : base("People.CreatePerson")
         {
             _firstName = firstName;
             _lastName = lastName;

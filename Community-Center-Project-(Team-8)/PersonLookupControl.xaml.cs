@@ -111,6 +111,9 @@ namespace Community_Center_Project__Team_8_
             PersonControlGrid.Visibility = Visibility.Hidden;
             MembersDisplay.Visibility = Visibility.Visible;
             SwitchButton.Invoke(this, new MainMenuButtonEventArgs(Visibility.Visible));
+            PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<Person> people = personRepository.RetrievePersons();
+            MembersListView.DataContext = people;
             MembersListView.Items.Refresh();
             
         }

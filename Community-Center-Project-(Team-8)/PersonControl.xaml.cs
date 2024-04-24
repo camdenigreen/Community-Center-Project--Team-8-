@@ -74,8 +74,6 @@ namespace Community_Center_Project__Team_8_
                     
                     GroupsPersonDisplay.GroupsListView.Items.Refresh();
                     MyGroups.Items.Refresh();
- 
-
 
                 }
                 else
@@ -83,8 +81,6 @@ namespace Community_Center_Project__Team_8_
                     person.LeaveGroup(e.Id,e.Group);
                     GroupsPersonDisplay.GroupsListView.Items.Refresh();
                     MyGroups.Items.Refresh();
-
-
                 }
             }
             else if(e.Type == "event")
@@ -94,8 +90,6 @@ namespace Community_Center_Project__Team_8_
                     person.JoinEvent(e.Id,e.Event);
                     MyEvents.Items.Refresh();
                     EventPersonDisplay.EventsListView.Items.Refresh();
-
-
                 }
                 else
                 {
@@ -210,11 +204,6 @@ namespace Community_Center_Project__Team_8_
             DeletePersonDisplay.Visibility = Visibility.Visible;
             DeletePersonDisplay.DataContext = this.DataContext;
 
-            //move to deleteperson control
-            //dlete person question
-            //yes
-            //show person deleted
-            //go back to the members screen.
 
         }
 

@@ -2,11 +2,18 @@
     @PersonID INT
 AS
 
-SELECT SUM(C.Amount) - SUM(Pa.Amount) AS Balance
-FROM People.People AS P
-LEFT JOIN People.Payments AS Pa ON P.PersonID = Pa.PersonID
-INNER JOIN People.Charges AS C ON P.PersonID = C.PersonID
-WHERE P.PersonID = @PersonID
-GROUP BY P.PersonID, P.FirstName, P.LastName, P.PhoneNumber;
+SELECT SUM(ag.Amount) AS Balance
+FROM
+    (
+    SELECT  ct.Amount,ct.PersonID FROM People.Charges ct
+	WHERE ct.PersonID=1
+    UNION ALL
+    SELECT pt.Amount,pt.PersonID FROM People.Payments pt
+	WHERE pt.PersonID=1
+    ) ag 
+   
+GROUP BY ag.PersonID;
+
+
 
 GO

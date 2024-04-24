@@ -6,8 +6,8 @@ CREATE OR ALTER PROCEDURE People.CreatePerson
     @PersonID INT OUTPUT
 AS
 
-INSERT People.People (FirstName, LastName, Address, PhoneNumber)
-VALUES (@FirstName, @LastName, @Address, @PhoneNumber);
+INSERT People.People (FirstName, LastName, Address, PhoneNumber,IsMember)
+VALUES (@FirstName, @LastName, @Address, @PhoneNumber,1);
 
 SET @PersonID = SCOPE_IDENTITY();
 

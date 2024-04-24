@@ -8,7 +8,7 @@ AS
 
 UPDATE People.People
 SET
-    Address = @Address,
+    [Address] = @Address,
     FirstName = @FirstName,
     LastName = @LastName,
     PhoneNumber = @PhoneNumber

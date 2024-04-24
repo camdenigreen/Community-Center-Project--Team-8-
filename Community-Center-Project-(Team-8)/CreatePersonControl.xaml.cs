@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -84,10 +85,14 @@ namespace Community_Center_Project__Team_8_
             //Create actual person in database using the textboxes
             //if the insertion is successful
 
-            if (true)
+            if (ConfirmInformation.DataContext is PersonView)
             {
-                int id = 0;
-                MessageBox.Show($" Person {id.ToString()} created successfully");
+                PersonView person = ConfirmInformation.DataContext as PersonView;
+                PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                personRepository.CreatePerson(person.FirstName,person.LastName,person.Address,person.PhoneNumber,1);
+
+                
+                MessageBox.Show($" Person {person.Id.ToString()} created successfully");
                 CreatePersonInfo.Visibility = Visibility.Visible;
                 ConfirmInformation.Visibility = Visibility.Hidden;
                // Back.Visibility = Visibility.Hidden;

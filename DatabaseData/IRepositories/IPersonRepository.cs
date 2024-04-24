@@ -15,5 +15,9 @@ namespace DatabaseData
         Person GetPerson(string phoneNumber);
 
         Person CreatePerson(string firstName, string lastName, string address, string phoneNumber, byte isMember);
+
+       void UpdateInformation(int personId, string address, string firstName, string lastName, string phoneNumber);
+
+        void UpdateMembership(int personId);
     }
 }
