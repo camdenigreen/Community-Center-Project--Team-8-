@@ -8,7 +8,7 @@ namespace DatabaseData
 {
     public interface IEventRepository
     {
-        IReadOnlyList<Event> RetrieveEvents(int eventID, string eventName);
+        IReadOnlyList<Event> RetrieveEvents(int? eventID, string eventName);
 
         IReadOnlyList<Event> RetrieveEvents(int personId);
 

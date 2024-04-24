@@ -10,7 +10,7 @@ SELECT
 FROM People.Groups AS G
 WHERE
     (@GroupID IS NOT NULL AND @GroupID = G.GroupID)
-    OR (@GroupName IS NOT NULL AND @GroupName = G.Name)
+    OR (@GroupName IS NOT NULL AND G.Name LIKE ('%' + @GroupName + '%'))
     OR (@GroupID IS NULL AND @GroupName IS NULL);
 
 GO

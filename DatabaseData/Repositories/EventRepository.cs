@@ -28,7 +28,7 @@ namespace DatabaseData
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<Event> RetrieveEvents(int eventID, string eventName)
+        public IReadOnlyList<Event> RetrieveEvents(int? eventID, string eventName)
         {
             RetrieveEventsDataDelegate data = new RetrieveEventsDataDelegate(eventID, eventName);
             return _executor.ExecuteReader(data);

@@ -25,7 +25,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"> 
                     <TextBlock Text="EventId: "/>
-                    <TextBlock Text="{Binding Path=EventId}" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Path=EventID}" TextWrapping="Wrap"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock Text="Name: "/>
@@ -39,7 +39,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock Text="GroupId: "/>
-                    <TextBlock Text="{Binding Path=GroupId}" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Path=GroupID}" TextWrapping="Wrap"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock Text="Organizer: "/>

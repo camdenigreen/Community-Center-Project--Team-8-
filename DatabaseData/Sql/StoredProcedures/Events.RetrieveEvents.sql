@@ -9,6 +9,7 @@ SELECT
     E.Name,
     E.Date,
     E.Description,
+    E.GroupID,
     G.Name AS GroupName,
     E.Charge
 FROM [Events].[Events] AS E

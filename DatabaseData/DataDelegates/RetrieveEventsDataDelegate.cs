@@ -42,7 +42,7 @@ namespace DatabaseData.DataDelegates
                     reader.GetString("Description"),
                     reader.GetString("Organizer"),
                     reader.GetDateTime("Date", DateTimeKind.Utc),
-                    reader.GetInt32("Charge")));
+                    reader.GetValue<Decimal>("Charge")));
             }
 
             return list.AsReadOnly();

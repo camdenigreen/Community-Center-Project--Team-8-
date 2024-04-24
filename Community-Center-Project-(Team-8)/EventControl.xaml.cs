@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DatabaseData;
 
 namespace Community_Center_Project__Team_8_
 {
@@ -55,6 +56,9 @@ namespace Community_Center_Project__Team_8_
             EventControlsDisplay.Visibility = Visibility.Visible;
             SearchEventDisplay.Visibility = Visibility.Visible;
             SearchEventDisplay.SearchingGrid.Visibility = Visibility.Visible;
+            EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<Event> events = eventRepository.RetrieveEvents(null, null);
+            SearchEventDisplay.SearchEventListView.DataContext = events;
         }
     }
 }

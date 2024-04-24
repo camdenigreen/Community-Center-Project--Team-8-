@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DatabaseData;
 using Xceed.Wpf.Toolkit;
 
 namespace Community_Center_Project__Team_8_
@@ -48,10 +49,17 @@ namespace Community_Center_Project__Team_8_
 
         private void AddGroupClick(object sender, RoutedEventArgs e)
         {
-            //Data validation
-            //Create Group
-            //Reset if it worked
-            Reset();
+            if (NameTextBox.Text.Trim() == string.Empty || NameTextBox.Text.Trim().Length > 50)
+            {
+                System.Windows.MessageBox.Show("Name must be not null and less than 50 characters");
+                return;
+            }
+            GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            Group g = groupRepository.CreateGroup(NameTextBox.Text.Trim(), DescriptionTextBox.Text.Trim());
+            if (g != null) 
+            {
+                Reset();
+            }
         }
     }
 }

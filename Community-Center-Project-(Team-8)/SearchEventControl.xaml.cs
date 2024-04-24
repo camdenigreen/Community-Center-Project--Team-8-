@@ -24,13 +24,6 @@ namespace Community_Center_Project__Team_8_
         public SearchEventControl()
         {
             InitializeComponent();
-            List<Event> events = new List<Event>();
-            for (int i = 0; i < 10; i++)
-            {
-                Event e = new Event(i, "Back to school smash", null, "Long description that goes on for a while and has a lot of words in it i mean really who needed to put all this text into the database lmao", "camden", DateTime.Now, 0.00m);
-                events.Add(e);
-            }
-            DataContext = events;
         }
 
         private void ListViewSizeChanged7Column(object sender, SizeChangedEventArgs e)

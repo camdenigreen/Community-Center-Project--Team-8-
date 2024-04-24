@@ -37,9 +37,9 @@
             <ListView Grid.Row="1" Name="SearchEventListView" ItemsSource="{Binding}" SizeChanged="ListViewSizeChanged7Column">
                 <ListView.View>
                     <GridView x:Name="SearchEventGridView">
-                        <GridViewColumn DisplayMemberBinding="{Binding EventId}" Header="Id"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding EventID}" Header="Id"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Event Name"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding GroupId}" Header="Group Id"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding GroupID}" Header="Group Id"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Organizer}" Header="Organizer"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Charge}" Header="Charge"/>

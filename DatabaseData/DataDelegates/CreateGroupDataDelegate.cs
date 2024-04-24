@@ -37,7 +37,7 @@ namespace DatabaseData.DataDelegates
         public override Group Translate(Command command)
         {
             return new Group(
-                command.GetParameterValue<int>("GropuID"),
+                command.GetParameterValue<int>("GroupID"),
                 _name,
                 _description);
         }

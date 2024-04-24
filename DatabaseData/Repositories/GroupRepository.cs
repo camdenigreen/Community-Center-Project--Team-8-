@@ -23,9 +23,10 @@ namespace DatabaseData
             throw new NotImplementedException();
         }
 
-        public Group CreateGroup(string name, string Description)
+        public Group CreateGroup(string name, string description)
         {
-            throw new NotImplementedException();
+            CreateGroupDataDelegate data = new CreateGroupDataDelegate(name, description);
+            return _executor.ExecuteNonQuery(data);
         }
 
         public IReadOnlyList<Group> RetrieveGroups(int? groupID, string groupName)
