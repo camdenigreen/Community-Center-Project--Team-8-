@@ -34,7 +34,9 @@ namespace DatabaseData
         public void UpdateMembership(int personId)
         {
             UpdateMembershipDataDelegate data = new UpdateMembershipDataDelegate(personId);
-            
+             _executor.ExecuteNonQuery(data);
+
+
         }
 
         public Person GetPerson(string phoneNumber)
@@ -50,6 +52,7 @@ namespace DatabaseData
         public void UpdateInformation(int id, string address,string firstName,string lastName, string phoneNumber)
         {
             UpdateInformationDataDelegate data = new UpdateInformationDataDelegate(id, address, firstName, lastName, phoneNumber);
+            _executor.ExecuteNonQuery(data);
 
 
 

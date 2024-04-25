@@ -19,7 +19,6 @@ namespace Community_Center_Project__Team_8_
         public EventRepository eventRepository= new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
         public GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
 
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         private string _firstname;
