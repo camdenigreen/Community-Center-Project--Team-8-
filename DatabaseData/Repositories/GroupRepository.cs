@@ -58,8 +58,12 @@ namespace DatabaseData
         {
             LeaveGroupDataDelegate data = new LeaveGroupDataDelegate(personId, groupId);
             _executor.ExecuteNonQuery(data);
+        }
 
-
+        public IReadOnlyList<Person> RetrievePeopleInGroup(int groupID)
+        {
+            RetrievePeopleByGroupIDDataDelegate data = new RetrievePeopleByGroupIDDataDelegate(groupID);
+            return _executor.ExecuteReader(data);
         }
     }
 }

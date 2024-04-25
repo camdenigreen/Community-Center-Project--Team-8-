@@ -88,9 +88,10 @@ namespace Community_Center_Project__Team_8_
             if (SearchGroupListView.SelectedItem is Group group)
             {
                 ShowGroupDisplay.DataContext = group;
-                List<Person> peopleInGroup = new List<Person>();
-                //get list of people attached to Group
-                //ShowGroupDisplay.PeopleInGroupListView.DataContext = peopleInGroup;
+                GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Person> peopleInGroup = groupRepository.RetrievePeopleInGroup(group.GroupId);
+                ShowGroupDisplay.PeopleInGroupListView.DataContext = peopleInGroup;
+
                 List<Event> eventsInGroup = new List<Event>();
                 //get list of events attached to group
                 //ShowGroupDisplay.EventsInGroupListView.DataContext = eventsInGroup;

@@ -65,6 +65,7 @@
     <Compile Include="DataDelegates\RetrieveOtherGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePastEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePaymentsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrievePeopleByGroupIDDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePersonGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePersonOtherGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTransactionsDataDelegate.cs" />
@@ -148,6 +149,7 @@
     <Content Include="Sql\StoredProcedures\People.RetrieveAllMembers.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveBalance.sql" />
     <Content Include="Sql\StoredProcedures\Events.RetrievePersonEvents.sql" />
+    <Content Include="Sql\StoredProcedures\People.RetrievePeopleByGroupID.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrievePersonGroups.sql" />
     <Content Include="Sql\StoredProcedures\People.UpdateMembership.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveChargesAndPayments.sql" />
