@@ -1,6 +1,6 @@
 CREATE OR ALTER PROCEDURE People.RetrieveAllMembers
-@PhoneNumber NVARCHAR(14),
-@LastName NVARCHAR(30)
+    @PhoneNumber NVARCHAR(14),
+    @LastName NVARCHAR(30)
 AS
 SELECT
     P.PersonID,

@@ -4,6 +4,6 @@ CREATE OR ALTER PROCEDURE People.AddPersonToGroup
 AS
 
 INSERT INTO People.PeopleGroups (GroupID, PersonID)
-VALUES (@PersonID,@GroupID);
+VALUES (@GroupID,@PersonID);
 
 GO

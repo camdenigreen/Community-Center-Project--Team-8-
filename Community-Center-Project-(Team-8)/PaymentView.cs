@@ -22,7 +22,7 @@ namespace Community_Center_Project__Team_8_
 
                 if (value <=0 )
                 {
-                    throw new ArgumentException("must be greater than zero");
+                    //throw new ArgumentException("must be greater than zero");
                 }
                 else
                 {
