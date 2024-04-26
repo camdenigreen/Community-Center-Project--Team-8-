@@ -114,6 +114,16 @@ namespace Community_Center_Project__Team_8_
             }
             EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
             DateTime yeah = (DateTime)DateTimePicker.Value;
+            IReadOnlyList<Event> matchingEvents = eventRepository.RetrieveEvents(null, NameTextBox.Text.Trim());
+            foreach (Event ee in  matchingEvents)
+            {
+                if (NameTextBox.Text.Trim().Equals(ee.Name, StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("Event with this name already exists.");
+                    return;
+                }
+            }
+
             Event createdEvent = eventRepository.CreateEvent(NameTextBox.Text.Trim(),
                 groupID,
                 DescriptionTextBox.Text.Trim(),

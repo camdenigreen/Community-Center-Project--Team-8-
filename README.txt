@@ -1,5 +1,8 @@
 This is a visual studio WPF project, open with the .sln file.
 
+RebuildDatabase.ps1 is the script to create the database, insert the data, store procedures etc.
+But it's and unsigned script so you may need to change the execution policy to run it.
+
 
 Table creation files are located in:
 DatabaseData\Sql\Tables

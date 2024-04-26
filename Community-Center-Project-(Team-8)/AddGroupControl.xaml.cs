@@ -55,6 +55,17 @@ namespace Community_Center_Project__Team_8_
                 return;
             }
             GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            IReadOnlyList<Group> matchingGroups = groupRepository.RetrieveGroups(null, NameTextBox.Text.Trim());
+            foreach (Group ee in matchingGroups)
+            {
+                if (NameTextBox.Text.Trim().Equals(ee.Name, StringComparison.OrdinalIgnoreCase))
+                {
+                    System.Windows.MessageBox.Show("Group with this name already exists.");
+                    return;
+                }
+            }
+
+
             Group g = groupRepository.CreateGroup(NameTextBox.Text.Trim(), DescriptionTextBox.Text.Trim());
             if (g != null) 
             {
