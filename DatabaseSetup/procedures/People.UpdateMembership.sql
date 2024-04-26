@@ -10,7 +10,9 @@ DELETE FROM People.PeopleGroups
 WHERE PersonID =@PersonID;
 
 DELETE FROM [Events].[EventAttendance] 
-WHERE PersonID=@PersonID;
+WHERE EventID IN (SELECT EventID FROM [Events].[Events] WHERE Date >=GETDATE())
+AND PersonID=@PersonID
+
 
 
 GO

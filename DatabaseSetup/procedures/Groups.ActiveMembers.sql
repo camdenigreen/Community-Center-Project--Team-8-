@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE Groups.ActiveMembers
+﻿CREATE OR ALTER PROCEDURE Groups.ActiveMembers
 AS
 
 

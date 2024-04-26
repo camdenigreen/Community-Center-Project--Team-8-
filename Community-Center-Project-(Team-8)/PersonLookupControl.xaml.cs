@@ -121,7 +121,7 @@ namespace Community_Center_Project__Team_8_
            if (LastNameTextbox.Text.Length <= 50)
             {
                 PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
-                IReadOnlyList<Person> people = personRepository.RetrievePersons(null, LastNameTextbox.Text);
+                IReadOnlyList<Person> people = personRepository.RetrievePersons(PhoneNumberTextBox.Text, LastNameTextbox.Text);
                 MembersListView.DataContext = people;
             }
             
@@ -132,7 +132,7 @@ namespace Community_Center_Project__Team_8_
             if (PhoneNumberTextBox.Text.Length <= 50)
             {
                 PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
-                IReadOnlyList<Person> people = personRepository.RetrievePersons(null, PhoneNumberTextBox.Text);
+                IReadOnlyList<Person> people = personRepository.RetrievePersons(PhoneNumberTextBox.Text, LastNameTextbox.Text);
                 MembersListView.DataContext = people;
             }
 

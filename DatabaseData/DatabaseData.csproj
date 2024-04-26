@@ -103,7 +103,6 @@
     <Compile Include="DataDelegates\UpdateLastNameDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateInformationDataDelegate.cs" />
     <Compile Include="Repositories\TransactionRepository.cs" />
-    <Compile Include="Sql\Data\Aggregated.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -11,8 +11,9 @@ SELECT
     P.IsMember
 FROM People.People AS P
 WHERE (@LastName IS NOT NULL AND @LastName=P.LastName)
-OR(@LastName IS NOT NULL AND P.LastName LIKE ('%' + @LastName +'%'))
 OR(@PhoneNumber IS NOT NULL AND P.PhoneNumber= @PhoneNumber)
+OR(@LastName IS NOT NULL AND P.LastName LIKE ('%' + @LastName +'%') AND @PhoneNumber IS NOT NULL AND P.PhoneNumber LIKE( '%' + @PhoneNumber + '%'))
+OR(@LastName IS NOT NULL AND P.LastName LIKE ('%' + @LastName +'%'))
 OR(@PhoneNumber IS NOT NULL AND P.PhoneNumber LIKE( '%' + @PhoneNumber + '%'))
 OR (@PhoneNumber IS NULL AND @LastName IS NULL)
 AND
