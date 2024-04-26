@@ -54,7 +54,7 @@
 
 
             <StackPanel Grid.Column="2" Margin="20,14,0,0">
-                <TextBlock  FontSize="20" Text="CurrentBalance:"/>
+                <TextBlock  FontSize="20" Text="Current Balance:"/>
                 <TextBlock FontSize="20" Margin="20"  Text="{Binding Path=Balance, StringFormat=' {0:C}'}"/>
                 <Button x:Name="MakePayment" Click="ClickMakePayment" Content="Make Payment"/>
                 <Button  x:Name="Transactions" Content="View Transactions" Click="ClickViewTransactions"/>
@@ -79,15 +79,15 @@
                 <TextBlock x:Name="FirstName" Text="{Binding Path=FirstName, StringFormat='First Name: {0}' }"/>
                 <TextBlock x:Name="LastName" Text="{Binding Path=LastName, StringFormat='Last Name: {0}' }"/>
                 <TextBlock x:Name="Address" Text="{Binding Path=Address, StringFormat='Address: {0}' }"/>
-                <TextBlock x:Name="PhoneNumber" Text="{Binding Path=PhoneNumber, StringFormat='PhoneNumber: {0}' }"/>
+                <TextBlock x:Name="PhoneNumber" Text="{Binding Path=PhoneNumber, StringFormat='Phone Number: {0}' }"/>
                 <Button x:Name="UpdateInfo" Content="Update Information" Click="ClickUpdateInfo"/>
                 </StackPanel>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,40,0,0">
-                <Button x:Name="AddEvent" Click="ClickAddEvent" Content="Add Event"/>
+                <Button x:Name="AddEvent" Click="ClickAddEvent" Content="Join Event"/>
                 <Button x:Name="JoinGroup" Click="ClickJoinGroup" Content="Join Group"/>
-                <Button x:Name="DeletePerson" Click="ClickDeletePerson" Content="DeletePerson" IsEnabled="{Binding Path=CanDelete}"/>
+                <Button x:Name="DeletePerson" Click="ClickDeletePerson" Content="Delete Person" IsEnabled="{Binding Path=CanDelete}"/>
 
             </StackPanel>
 

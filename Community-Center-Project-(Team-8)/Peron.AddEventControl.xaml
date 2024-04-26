@@ -49,7 +49,7 @@
                 </ListView.View>
             </ListView>
             <DockPanel Grid.Row="2">
-                <Button Grid.Row="2" Grid.Column="0" DockPanel.Dock="Left" Width="140" x:Name="SelectEvent" Content="Add Event" Click="ClickAddEvent"/>
+                <Button Grid.Row="2" Grid.Column="0" DockPanel.Dock="Left" Width="140" x:Name="SelectEvent" Content="Join Event" Click="ClickAddEvent"/>
             </DockPanel>
 
         </Grid>

@@ -31,7 +31,8 @@ namespace DatabaseData.DataDelegates
         {
             if (!reader.Read())
             {
-                throw new RecordNotFoundException(_personID.ToString());
+                // Could be error but more likely just means person has no charges/payments
+                return 0m;
             }
 
             return reader.GetValue<decimal>("Balance", 0.00m);
