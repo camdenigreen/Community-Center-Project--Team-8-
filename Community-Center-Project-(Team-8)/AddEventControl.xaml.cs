@@ -113,16 +113,20 @@ namespace Community_Center_Project__Team_8_
                 }
             }
             EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
-            MessageBox.Show(DateTimePicker.Value.ToString());
             DateTime yeah = (DateTime)DateTimePicker.Value;
-            eventRepository.CreateEvent(NameTextBox.Text.Trim(),
+            Event createdEvent = eventRepository.CreateEvent(NameTextBox.Text.Trim(),
                 groupID,
                 DescriptionTextBox.Text.Trim(),
                 OrganizerTextBox.Text.Trim(),
                 yeah, 
                 charge);
-            MessageBox.Show("Event successfully created");
-            Reset();
+            if (createdEvent != null) 
+            {
+                MessageBox.Show("Event successfully created");
+                Reset();
+            }
+
+
         }
     }
 }

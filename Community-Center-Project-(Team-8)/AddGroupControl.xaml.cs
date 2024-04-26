@@ -59,6 +59,7 @@ namespace Community_Center_Project__Team_8_
             if (g != null) 
             {
                 Reset();
+                System.Windows.MessageBox.Show("Event successfully created");
             }
         }
     }
