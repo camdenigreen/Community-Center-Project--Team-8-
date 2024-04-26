@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE Events.CreateEvent
+CREATE OR ALTER PROCEDURE [Events].CreateEvent
     @Organizer NVARCHAR(100),
     @Name NVARCHAR(100),
     @Date DATETIME2(7),
@@ -8,7 +8,7 @@ CREATE OR ALTER PROCEDURE Events.CreateEvent
     @EventID INT OUTPUT
 AS
 
-INSERT Events.Events (
+INSERT [Events].[Events] (
     Organizer, Name, Date, Description, GroupID, Charge
 )
 VALUES (@Organizer, @Name, @Date, @Description, @GroupID, @Charge)

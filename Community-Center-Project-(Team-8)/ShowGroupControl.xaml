@@ -38,7 +38,7 @@
             <ListView Name="EventsInGroupListView" ItemsSource="{Binding}" SizeChanged="ListViewSizeChanged3Column">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding EventId}" Header="Event ID"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding EventID}" Header="Event ID"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Event Name"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>
                     </GridView>

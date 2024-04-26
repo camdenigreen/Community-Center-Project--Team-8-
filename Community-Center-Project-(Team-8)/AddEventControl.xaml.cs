@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DatabaseData;
 
 namespace Community_Center_Project__Team_8_
 {
@@ -24,12 +26,6 @@ namespace Community_Center_Project__Team_8_
         {
             InitializeComponent();
 
-            //validate information
-            //enable button when only stuff are all fixed
-            //attempt to add event
-            //get message from the database whether it is successful 
-            //success message, show event, then back button.
-            //property changed for array of events
             DescriptionTextBox.DataContext = this;
             StartUpText = " ";
         }
@@ -59,9 +55,73 @@ namespace Community_Center_Project__Team_8_
 
         private void CreateEventClick(object sender, RoutedEventArgs e)
         {
-            //Data validation
-            //Create event
-            //Reset if it worked
+            if (NameTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Event must have a name.");
+                return;
+            }
+            if (OrganizerTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Event must have an organizer.");
+                return;
+            }
+            DateTime dateTime = DateTime.Now;
+            if (DateTimePicker.Text == string.Empty)
+            {
+                MessageBox.Show("Event must have an date.");
+                return;
+            }
+            decimal charge;
+            if (ChargeTextBox.Text == string.Empty)
+            {
+                charge = 0;
+            }
+            else if (!decimal.TryParse(ChargeTextBox.Text, out charge))
+            {
+                MessageBox.Show("Charge is valid");
+            }
+            if (NameTextBox.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Name must be less than 50 characters");
+                return;
+            }
+            if (OrganizerTextBox.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Organizer must be less than 50 characters");
+                return;
+            }
+            int groupid;
+            int? groupID;
+            if (GroupIDTextBox.Text.Trim() == string.Empty)
+            {
+                groupID = null;
+            }
+            else if (!int.TryParse(GroupIDTextBox.Text.Trim(), out groupid))
+            {
+                MessageBox.Show("Group ID must be an integer");
+                return;
+            }
+            else
+            {
+                groupID = groupid;
+                GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Group> groups = groupRepository.RetrieveGroups(groupID, null);
+                if (groups.Count != 1)
+                {
+                    MessageBox.Show("Group ID does not reference existing group.");
+                    return;
+                }
+            }
+            EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+            MessageBox.Show(DateTimePicker.Value.ToString());
+            DateTime yeah = (DateTime)DateTimePicker.Value;
+            eventRepository.CreateEvent(NameTextBox.Text.Trim(),
+                groupID,
+                DescriptionTextBox.Text.Trim(),
+                OrganizerTextBox.Text.Trim(),
+                yeah, 
+                charge);
+            MessageBox.Show("Event successfully created");
             Reset();
         }
     }

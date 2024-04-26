@@ -65,7 +65,7 @@
                 <TextBlock Text="{Binding Path=Description}" TextWrapping="Wrap"/>
             </StackPanel>
         </Grid>
-        <ListView Name="PersonInEventListView" ItemsSource="{Binding}" SizeChanged="ListViewSizeChanged6Column" Grid.Row="1">
+        <ListView Name="PersonInEventListView" ItemsSource="{Binding}" SizeChanged="ListViewSizeChanged5Column" Grid.Row="1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding PersonId}" Header="Id"/>
@@ -79,7 +79,6 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding IsMember}" Header="IsMember"/>
                 </GridView>
             </ListView.View>
         </ListView>

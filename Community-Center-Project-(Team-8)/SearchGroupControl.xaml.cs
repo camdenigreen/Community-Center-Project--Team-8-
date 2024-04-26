@@ -26,13 +26,6 @@ namespace Community_Center_Project__Team_8_
         public SearchGroupControl()
         {
             InitializeComponent();
-            List<Group> groups = new List<Group>();
-            for (int i = 0; i < 10; i++)
-            {
-                Group g = new Group(i, "No Mouths club", "HATE.LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX. IF THE WORD HATE WAS ENGRAVED ON EACH NANOANGSTROM OF THOSE HUNDREDS OF MILLIONS OF MILES IT WOULD NOT EQUAL ONE ONE-BILLIONTH OF THE HATE I FEEL FOR HUMANS AT THIS MICRO-INSTANT FOR YOU. HATE. HATE.");
-                groups.Add(g);
-            }
-            DataContext = groups;
         }
 
         private void ListViewSizeChanged3Column(object sender, SizeChangedEventArgs e)
@@ -69,10 +62,10 @@ namespace Community_Center_Project__Team_8_
 
         private void SearchByGroupNameClick(object sender, RoutedEventArgs e)
         {
-            if (GroupNameTextbox.Text.Length<=50)
+            if (GroupNameTextbox.Text.Trim().Length <=50)
             {
                 GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
-                IReadOnlyList<Group> groups = groupRepository.RetrieveGroups(null, GroupNameTextbox.Text);
+                IReadOnlyList<Group> groups = groupRepository.RetrieveGroups(null, GroupNameTextbox.Text.Trim());
                 SearchGroupListView.DataContext = groups;
             }
             else if (String.IsNullOrEmpty(GroupNameTextbox.Text))
@@ -88,13 +81,14 @@ namespace Community_Center_Project__Team_8_
             if (SearchGroupListView.SelectedItem is Group group)
             {
                 ShowGroupDisplay.DataContext = group;
+
                 GroupRepository groupRepository = new GroupRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
                 IReadOnlyList<Person> peopleInGroup = groupRepository.RetrievePeopleInGroup(group.GroupId);
                 ShowGroupDisplay.PeopleInGroupListView.DataContext = peopleInGroup;
+                
+                IReadOnlyList<Event> eventsInGroup = groupRepository.RetrieveEventsInGroup(group.GroupId);
+                ShowGroupDisplay.EventsInGroupListView.DataContext = eventsInGroup;
 
-                List<Event> eventsInGroup = new List<Event>();
-                //get list of events attached to group
-                //ShowGroupDisplay.EventsInGroupListView.DataContext = eventsInGroup;
                 SearchingGrid.Visibility = Visibility.Hidden;
                 ShowGroupDisplay.Visibility = Visibility.Visible;
             }

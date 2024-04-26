@@ -1,32 +1,27 @@
-﻿using DataAccess;
-using DataAccess.DataDelegates;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess;
+using DataAccess.DataDelegates;
 
 namespace DatabaseData.DataDelegates
 {
-    public class RetrieveEventsDataDelegate : DataReaderDelegate<IReadOnlyList<Event>>
+    public class RetrieveEventsByGroupIDDataDelegate : DataReaderDelegate<IReadOnlyList<Event>>
     {
-        private readonly int? _eventID;
-
-        private readonly string _eventName;
-
-        public RetrieveEventsDataDelegate(int? eventID, string eventName)
-            : base("[Events].RetrieveEvents")
+        private readonly int _groupID;
+        public RetrieveEventsByGroupIDDataDelegate(int groupID) 
+            : base("Events.RetrieveEventsByGroupID")
         {
-            _eventID = eventID;
-            _eventName = eventName;
+            _groupID = groupID;
         }
 
         public override void PrepareCommand(Command command)
         {
             base.PrepareCommand(command);
 
-            command.Parameters.AddWithValue("EventID", _eventID is null ? (object)DBNull.Value : _eventID);
-            command.Parameters.AddWithValue("EventName", String.IsNullOrEmpty(_eventName) ? (object)DBNull.Value : _eventName);
+            command.Parameters.AddWithValue("GroupID", _groupID);
         }
 
         public override IReadOnlyList<Event> Translate(Command command, IDataRowReader reader)
@@ -45,7 +40,7 @@ namespace DatabaseData.DataDelegates
                     reader.GetValue<Decimal>("Charge")));
             }
 
-            return list.AsReadOnly();
+            return list;
         }
     }
 }

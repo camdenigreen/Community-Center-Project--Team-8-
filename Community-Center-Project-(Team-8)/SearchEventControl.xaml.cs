@@ -51,16 +51,35 @@ namespace Community_Center_Project__Team_8_
 
         private void SearchByEventIdClick(object sender, RoutedEventArgs e)
         {
-            //DATA VALIDATION
-            //Run query
-            //change data context
+            int i;
+            if (Int32.TryParse(EventIdTextBox.Text, out i))
+            {
+                EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Event> events = eventRepository.RetrieveEvents(i, null);
+                SearchEventListView.DataContext = events;
+            }
+            else if (String.IsNullOrEmpty(EventIdTextBox.Text))
+            {
+                EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Event> events = eventRepository.RetrieveEvents(null, null);
+                SearchEventListView.DataContext = events;
+            }
         }
 
         private void SearchByEventNameClick(object sender, RoutedEventArgs e)
         {
-            //DATA VALIDATION
-            //Run query
-            //change data context
+            if (EventNameTextbox.Text.Trim().Length<=50)
+            {
+                EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Event> events = eventRepository.RetrieveEvents(null, EventNameTextbox.Text.Trim());
+                SearchEventListView.DataContext = events;
+            }
+            else if (String.IsNullOrEmpty(EventNameTextbox.Text))
+            {
+                EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Event> events = eventRepository.RetrieveEvents(null, null);
+                SearchEventListView.DataContext = events;
+            }
         }
 
         private void GoToEventClick(object sender, RoutedEventArgs e)
@@ -68,13 +87,14 @@ namespace Community_Center_Project__Team_8_
             if (SearchEventListView.SelectedItem is Event realEvent)
             {
                 ShowEventDisplay.DataContext = realEvent;
-                List<Person> peopleInEvent = new List<Person>();
-                //get list of people attached to event
-                //ShowEventDisplay.PersonInEventListView.DataContext = list;
+
+                EventRepository eventRepository = new EventRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Person> peopleInEvent = eventRepository.RetrievePeopleInEvent(realEvent.EventID);
+                ShowEventDisplay.PersonInEventListView.DataContext = peopleInEvent;
+
                 SearchingGrid.Visibility = Visibility.Hidden;
                 ShowEventDisplay.Visibility = Visibility.Visible;
             }
-            
         }
     }
 }

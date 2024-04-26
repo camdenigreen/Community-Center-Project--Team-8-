@@ -82,6 +82,8 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseDa
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\StoredProcedures\People.UpdateMembership.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\StoredProcedures\People.UpdatePhoneNumber.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\StoredProcedures\People.RetrievePeopleByGroupID.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\StoredProcedures\Events.RetrieveEventsByGroupID.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\StoredProcedures\Events.RetrievePeopleByEventID.sql"
 
 Write-Host "Inserting data..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "DatabaseData\Sql\Data\People.People.sql"

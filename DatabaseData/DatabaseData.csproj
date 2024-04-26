@@ -56,6 +56,7 @@
     <Compile Include="DataDelegates\RetrieveBalanceDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveChargesAndPaymentsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveChargesDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveEventsByGroupIDDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveEventsByPersonIDDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveGroupsByPersonIDDataDelegate.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="DataDelegates\RetrieveOtherGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePastEventsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePaymentsDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrievePeopleByEventIDDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePeopleByGroupIDDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePersonGroupsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePersonOtherGroupsDataDelegate.cs" />
@@ -139,6 +141,8 @@
     <Content Include="Sql\Data\People.PeopleGroups.sql" />
     <Content Include="Sql\Schemas\Events.sql" />
     <Content Include="Sql\Schemas\People.sql" />
+    <Content Include="Sql\StoredProcedures\Events.RetrieveEventsByGroupID.sql" />
+    <Content Include="Sql\StoredProcedures\Events.RetrievePeopleByEventID.sql" />
     <Content Include="Sql\StoredProcedures\People.CreateCharge.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveChargesByPersonId.sql" />
     <Content Include="Sql\StoredProcedures\Events.UpdateEventAttendance.sql" />

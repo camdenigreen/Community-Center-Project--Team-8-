@@ -12,7 +12,7 @@ namespace DatabaseData
 
         IReadOnlyList<Event> RetrieveEvents(int personId);
 
-        Event CreateEvent(string name, int groupId, string description, string organizer, DateTime date, decimal charge);
+        Event CreateEvent(string name, int? groupId, string description, string organizer, DateTime date, decimal charge);
 
         void AddPersonToEvent(int personId, int eventId,decimal charge);
 

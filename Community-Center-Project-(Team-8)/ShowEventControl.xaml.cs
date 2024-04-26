@@ -25,7 +25,7 @@ namespace Community_Center_Project__Team_8_
             InitializeComponent();
         }
 
-        private void ListViewSizeChanged6Column(object sender, SizeChangedEventArgs e)
+        private void ListViewSizeChanged5Column(object sender, SizeChangedEventArgs e)
         {
             ListView listView = sender as ListView;
             GridView gView = listView.View as GridView;
@@ -35,15 +35,13 @@ namespace Community_Center_Project__Team_8_
             var col2 = 0.225;
             var col3 = 0.225;
             var col4 = 0.225;
-            var col5 = 0.225;
-            var col6 = 0.05;
+            var col5 = 0.275;
 
             gView.Columns[0].Width = workingWidth * col1;
             gView.Columns[1].Width = workingWidth * col2;
             gView.Columns[2].Width = workingWidth * col3;
             gView.Columns[3].Width = workingWidth * col4;
             gView.Columns[4].Width = workingWidth * col5;
-            gView.Columns[5].Width = workingWidth * col6;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace DatabaseData
         {
             EventID = eventId;
             Name = name;
-            GroupID = groupId;
+            GroupID = groupId == 0 ? null : groupId; //the reader returns nulls as default (0)
             Description = description;
             Organizer = organizer;
             Date = date;

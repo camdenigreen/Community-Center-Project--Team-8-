@@ -39,20 +39,20 @@ namespace DatabaseData.DataDelegates
         {
             base.PrepareCommand(command);
 
-            command.Parameters.AddWithValue("EventName", _eventName);
+            command.Parameters.AddWithValue("Name", _eventName);
             command.Parameters.AddWithValue("GroupID", _groupID is null ? (object)DBNull.Value : _groupID);
             command.Parameters.AddWithValue("Description", _description);
             command.Parameters.AddWithValue("Organizer", _organizer);
             command.Parameters.AddWithValue("Date", _date);
             command.Parameters.AddWithValue("Charge", _charge);
 
-            SqlParameter personID = command.Parameters.Add("PersonID", SqlDbType.Int);
-            personID.Direction = ParameterDirection.Output;
+            SqlParameter eventID = command.Parameters.Add("EventID", SqlDbType.Int);
+            eventID.Direction = ParameterDirection.Output;
         }
 
         public override Event Translate(Command command)
         {
-            return new Event(command.GetParameterValue<int>("PersonID"), _eventName, _groupID, _description, _organizer, _date, _charge);
+            return new Event(command.GetParameterValue<int>("EventID"), _eventName, _groupID, _description, _organizer, _date, _charge);
         }
     }
 }

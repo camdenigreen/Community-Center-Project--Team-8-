@@ -34,7 +34,7 @@ namespace DatabaseData
 
         }
 
-        public Event CreateEvent(string name, int groupId, string description, string organizer, DateTime date, decimal charge)
+        public Event CreateEvent(string name, int? groupId, string description, string organizer, DateTime date, decimal charge)
         {
             CreateEventDataDelegate data = new CreateEventDataDelegate(name, groupId, description, organizer, date, charge);
             return _executor.ExecuteNonQuery(data);
@@ -73,6 +73,12 @@ namespace DatabaseData
         public IReadOnlyList<PastEvent> RetrievePastEvents()
         {
             RetrievePastEventsDataDelegate data = new RetrievePastEventsDataDelegate();
+            return _executor.ExecuteReader(data);
+        }
+
+        public IReadOnlyList<Person> RetrievePeopleInEvent(int eventID)
+        {
+            RetrievePeopleByEventIDDataDelegate data = new RetrievePeopleByEventIDDataDelegate(eventID);
             return _executor.ExecuteReader(data);
         }
     }

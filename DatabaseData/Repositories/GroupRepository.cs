@@ -65,5 +65,11 @@ namespace DatabaseData
             RetrievePeopleByGroupIDDataDelegate data = new RetrievePeopleByGroupIDDataDelegate(groupID);
             return _executor.ExecuteReader(data);
         }
+
+        public IReadOnlyList<Event> RetrieveEventsInGroup(int groupID)
+        {
+            RetrieveEventsByGroupIDDataDelegate data = new RetrieveEventsByGroupIDDataDelegate(groupID);
+            return _executor.ExecuteReader(data);
+        }
     }
 }
