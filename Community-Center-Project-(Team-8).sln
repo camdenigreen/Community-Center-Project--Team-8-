@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Community-Center-Project-(Team-8)", "Community-Center-Project-(Team-8)\Community-Center-Project-(Team-8).csproj", "{48220AC6-062F-45FC-B87B-167C7FF49EE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseSetup", "DatabaseSetup\DatabaseSetup.csproj", "{643263FC-31FC-4360-A2EC-80FD9DE0DFEB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseData", "DatabaseData\DatabaseData.csproj", "{09F62716-B55D-4F0B-9742-600429C05848}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{4A2B4CC0-5FD0-40AC-B513-2397B4D92B66}"
@@ -33,10 +31,6 @@ Global
 		{48220AC6-062F-45FC-B87B-167C7FF49EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48220AC6-062F-45FC-B87B-167C7FF49EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48220AC6-062F-45FC-B87B-167C7FF49EE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{643263FC-31FC-4360-A2EC-80FD9DE0DFEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{643263FC-31FC-4360-A2EC-80FD9DE0DFEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{643263FC-31FC-4360-A2EC-80FD9DE0DFEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{643263FC-31FC-4360-A2EC-80FD9DE0DFEB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09F62716-B55D-4F0B-9742-600429C05848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{09F62716-B55D-4F0B-9742-600429C05848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09F62716-B55D-4F0B-9742-600429C05848}.Release|Any CPU.ActiveCfg = Release|Any CPU
