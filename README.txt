@@ -1,3 +1,6 @@
+This is a visual studio WPF project, open with the .sln file.
+
+
 Table creation files are located in:
 DatabaseData\Sql\Tables
 

@@ -67,11 +67,33 @@ namespace Community_Center_Project__Team_8_
         }
         private void ClickCreate(object sender, RoutedEventArgs e)
         {
-            CreatePersonInfo.Visibility = Visibility.Hidden;
-            ConfirmInformation.Visibility = Visibility.Visible;
-            PersonView person = new PersonView(FirstName.Text.ToString(), LastName.Text.ToString(), Address.Text.ToString(), PhoneNumber.Text.ToString());
-            this.DataContext = person;
-            ConfirmInformation.DataContext = this.DataContext;
+           
+            bool search = false;
+
+            PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+
+            IReadOnlyList<Person> persons = personRepository.RetrievePersons(PhoneNumber.Text.ToString(), null);
+            foreach (Person p in persons)
+            {
+                if (p.PhoneNumber.Equals(PhoneNumber.Text, StringComparison.OrdinalIgnoreCase))
+                {
+                    if (FirstName.Text.Equals(p.FirstName, StringComparison.OrdinalIgnoreCase) && LastName.Text.Equals(p.LastName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Already exists");
+                        search = true;
+                    }
+                }
+            }
+
+            if (search == false)
+            {
+                CreatePersonInfo.Visibility = Visibility.Hidden;
+                ConfirmInformation.Visibility = Visibility.Visible;
+                PersonView person = new PersonView(FirstName.Text.ToString(), LastName.Text.ToString(), Address.Text.ToString(), PhoneNumber.Text.ToString());
+                this.DataContext = person;
+                ConfirmInformation.DataContext = this.DataContext;
+            }
+            
 
 
 

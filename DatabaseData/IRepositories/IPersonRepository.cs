@@ -19,5 +19,6 @@ namespace DatabaseData
        void UpdateInformation(int personId, string address, string firstName, string lastName, string phoneNumber);
 
         void UpdateMembership(int personId);
+
     }
 }
