@@ -37,10 +37,10 @@
         </Grid.ColumnDefinitions>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="First Name" />
-                <TextBox Name="FirstNameTextBox" MinWidth="100"/>
+                <TextBlock Text="PhoneNumber" />
+                <TextBox Name="PhoneNumberTextBox" MinWidth="100"/>
             </StackPanel>
-            <Button Margin="0,0,0,0" Name="SearchByFirstNameButton" Grid.Row="1" Width="150" Height="30" FontSize="15" Click="SearchByFirstNameClick" >Search by First Name</Button>
+            <Button Margin="0,0,0,0" Name="SearchByPhoneNumberButton" Grid.Row="1" Width="180" Height="30" FontSize="15" Click="SearchByPhoneNumberClick" >Search by Phone Number</Button>
             <StackPanel HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center">
                 <TextBlock Text="Last Name"/>
                 <TextBox Name="LastNameTextbox" MinWidth="100"/>

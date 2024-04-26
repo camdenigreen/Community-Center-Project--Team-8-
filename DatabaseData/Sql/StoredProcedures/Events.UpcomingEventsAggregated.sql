@@ -7,7 +7,7 @@ SET @CurrentDate = GETDATE()
 SELECT
     E.EventID,
     E.Name,
-    E.Date,
+    FORMAT(E.Date, 'yyyy-MM-dd HH:mm') AS Date,
     SUM(EA.PersonID) AS Registrants
 FROM [Events].[Events] AS E
 INNER JOIN [Events].EventAttendance AS EA ON E.EventID = EA.EventID

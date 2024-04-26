@@ -4,7 +4,7 @@ AS
 
 SELECT Type,Amount,[Date],Reason
 FROM(
-    SELECT N'Paymnt' AS Type, P.Amount AS Amount, P.[Date],P.Reason 
+    SELECT N'Payment' AS Type, P.Amount AS Amount, P.[Date],P.Reason 
     FROM People.Payments P
     WHERE P.PersonID=@PersonID
     UNION ALL

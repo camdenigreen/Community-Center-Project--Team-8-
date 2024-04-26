@@ -13,5 +13,6 @@ SELECT
     E.Charge
 FROM [Events].[Events] AS E
 INNER JOIN [Events].EventAttendance AS EA ON EA.PersonID = @PersonID
+ORDER BY E.Date;
 
 GO

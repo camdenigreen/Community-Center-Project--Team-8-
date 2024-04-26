@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE InsertPersonIntoEvent
+CREATE OR ALTER PROCEDURE EventAttendance.InsertPersonIntoEvent
 	@PersonID INT,
 	@EventID INT,
 	@DidAttend INT,
@@ -6,6 +6,9 @@ CREATE OR ALTER PROCEDURE InsertPersonIntoEvent
 	@EventAttendanceID INT OUTPUT
 
 AS
+
+BEGIN TRANSACTION;
+
 INSERT [Events].EventAttendance(PersonID, EventID, DidAttend)
 VALUES(@PersonID, @EventID, @DidAttend);
 
@@ -16,4 +19,6 @@ WHERE E.EventID=@EventID
 
 
 SET @EventAttendanceID=SCOPE_IDENTITY();
+
+COMMIT;
 GO

@@ -97,7 +97,6 @@
                 <ListView  x:Name="MyGroups" ItemsSource="{Binding MyGroups}" SelectionMode="Single" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <!-- Define the appearance of each item -->
                             <TextBlock Text="{Binding Name}"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -127,10 +126,8 @@
 
 
 
-
-
         </Grid>
-        <Grid x:Name="ViewModifyPerson" Visibility="Hidden">
+        <Grid Grid.Row="0" x:Name="ViewModifyPerson" Visibility="Hidden">
 
             <local:UpdatePersonControl x:Name="UpdatePersonDisplay" Visibility="Hidden"/>
             <local:PersonTransactionsControl x:Name="TransactionsPersonDisplay" Visibility="Hidden"/>

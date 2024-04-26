@@ -38,8 +38,8 @@
         <ListView  Grid.ColumnSpan="3" Grid.Row="1"  Name="GroupsListView" ItemsSource="{Binding OtherGroups}" Visibility="Visible" SizeChanged="ListViewSizeChanged3Column" DockPanel.Dock="Top">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding GroupId}" Header="Id"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Event Name"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding GroupId}" Header="GroupId"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="GroupName"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description"/>
 
                 </GridView>

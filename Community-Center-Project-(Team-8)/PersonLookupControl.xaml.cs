@@ -27,38 +27,22 @@ namespace Community_Center_Project__Team_8_
         {
             InitializeComponent();
             PersonDisplay.ClickBackTriggered += ReturnToMembers;
-            CreatePersonDisplay.ClickBackTriggered += ReturnToMembers;
-
-
-
-        /*    List<Person> members = new List<Person>();
-            for (int i = 0; i < 10; i++)
-            {
-                Person person = new Person(i, "Tinaye", "Kutesa", "1602 Hillcrest Drive", "785-31717");
-
-                members.Add(person);
-            }
-            MembersListView.DataContext = members;*/
-            
+            CreatePersonDisplay.ClickBackTriggered += ReturnToMembers;           
            
         }
 
         public event EventHandler<MainMenuButtonEventArgs> SwitchButton;
 
         
-
         private UserControl prev_screen;
         
 
-
         private void DisplayPerson(object sender, AccessPersonEventArgs e)
-        {
-           
+        {           
             PersonDisplay.Visibility = Visibility.Visible;
             prev_screen = PersonDisplay;
 
             PersonDisplay.DataContext = e.Person;
-            //PersonDisplay.DataContext=new MockPerson(e.Person);
         }
 
         private void ListViewSizeChanged5Column(object sender, SizeChangedEventArgs e)
@@ -89,7 +73,6 @@ namespace Community_Center_Project__Team_8_
 
                 MembersDisplay.Visibility = Visibility.Hidden;
              
-
                 SwitchButton.Invoke(this, new MainMenuButtonEventArgs(Visibility.Hidden));
                 PersonControlGrid.Visibility = Visibility.Visible;
                 PersonDisplay.Visibility = Visibility.Visible;
@@ -98,8 +81,6 @@ namespace Community_Center_Project__Team_8_
                
                 PersonDisplay.DataContext = new PersonView(person);
               
-
-
             }
         }
         
@@ -122,9 +103,6 @@ namespace Community_Center_Project__Team_8_
         {
             MembersDisplay.Visibility = Visibility.Hidden;
 
-          
-
-
             SwitchButton.Invoke(this, new MainMenuButtonEventArgs(Visibility.Hidden));
             PersonControlGrid.Visibility = Visibility.Visible;
             PersonDisplay.Visibility = Visibility.Hidden;
@@ -137,12 +115,26 @@ namespace Community_Center_Project__Team_8_
 
         }
 
-        private void SearchByFirstNameClick(object sender,RoutedEventArgs e)
+        private void SearchByLastNameClick(object sender,RoutedEventArgs e)
         {
+            
+           if (LastNameTextbox.Text.Length <= 50)
+            {
+                PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Person> people = personRepository.RetrievePersons(null, LastNameTextbox.Text);
+                MembersListView.DataContext = people;
+            }
+            
 
         }
-        private void SearchByLastNameClick(object sender, RoutedEventArgs e)
+        private void SearchByPhoneNumberClick(object sender, RoutedEventArgs e)
         {
+            if (PhoneNumberTextBox.Text.Length <= 50)
+            {
+                PersonRepository personRepository = new PersonRepository(@"SERVER=(localdb)\MSSQLLocalDb;DATABASE=communitycenter;INTEGRATED SECURITY=SSPI;");
+                IReadOnlyList<Person> people = personRepository.RetrievePersons(null, PhoneNumberTextBox.Text);
+                MembersListView.DataContext = people;
+            }
 
         }
 

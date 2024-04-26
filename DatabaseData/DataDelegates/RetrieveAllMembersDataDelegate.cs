@@ -10,31 +10,25 @@ namespace DatabaseData.DataDelegates
 {
     public class RetrieveAllMembersDataDelegate : DataReaderDelegate<IReadOnlyList<Person>>
     {
-        private readonly int? _personID;
-
-        private readonly string _firstName;
+        private readonly string _phoneNumber;
 
         private readonly string _lastName;
 
-        private readonly string _phoneNumber;
-
-        public RetrieveAllMembersDataDelegate()
+        public RetrieveAllMembersDataDelegate(string phoneNumber,string lastName)
             : base("People.RetrieveAllMembers")
         {
-            /*_personID = personID;
-            _firstName = firstName;
+            _phoneNumber = phoneNumber;
             _lastName = lastName;
-            _phoneNumber = phoneNumber;*/
         }
 
         public override void PrepareCommand(Command command)
         {
             base.PrepareCommand(command);
-            /*
-            command.Parameters.AddWithValue("PersonID", _personID is null ? (object)DBNull.Value : _personID);
-            command.Parameters.AddWithValue("FirstName", String.IsNullOrEmpty(_firstName) ? (object)DBNull.Value : _firstName);
+           // command.Parameters.AddWithValue("GroupID", _groupID is null ? (object)DBNull.Value : _groupID);
+            command.Parameters.AddWithValue("PhoneNumber", String.IsNullOrEmpty(_phoneNumber) ? (object)DBNull.Value : _phoneNumber);
             command.Parameters.AddWithValue("LastName", String.IsNullOrEmpty(_lastName) ? (object)DBNull.Value : _lastName);
-            command.Parameters.AddWithValue("PhoneNumber", String.IsNullOrEmpty(_phoneNumber) ? (object)DBNull.Value : _phoneNumber);*/
+
+
         }
 
         public override IReadOnlyList<Person> Translate(Command command, IDataRowReader reader)

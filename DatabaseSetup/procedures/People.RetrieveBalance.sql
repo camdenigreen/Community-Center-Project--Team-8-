@@ -1,12 +1,18 @@
 ﻿CREATE OR ALTER PROCEDURE People.RetrieveBalance
-    @PersonID  INT
-   
+    @PersonID INT
 AS
-SELECT  ISNULL(0,SUM(Pa.Amount))-SUM(C.Amount) AS Balance
-FROM [People].People P
-LEFT JOIN People.Payments Pa ON Pa.PersonID=P.PersonID
-LEFT JOIN People.Charges C on C.PersonID=P.PersonID
-WHERE P.PersonID=1
-GROUP BY P.PersonID,P.FirstName,P.LastName,P.PhoneNumber;
+
+SELECT SUM(ag.Amount) AS Balance
+FROM
+    (
+    SELECT  ct.Amount,ct.PersonID FROM People.Charges ct
+	WHERE ct.PersonID=@PersonID
+    UNION ALL
+    SELECT pt.Amount,pt.PersonID FROM People.Payments pt
+	WHERE pt.PersonID=@PersonID
+    ) ag 
+   
+GROUP BY ag.PersonID;
+
 
 GO

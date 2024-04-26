@@ -1,18 +1,19 @@
 ﻿CREATE PROCEDURE Groups.ActiveMembers
 AS
 
-SELECT G.GroupID,G.Name, SUM( PG.PersonID) AS TotalMembers,(
-SELECT SUM(PG.PersonID) AS ActiveMembers
-	FROM People.PeopleGroups PG
-		WHERE EXISTS(
-			SELECT *
-			FROM [Events].EventAttendance EA
-			JOIN [Events].[Events] E ON E.EventID=EA.EventID
-			WHERE E.Date >= DATEADD(day,-30,GETDATE())
-			AND EA.DidAttend=1
-			AND EA.PersonID=PG.PersonID
-				)	)		
+
+WITH EventAttendences(EventID, PersonID, GroupID) AS (
+    SELECT EA.EventID, EA.PersonID, E.GroupID
+    FROM [Events].EventAttendance EA
+        INNER JOIN [Events].[Events] E ON EA.EventID = E.EventID
+    WHERE EA.DidAttend=1
+        AND (CAST(E.Date AS smalldatetime)) >= DATEADD(day,-30,GETDATE())
+)
+SELECT G.GroupID, G.Name, COUNT(DISTINCT PG.PersonID) AS TotalMembers, COUNT(DISTINCT EAS.PersonID) AS ActiveMembers
 FROM People.Groups G
-JOIN People.PeopleGroups PG ON PG.GroupID=G.GroupID
-GROUP BY G.GroupID,G.Name;
+    INNER JOIN People.PeopleGroups PG ON G.GroupID = PG.GroupID
+    LEFT JOIN EventAttendences EAS ON G.GroupID = EAS.GroupID
+GROUP BY G.GroupID, G.Name
+ORDER BY ActiveMembers DESC;
+
 GO

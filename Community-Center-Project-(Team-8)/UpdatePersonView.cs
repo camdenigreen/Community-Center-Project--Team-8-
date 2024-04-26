@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DatabaseData;
 
@@ -37,7 +38,13 @@ namespace Community_Center_Project__Team_8_
         }
         private bool validphone()
         {
-            return true;
+            string pattern = @"^\(\d{3}\) \d{7}";
+
+            Regex regex = new Regex(pattern);
+
+            Match match = regex.Match(PhoneNumber);
+
+            return match.Success && _number.Length==13;
         }
         private string _firstname="";
 

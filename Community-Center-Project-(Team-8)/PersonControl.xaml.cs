@@ -90,12 +90,16 @@ namespace Community_Center_Project__Team_8_
                     person.JoinEvent(e.Id,e.Event);
                     MyEvents.Items.Refresh();
                     EventPersonDisplay.EventsListView.Items.Refresh();
+                    TransactionsPersonDisplay.TransactionsListView.Items.Refresh();
+
                 }
                 else
                 {
                     person.LeaveEvent(e.Id,e.Event);
                     MyEvents.Items.Refresh();
                     EventPersonDisplay.EventsListView.Items.Refresh();
+                    TransactionsPersonDisplay.TransactionsListView.Items.Refresh();
+
                 }
 
             }
@@ -131,8 +135,6 @@ namespace Community_Center_Project__Team_8_
             PersonDisplay.Visibility = Visibility.Hidden;
             ViewModifyPerson.Visibility = Visibility.Visible;
             UpdatePersonDisplay.Visibility = Visibility.Visible;
-            
-
             PersonView person = DataContext as PersonView;
             UpdatePersonDisplay.DataContext = new UpdatePersonView(person);
 
@@ -158,8 +160,6 @@ namespace Community_Center_Project__Team_8_
             PersonDisplay.Visibility = Visibility.Hidden;
             ViewModifyPerson.Visibility = Visibility.Visible;
             EventPersonDisplay.Visibility = Visibility.Visible;
-            
-         
             PersonView person = this.DataContext as PersonView;
             EventPersonDisplay.DataContext = person;
 
@@ -171,8 +171,7 @@ namespace Community_Center_Project__Team_8_
             ViewModifyPerson.Visibility = Visibility.Visible;
             GroupsPersonDisplay.Visibility = Visibility.Visible;
             GroupsPersonDisplay.DataContext = this.DataContext;
-            PersonView person = this.DataContext as PersonView;
-           
+            PersonView person = this.DataContext as PersonView; 
             GroupsPersonDisplay.DataContext = person;
         }
         private void ClickMakePayment(object sender, RoutedEventArgs e)
@@ -203,14 +202,11 @@ namespace Community_Center_Project__Team_8_
             ViewModifyPerson.Visibility = Visibility.Visible;
             DeletePersonDisplay.Visibility = Visibility.Visible;
             DeletePersonDisplay.DataContext = this.DataContext;
-
-
         }
 
         private void ClickLeaveGroup(object sender, RoutedEventArgs e)
         {
           
-
             if (MyGroups.SelectedItem is Group)
             {
                 prev_screen = LeaveGroupDisplay;
@@ -227,8 +223,6 @@ namespace Community_Center_Project__Team_8_
             
             if (MyEvents.SelectedItem is Event)
             {
-
-
                 prev_screen = LeaveEventDisplay;
                 PersonDisplay.Visibility = Visibility.Hidden;
                 ViewModifyPerson.Visibility = Visibility.Visible;
@@ -236,8 +230,6 @@ namespace Community_Center_Project__Team_8_
                 LeaveEventDisplay.DataContext = MyEvents.SelectedItem;
             }
         }
-
-
 
     }
 }
