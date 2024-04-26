@@ -25,8 +25,6 @@ namespace Community_Center_Project__Team_8_
         public PersonAddEventControl()
         {
             InitializeComponent();
-
-
         }
 
 
@@ -58,22 +56,17 @@ namespace Community_Center_Project__Team_8_
             //all events that a person is not in 
             Event even = EventsListView.SelectedItem as Event;
             PersonView person=this.DataContext as PersonView;
-            
-           
+                      
             if (even != null)
             {
                 MessageBox.Show($"Event #{even.EventID.ToString()} added");
                 JoinEvent.Invoke(this, new PersonEventGroupEventArgs(even.EventID, true, "event",even));
-                person.OnPropertyChanged(nameof(person.OtherEvents));
-
+               // person.OnPropertyChanged(nameof(person.OtherEvents));
             }
             else
             {
                 MessageBox.Show("no event to add");
             }
-       
-
-
 
         }
 

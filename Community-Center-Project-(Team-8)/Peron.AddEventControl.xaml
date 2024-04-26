@@ -40,7 +40,7 @@
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding EventID}" Header="Id"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Name}" Header=" Name"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding GroupId}" Header="GroupId"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding GroupID}" Header="GroupId"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Organizer}" Header="Organizer"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date"/>

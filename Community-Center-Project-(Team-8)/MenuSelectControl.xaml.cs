@@ -32,8 +32,7 @@ namespace Community_Center_Project__Team_8_
            
         }
 
-        private UserControl prev_screen;
-  
+
         private void ManageMainMenuButton(object sender,MainMenuButtonEventArgs e)
         {
             BackGrid.Visibility = e.Visibility;

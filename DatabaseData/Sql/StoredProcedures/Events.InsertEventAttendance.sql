@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE Events.InsertEventAttendance
+CREATE OR ALTER PROCEDURE [Events].InsertEventAttendance
     @PersonID INT,
     @EventID INT,
     @DidAttend INT,

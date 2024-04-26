@@ -35,8 +35,12 @@ namespace DatabaseData
         {
             UpdateMembershipDataDelegate data = new UpdateMembershipDataDelegate(personId);
              _executor.ExecuteNonQuery(data);
+        }
 
-
+        public IReadOnlyList<Person> RetrievePersons(string phoneNumber, string lastName)
+        {
+            RetrieveAllMembersDataDelegate data = new RetrieveAllMembersDataDelegate(phoneNumber, lastName);
+            return _executor.ExecuteReader(data);
         }
 
         public Person GetPerson(string phoneNumber)
@@ -46,16 +50,13 @@ namespace DatabaseData
 
         public IReadOnlyList<Person> RetrievePersons()
         {
-            RetrieveAllMembersDataDelegate data = new RetrieveAllMembersDataDelegate();
+            RetrieveAllMembersDataDelegate data = new RetrieveAllMembersDataDelegate(null,null);
             return _executor.ExecuteReader(data);
         }
         public void UpdateInformation(int id, string address,string firstName,string lastName, string phoneNumber)
         {
             UpdateInformationDataDelegate data = new UpdateInformationDataDelegate(id, address, firstName, lastName, phoneNumber);
             _executor.ExecuteNonQuery(data);
-
-
-
 
         }
         public IReadOnlyList<PersonBalance> RetrieveNegativeBalances()

@@ -108,6 +108,7 @@
     <Compile Include="Repositories\TransactionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="Xceed.Wpf.AvalonDock, Version=4.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
       <HintPath>..\packages\Extended.Wpf.Toolkit.4.6.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
@@ -143,6 +144,7 @@
     <Content Include="Sql\Schemas\People.sql" />
     <Content Include="Sql\StoredProcedures\Events.RetrieveEventsByGroupID.sql" />
     <Content Include="Sql\StoredProcedures\Events.RetrievePeopleByEventID.sql" />
+    <Content Include="Sql\StoredProcedures\Events.AddEventCharge.sql" />
     <Content Include="Sql\StoredProcedures\People.CreateCharge.sql" />
     <Content Include="Sql\StoredProcedures\People.RetrieveChargesByPersonId.sql" />
     <Content Include="Sql\StoredProcedures\Events.UpdateEventAttendance.sql" />

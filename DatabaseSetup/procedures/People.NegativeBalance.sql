@@ -3,7 +3,7 @@
 AS
 
 
-SELECT ag.PersonID, P.FirstName,P.LastName,P.PhoneNumber, SUM(ag.Amount) AS Balance
+SELECT ag.PersonID, P.FirstName,P.LastName,P.PhoneNumber, -SUM(ag.Amount) AS Balance
 FROM
     (
     SELECT ct.PersonID, ct.Amount FROM People.Charges ct
@@ -13,7 +13,7 @@ FROM
     INNER JOIN People.People P ON ag.PersonID = P.PersonID
 GROUP BY ag.PersonID,P.FirstName,P.LastName,P.PhoneNumber
 HAVING SUM(ag.Amount) < 0
-ORDER BY Balance ASC;
+ORDER BY Balance DESC;
 
 GO
 

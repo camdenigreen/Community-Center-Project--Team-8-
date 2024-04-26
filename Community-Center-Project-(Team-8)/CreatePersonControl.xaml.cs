@@ -32,8 +32,7 @@ namespace Community_Center_Project__Team_8_
 
         private void ClickBack(object sender, RoutedEventArgs e)
         {
-            //what screen should we go back to
-            //the createperson info or the members page
+            
             if(ConfirmInformation.Visibility == Visibility.Visible)
             {
                 CreatePersonInfo.DataContext = ConfirmInformation.DataContext;
@@ -82,8 +81,7 @@ namespace Community_Center_Project__Team_8_
 
         private void ClickConfirmCreate(object sender, RoutedEventArgs e)
         {
-            //Create actual person in database using the textboxes
-            //if the insertion is successful
+            
 
             if (ConfirmInformation.DataContext is PersonView)
             {
@@ -92,21 +90,17 @@ namespace Community_Center_Project__Team_8_
                 personRepository.CreatePerson(person.FirstName,person.LastName,person.Address,person.PhoneNumber,1);
 
                 
-                MessageBox.Show($" Person {person.Id.ToString()} created successfully");
+                MessageBox.Show($" Person {person.FirstName} {person.LastName} {person.PhoneNumber} created successfully");
                 CreatePersonInfo.Visibility = Visibility.Visible;
                 ConfirmInformation.Visibility = Visibility.Hidden;
-               // Back.Visibility = Visibility.Hidden;
+               
                 ClickBackTriggered.Invoke(this, EventArgs.Empty);
                 FirstName.Text = "";
                 LastName.Text = "";
                 Address.Text = "";
                 PhoneNumber.Text = "";
             }
-            //message successfully created
-            //go back to the person lookup menu
-            //display message, person already exists
-            //go back to the previous page
-
+           
 
 
         }
